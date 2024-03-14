@@ -1,0 +1,22 @@
+/* Initialisation des Variables */
+:root {
+    --primary-bodycolor: #FFFFFF;
+    --secondary-bodycolor: #FFFFFF;
+
+    --header-color: #FFFFFF;
+    --nav-color: #FFFFFF;
+
+    --primary-textcolor: #f1f1f1;
+}
+
+/* Initialisation de la page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-bodycolor);
+}
