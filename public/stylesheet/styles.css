@@ -576,6 +576,10 @@ video {
   gap: 1rem;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .rounded-sm {
   border-radius: 0.125rem;
 }
