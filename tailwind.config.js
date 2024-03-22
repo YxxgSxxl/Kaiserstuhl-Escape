@@ -9,7 +9,10 @@ module.exports = {
         'ks-black': "rgb(10 10 10 / <alpha-value>)",
         'ks-grey': "rgb(10 10 10 / <alpha-value>)",
         'ks-white': '#rgb(69 66 65 / <alpha-value>)',
-      }
+      },
+      backgroundImage: {
+        'img': "url('img/ks-bg.png')",
+      },
     },
   },
   plugins: [],
