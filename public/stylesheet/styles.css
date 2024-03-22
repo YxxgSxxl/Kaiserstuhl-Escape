@@ -544,10 +544,43 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.p-4 {
-  padding: 1rem;
+.flex-1 {
+  flex: 1 1 0%;
 }
 
-.p-20 {
-  padding: 5rem;
+.bg-ks-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 10 10 / var(--tw-bg-opacity));
+}
+
+.bg-ks-black\/25 {
+  background-color: rgb(10 10 10 / 0.25);
+}
+
+.bg-\[url\(\'\/img\/hero-pattern\.svg\'\)\] {
+  background-image: url('/img/hero-pattern.svg');
+}
+
+.bg-\[url\(\'\/img\/\'\)\] {
+  background-image: url('/img/');
+}
+
+.bg-\[url\(\'\/img\/ks-bg\.png\'\)\] {
+  background-image: url('/img/ks-bg.png');
+}
+
+.bg-\[url\(\'img\/ks-bg\.png\'\)\] {
+  background-image: url('img/ks-bg.png');
+}
+
+.bg-\[url\(\'\.\/img\/ks-bg\.png\'\)\] {
+  background-image: url('./img/ks-bg.png');
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
