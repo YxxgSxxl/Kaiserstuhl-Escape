@@ -11,8 +11,8 @@ module.exports = {
         'ks-white': '#rgb(69 66 65 / <alpha-value>)',
       },
       backgroundImage: {
-        'img': "url('img/ks-bg.png')",
-      },
+        'ks-bg1': "url('/img/ks-bg1.jpg')",
+      }
     },
   },
   plugins: [],
