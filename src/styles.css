@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+
+    *,
+    *::before,
+    *::after {
+        @apply box-border;
+        @apply m-0;
+        @apply p-0;
+    }
+
+    body {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+    }
+
+    input {
+        color: black;
+    }
+
+    .ks-label {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .hr-text {
+        line-height: 1em;
+        position: relative;
+        outline: 0;
+        border: 0;
+        color: black;
+        text-align: center;
+        height: 1.5em;
+        opacity: .5;
+
+        &:before {
+            content: '';
+            background: linear-gradient(to right, transparent, #c2c2c2, transparent);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+        }
+
+        &:after {
+            content: attr(data-content);
+            position: relative;
+            display: inline-block;
+            color: black;
+
+            padding: 0 .5em;
+            line-height: 1.5em;
+            color: #c2c2c2;
+            background-color: rgb(20, 20, 20);
+        }
+    }
+}
