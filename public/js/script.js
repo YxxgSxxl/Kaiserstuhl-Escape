@@ -1,3 +1,12 @@
+// Affichage menu header au clique
+const ks_menu = document.getElementById('ks-menu');
+const ks_burger = document.getElementById('ks-burger');
+
+ks_burger.addEventListener('click', () => {
+    ks_menu.classList.toggle('ks-visible');
+})
+
+// Signup / Signin Continue with socials
 const ks_signup = document.querySelector('.ks-signup');
 
 ks_signup.innerHTML =
