@@ -33,7 +33,7 @@
     .ks-label {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 8px;
     }
 
     .ks-visible {
@@ -42,11 +42,9 @@
 
     .hr-text {
         line-height: 1em;
-        position: relative;
+        @apply relative text-black text-center;
         outline: 0;
         border: 0;
-        color: black;
-        text-align: center;
         height: 1.5em;
         opacity: .5;
 

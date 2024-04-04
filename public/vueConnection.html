@@ -18,26 +18,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
 </head>
-<body">
-    <section class="h-[100vh] bg-cover bg-no-repeat flex flex-col justify-center items-center" style="background-image: url('img/ks-bg2.png');">
-        <form action="" method="post" class="text-ks-white px-8 py-4 bg-black/60 w-fit rounded-xl flex flex-col gap-4">
-            <h1 class="text-ks-white text-4xl text-center">Connexion</h1>
+
+<body>
+    <section class="h-[100vh] bg-cover bg-no-repeat flex flex-col justify-center items-center"
+        style="background-image: url('img/ks-bg2.png');">
+        <form action="" method="post" class="flex flex-col gap-form-gap bg-black/40 text-ks-white p-8 rounded-md">
+            <h1 class="text-ks-white text-4xl text-center mb-4">Connexion</h1>
             <div class="ks-label">
-                <label for="text">adresse <span class="text-ks-orange">mail</span> ou nom d'<span class="text-ks-orange">utilisateur</span> :</label>
-                <input type="text" name="email" placeholder="Entrez votre mail ici..." class="rounded-md w-[500px] px-4 py-2">
+                <label for="text">adresse <span class="text-ks-orange">mail</span> ou <span
+                        class="text-ks-orange">pseudo</span> :</label>
+                <input type="text" name="email" placeholder="Entrez vos infortmations ici..." class="px-4 py-1 rounded-md">
             </div>
             <div class="ks-label">
                 <label for="mdp">mot de <span class="text-ks-orange">passe</span> :</label>
-                <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..." class="rounded-md w-[500px] px-4 py-2">
+                <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..." class="px-4 py-1 rounded-md" >
             </div>
-            <button type="submit" class="bg-ks-orange py-1 rounded-lg w-full mt-1 text-2xl">Se connecter</button>
+            <a href=""><small class="text-ks-orange font-thin underline">Mot de passe oublié ?</small></a>
+            <button type="submit" class="bg-ks-orange rounded-md p-2">Se connecter</button>
             <hr class="hr-text" data-content="ou bien">
             <!-- Model de donnée (cf.script.js) -->
             <div class="ks-signup mb-2"></div>
-            <p class="text-white/60 text-center">Pas encore client ? <a href="vueInscription.html" class="underline hover:text-white/80">S'inscrire</a></p>
+            <p class="text-white/60 text-center">Pas encore client ? <a href="vueInscription.html"
+                    class="underline hover:text-white/80">S'inscrire</a></p>
     </section>
 
     <script src="js/sign.js"></script>
-    </body>
+</body>
 
 </html>

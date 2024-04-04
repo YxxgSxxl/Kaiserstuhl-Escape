@@ -10,6 +10,9 @@ module.exports = {
         'ks-grey': "rgb(69 66 65 / <alpha-value>)",
         'ks-white': 'rgb(255 255 255 / <alpha-value>)',
       },
+      gap: {
+        'form-gap': "0.8rem",
+      }
     },
   },
   plugins: [],
