@@ -57,7 +57,7 @@
 
             <!-- Header Menu -->
             <div
-                class="header-menu bg-ks-black md:bg-transparent flex flex-col text-center items-center p-28 fixed top-0 left-0 h-[100vh] min-w-[100vw] transform -translate-x-full ease-linear duration-200 z-[2] md:w-auto md:h-auto md:relative md:min-w-[auto] md:translate-x-0 md:p-0 md:items-center md:text-center md:text-base md:justify-end">
+                class="header-menu bg-ks-black/90 md:bg-transparent flex flex-col text-center items-center p-28 fixed top-0 left-0 h-[100vh] min-w-[100vw] transform -translate-x-full ease-linear duration-200 z-[2] md:w-auto md:h-auto md:relative md:min-w-[auto] md:translate-x-0 md:p-0 md:items-center md:text-center md:text-base md:justify-end">
                 <button type="button" class="header-menuexit cursor-pointer absolute top-4 right-4 md:invisible">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
                         stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -66,14 +66,6 @@
                         <line x1="9" y1="9" x2="15" y2="15"></line>
                     </svg>
                 </button>
-
-                <div class="header-logo items-center absolute inset-0 mx-auto pt-6 w-fit z-[3] md:hidden">
-                    <a href="index.html">
-                        <img class="w-[150px]" loading="eager" src="img/ks-logo1.png"
-                            alt="Logo Kaiserstuhl Escape Game" />
-                    </a>
-                </div>
-
                 <ul class="text-ks-white md:items-center md:text-center md:m-0 md:flex md:gap-6">
                     <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="#"
                             class="hover:underline hover:text-ks-orange">À
@@ -81,20 +73,19 @@
                     </li>
                     <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="#"
                             class="hover:underline hover:text-ks-orange">BONS</a></li>
-                    <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="#"
+                    <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="vueContact.html"
                             class="hover:underline hover:text-ks-orange">CONTACT</a>
                     </li>
                     <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="#"
-                            class=" hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">JOUER</a>
+                            class="hover:underline hover:text-ks-orange md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">JOUER</a>
                     </li>
                     <li class="mb-4 text-lg md:mb-0 md:text-sm"><a href="vueInscription.html"
-                            class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">SE
+                            class="hover:underline hover:text-ks-orange md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">SE
                             CONNECTER</a></li>
-                    <select
-                        class="mb-4 text-lg text-ks-white px-2 py-1 rounded-lg bg-ks-white/40 md:mb-0 md:text-sm lg:text-base"
+                    <select class="mb-4 text-lg px-2 py-1 rounded-lg bg-ks-white/40 md:mb-0 md:text-sm lg:text-base"
                         name="" id="">
-                        <option value="FR" class="text-ks-black">FR</option>
-                        <option value="EN" class="text-ks-black">EN</option>
+                        <option value="FR">FR</option>
+                        <option value="EN">EN</option>
                     </select>
                 </ul>
             </div>

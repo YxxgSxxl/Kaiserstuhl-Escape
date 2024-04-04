@@ -32,11 +32,10 @@
         color: black;
     }
 
-    .details-color::marker{
-        @apply ks-orange;
-        
-    }   
+    .details-color::marker {
+        @apply text-ks-orange;
 
+    }
 
     .ks-label {
         display: flex;
@@ -79,5 +78,5 @@
         }
     }
 
-    
+
 }
