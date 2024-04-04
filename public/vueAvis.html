@@ -28,8 +28,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <title>Kaiserstuhl Outdoor</title>
-    <link rel="stylesheet" href="stylesheet/styles.css">
+    <title>Kaiserrstuhl Outdoor</title>
+    <link href="stylesheet/styles.css" rel="stylesheet">
 
     <!-- Font - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,18 +45,24 @@
 </head>
 
 <body>
-    <section class="h-[100vh] bg-cover bg-no-repeat flex flex-col justify-center items-center p-4"
-        style="background-image: url('img/ks-bg3.png');">
-        <h1 class="text-ks-white">
+    <section class="h-[60vh] md:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
+
+        <h1 class="text-ks-white text-2xl">
             FAITES NOUS UN <span class="text-ks-orange">RETOUR...</span>
         </h1>
 
-        <form action="" method="post" class="bg-ks-white p-4 rounded-lg">
-            <label for="review">
-                
-            </label>
+        <form action="" method="post" class="bg-ks-white p-6 rounded-lg">
+            <div class="flex flex-col gap-4">
+                <label for="review">Décrivez votre expérience :</label>
+                <textarea class="bg-ks-grey/20" name="message" cols="30" rows="10" placeholder="Message ici..."
+                    autocomplete="off" required></textarea>
+                <button type="submit" class="bg-ks-grey/40 rounded-lg p-2 font-bold lg:text-lg h-10">Se
+                    connecter</button>
+            </div>
         </form>
     </section>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
