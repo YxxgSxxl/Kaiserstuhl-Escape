@@ -85,16 +85,15 @@
                             class="hover:underline hover:text-ks-orange">CONTACT</a>
                     </li>
                     <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="#"
-                            class=" hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">JOUER</a>
+                            class="hover:underline hover:text-ks-orange md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">JOUER</a>
                     </li>
-                    <li class="mb-4 text-lg md:mb-0 md:text-sm"><a href="vueInscription.html"
-                            class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">SE
+                    <li class="mb-4 text-lg md:mb-0 md:text-sm"><a href="#"
+                            class="hover:underline hover:text-ks-orange md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">SE
                             CONNECTER</a></li>
-                    <select
-                        class="mb-4 text-lg text-ks-white px-2 py-1 rounded-lg bg-ks-white/40 md:mb-0 md:text-sm lg:text-base"
+                    <select class="mb-4 text-lg px-2 py-1 rounded-lg bg-ks-white/40 md:mb-0 md:text-sm lg:text-base"
                         name="" id="">
-                        <option value="FR" class="text-ks-black">FR</option>
-                        <option value="EN" class="text-ks-black">EN</option>
+                        <option value="FR">FR</option>
+                        <option value="EN">EN</option>
                     </select>
                 </ul>
             </div>
@@ -110,57 +109,19 @@
         </header>
         <!-- END HEADER COMPONENT -->
 
-        <h1 class="text-white font-semibold mt-0 pt-40 text-4xl md:text-6xl text-center my-40 select-none">VOTRE <span
-                class="text-ks-orange">AVENTURE</span><br><span class="text-ks-orange">EN</span> EXTERIEUR
+        <h1 class="text-ks-white text-2xl">
+            FAITES NOUS UN <span class="text-ks-orange">RETOUR...</span>
         </h1>
-    </section>
 
-    <section class="h-[100vh] bg-ks-black">
-        <div>
-            <div class="flex">
-                <h2 class="text-ks-white text-4xl">In Vino Veritas - Trailer</h2>
-                <img src="" alt="">
+        <form action="" method="post" class="bg-ks-white p-6 rounded-lg">
+            <div class="flex flex-col gap-4">
+                <label for="review">Décrivez votre expérience :</label>
+                <textarea class="bg-ks-grey/20" name="message" cols="30" rows="10" placeholder="Message ici..."
+                    autocomplete="off" required></textarea>
+                <button type="submit" class="bg-ks-grey/40 rounded-lg p-2 font-bold lg:text-lg h-10">Se
+                    connecter</button>
             </div>
-
-        </div>
-    </section>
-
-    <section class="h-[100vh] bg-ks-black">
-
-    </section>
-
-    <section
-        class="h-[20vh] bg-ks-grey px-4 text-xs md:px-64 md:py-6 md:text-lg text-ks-white flex justify-between align-middle items-center">
-        <div class="flex flex-col align-middle items-center text-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
-                stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z" />
-            </svg>
-            <p>L'AVENTURE</p>
-        </div>
-        <div class="flex flex-col align-middle items-center text-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
-                stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-            <p>TEAM BUILDING</p>
-        </div>
-        <div class="flex flex-col align-middle items-center text-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
-                stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
-            </svg>
-            <p>MYSTERES</p>
-        </div>
-    </section>
-
-    <section class="h-[100vh] bg-ks-black">
-
+        </form>
     </section>
 
     <script src="js/script.js"></script>
