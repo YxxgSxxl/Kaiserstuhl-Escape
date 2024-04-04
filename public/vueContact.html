@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+
+    <!-- Meta/Base -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#404040">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>Kaiserrstuhl Outdoor</title>
+    <link href="stylesheet/styles.css" rel="stylesheet">
+
+    <!-- Font - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- Font - Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="h-[100vh] lg:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
+        <nav
+            class="flex absolute lg:static left-0 right-0 bg-ks-black/60 items-center px-4 py-6 lg:p-4 justify-between flex-wrap lg:flex-row lg:flex-nowrap lg:px-10 lg:py-6">
+            <a href="index.html">
+                <img src="img/ks-logo1.png" alt="Logo de Kaiserstuhl Escape Game" class="h-auto w-[180px] lg:w-[300px]">
+            </a>
+
+            <!-- Menu de navigation -->
+            <div class="block lg:hidden">
+                <button
+                    class="flex items-center px-3 py-2 border rounded text-ks-orange border-ks-orange hover:text-white hover:border-white"
+                    id="ks-burger">
+                    <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Liens cliquables -->
+            <div class="w-full hidden relative lg:static top-0 flex-grow lg:flex lg:items-center" id="ks-menu">
+                <div
+                    class="text-sm flex justify-center gap-2 pt-[20px] lg:p-0 items-center lg:flex-grow lg:items-center lg:gap-6 lg:justify-end lg:text-lg">
+                    <a href="#"
+                        class="block mt-0 text-center lg:inline-block text-ks-white hover:text-ks-orange mr-4 lg:mr-0">
+                        À PROPOS
+                    </a>
+                    <a href="#"
+                        class="block mt-0 text-center lg:inline-block text-ks-white hover:text-ks-orange mr-4 lg:mr-0">
+                        BONS
+                    </a>
+                    <a href="#"
+                        class="block mt-0 text-center lg:inline-block text-ks-white hover:text-ks-orange mr-4 lg:mr-0">
+                        CONTACT
+                    </a>
+                    <select name="lang" id="lang"
+                        class="block mt-0 px-2 text-center lg:inline-block rounded-lg lg:bg-slate-500/60 mr-4 lg:mr-0 lg:px-2 lg:py-0.5 lg:rounded-lg lg:text-2xl">
+                        <option value="fr">🇫🇷</option>
+                        <option value="en">🇬🇧</option>
+                    </select>
+                    <a href="#"
+                        class="mt-4 text-center hidden lg:mt-0 lg:block text-ks-white hover:text-ks-black hover:lg:bg-ks-white lg:bg-ks-orange lg:px-2 lg:py-1 lg:rounded-lg">
+                        JOUER
+                    </a>
+                    <a href="#"
+                        class="mt-4 text-center hidden lg:mt-0 lg:block text-ks-white hover:text-ks-black hover:lg:bg-ks-white lg:bg-ks-orange lg:px-2 lg:py-1 lg:rounded-lg">
+                        SE CONNECTER
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <h1 class="text-white font-semibold mt-0 pt-40 text-4xl lg:text-6xl text-center my-40">NOUS <span
+                class="text-ks-orange">CONTACTER</span>
+        </h1>
+
+        
+            <div class="flex flex-col ">
+                <details class="flex flex-col justify-start items-start">
+                    <summary class="border details-color text-ks-white text-lg">Faire un retour</summary>
+                    <summary class="details-color text-ks-white text-lg ">Faire une suggestion</summary>
+                </details>
+                <details class="w-fit">
+                    <summary class="details-color text-ks-white text-lg">Demande d'emploi ou stage</summary>
+                    <p class="text-ks-white">Contactez-nous via le formulaire en cliquant sur le bouton
+                        via le formulaire ci-dessous. Ce formulaire de contact est
+                        seulement pour une demande d'emploi ou du stage, toute autre demande
+                        sera rejetée.
+                    </p>
+            
+                </details>
+            </div>
+        
+        
+    </section>
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

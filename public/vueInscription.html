@@ -45,24 +45,37 @@
 </head>
 
 <body>
-    <section class="h-[100vh] bg-cover bg-no-repeat flex flex-col justify-center items-center p-4"
+    <section class="h-[120vh] bg-cover bg-no-repeat flex flex-col justify-center items-center p-4"
         style="background-image: url('img/ks-bg2.png');">
         <form action="" method="post"
             class="flex flex-col gap-form-gap bg-black/30 text-ks-white p-6 rounded-lg w-full backdrop-blur-xl sm:w-[28rem]">
-            <h1 class="text-ks-white text-4xl text-center mb-4">Connexion</h1>
+            <h1 class="text-ks-white text-4xl text-center mb-4">Inscription</h1>
             <div class="ks-label">
+
+                <label class="lg:text-lg" for="text">Adresse <span class="text-ks-orange">mail</span> :</label>
+
                 <label class="lg:text-lg" for="email">Adresse <span class="text-ks-orange">mail</span> ou <span
                         class="text-ks-orange">pseudo</span> :</label>
+
                 <input type="text" name="email" placeholder="Entrez vos infortmations ici..."
                     class="h-10 px-4 py-1 rounded-lg md:w-[400px]">
             </div>
             <div class="ks-label">
-                <label class="lg:text-lg" for="mdp">Mot de <span class="text-ks-orange">passe</span> :</label>
-                <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..."
+                <label class="lg:text-lg" for="mdp">Nom d'<span class="text-ks-orange">utilisateur</span> :</label>
+                <input type="password" name="mdp" placeholder="Entrez le nom d'utilisateur ici..."
                     class="h-10 px-4 py-1 rounded-lg md:w-[400px]">
             </div>
-            <a href=""><small class="text-ks-orange font-thin underline lg:text-sm">Mot de passe oublié ?</small></a>
-            <button type="submit" class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10">Se connecter</button>
+            <div class="ks-label">
+                <label class="lg:text-lg" for="mdp">Mot de<span class="text-ks-orange"> passe</span> :</label>
+                <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..."
+                    class="h-10 px-4 py-1 rounded-lg md:w-[400px]">
+            </div>  
+            <div class="ks-label">
+                <label class="lg:text-lg" for="mdp">Confirmation du mot de<span class="text-ks-orange"> passe</span> :</label>
+                <input type="password" name="mdp" placeholder="Confirmez votre mot de passe ici..."
+                    class="h-10 px-4 py-1 rounded-lg md:w-[400px]">
+            </div>
+            <button type="submit" class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10">S'inscrire</button>
             <hr class="hr-text" data-content="ou bien">
             <!-- Model de donnée (cf.script.js) -->
 
@@ -131,8 +144,8 @@
 
                 <span>Continue with Apple</span>
             </button>
-            <p class="text-white/60 text-center text-sm">Pas encore client ? <a href="vueInscription.html"
-                    class="underline hover:text-white/80">S'inscrire</a></p>
+            <p class="text-white/60 text-center text-sm">Déjà client ? <a href="vueConnection.html"
+                    class="underline hover:text-white/80">Se connecter</a></p>
     </section>
 </body>
 
