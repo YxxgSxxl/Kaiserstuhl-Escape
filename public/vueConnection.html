@@ -25,16 +25,16 @@
         <form action="" method="post" class="flex flex-col gap-form-gap bg-black/40 text-ks-white p-8 rounded-md">
             <h1 class="text-ks-white text-4xl text-center mb-4">Connexion</h1>
             <div class="ks-label">
-                <label for="text">adresse <span class="text-ks-orange">mail</span> ou <span
+                <label  class="lg:text-lg" for="text">Adresse <span class="text-ks-orange">mail</span> ou <span
                         class="text-ks-orange">pseudo</span> :</label>
-                <input type="text" name="email" placeholder="Entrez vos infortmations ici..." class="px-4 py-1 rounded-md">
+                <input type="text" name="email" placeholder="Entrez vos infortmations ici..." class="px-4 py-1 rounded-md md:w-[400px]">
             </div>
             <div class="ks-label">
-                <label for="mdp">mot de <span class="text-ks-orange">passe</span> :</label>
-                <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..." class="px-4 py-1 rounded-md" >
+                <label class="lg:text-lg" for="mdp">Mot de <span class="text-ks-orange">passe</span> :</label>
+                <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..." class="px-4 py-1 rounded-md md:w-[400px]" >
             </div>
-            <a href=""><small class="text-ks-orange font-thin underline">Mot de passe oublié ?</small></a>
-            <button type="submit" class="bg-ks-orange rounded-md p-2">Se connecter</button>
+            <a href=""><small class="text-ks-orange font-thin underline lg:text-sm">Mot de passe oublié ?</small></a>
+            <button type="submit" class="bg-ks-orange rounded-md p-2 lg:text-lg">Se connecter</button>
             <hr class="hr-text" data-content="ou bien">
             <!-- Model de donnée (cf.script.js) -->
             <div class="ks-signup mb-2"></div>
