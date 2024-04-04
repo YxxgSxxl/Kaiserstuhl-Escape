@@ -36,9 +36,9 @@
         gap: 8px;
     }
 
-    .ks-visible {
+    /* .ks-visible {
         display: block !important;
-    }
+    } */
 
     .hr-text {
         line-height: 1em;
