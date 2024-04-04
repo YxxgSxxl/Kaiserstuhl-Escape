@@ -45,15 +45,16 @@
 </head>
 
 <body>
-    <section class="h-[60vh] lg:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
+    <section class="h-[60vh] md:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
         <nav
-            class="flex absolute lg:static left-0 right-0 bg-ks-black/60 items-center px-4 py-6 lg:p-4 justify-between flex-wrap lg:flex-row lg:flex-nowrap lg:px-10 lg:py-6">
+            class="flex absolute md:static left-0 right-0 bg-ks-black/60 items-center px-4 py-6 md:p-4 justify-between flex-wrap md:flex-row md:flex-nowrap md:px-10 md:py-6">
             <a href="index.html">
-                <img src="img/ks-logo1.png" alt="Logo de Kaiserstuhl Escape Game" class="h-auto w-[180px] lg:w-[300px]">
+                <img src="img/ks-logo1.png" alt="Logo de Kaiserstuhl Escape Game"
+                    class="h-auto w-[180px] lg:w-[300px] md:w-[180px]">
             </a>
 
             <!-- Menu de navigation -->
-            <div class="block lg:hidden">
+            <div class="block md:hidden">
                 <button
                     class="flex items-center px-3 py-2 border rounded text-ks-orange border-ks-orange hover:text-white hover:border-white"
                     id="ks-burger">
@@ -65,37 +66,38 @@
             </div>
 
             <!-- Liens cliquables -->
-            <div class="w-full hidden relative lg:static top-0 flex-grow lg:flex lg:items-center" id="ks-menu">
+            <div class="w-full hidden relative md:static top-0 flex-grow md:flex md:items-center" id="ks-menu">
                 <div
-                    class="text-sm flex justify-center gap-2 pt-[20px] lg:p-0 items-center lg:flex-grow lg:items-center lg:gap-6 lg:justify-end lg:text-lg">
+                    class="text-sm flex justify-center gap-2 pt-[20px] md:p-0 items-center md:flex-grow md:items-center md:gap-6 md:justify-end md:text-base lg:text-lg">
                     <a href="#"
-                        class="block mt-0 text-center lg:inline-block text-ks-white hover:text-ks-orange mr-4 lg:mr-0">
+                        class="block mt-0 text-center md:inline-block text-ks-white hover:text-ks-orange mr-4 md:mr-0">
                         À PROPOS
                     </a>
                     <a href="#"
-                        class="block mt-0 text-center lg:inline-block text-ks-white hover:text-ks-orange mr-4 lg:mr-0">
+                        class="block mt-0 text-center md:inline-block text-ks-white hover:text-ks-orange mr-4 md:mr-0">
                         BONS
                     </a>
                     <a href="#"
-                        class="block mt-0 text-center lg:inline-block text-ks-white hover:text-ks-orange mr-4 lg:mr-0">
+                        class="block mt-0 text-center md:inline-block text-ks-white hover:text-ks-orange mr-4 md:mr-0">
                         CONTACT
                     </a>
                     <select name="lang" id="lang"
-                        class="block mt-0 px-2 text-center lg:inline-block rounded-lg lg:bg-slate-500/60 mr-4 lg:mr-0 lg:px-2 lg:py-0.5 lg:rounded-lg lg:text-2xl">
+                        class="block mt-0 px-2 text-center md:inline-block rounded-lg md:bg-slate-500/60 mr-4 md:mr-0 md:px-2 md:py-0.5 md:rounded-lg md:text-2xl">
                         <option value="fr">🇫🇷</option>
                         <option value="en">🇬🇧</option>
                     </select>
                     <a href="#"
-                        class="mt-4 text-center hidden lg:mt-0 lg:block text-ks-white hover:text-ks-black hover:lg:bg-ks-white lg:bg-ks-orange lg:px-2 lg:py-1 lg:rounded-lg">
+                        class="mt-4 text-center hidden md:mt-0 md:block text-ks-white hover:text-ks-black hover:md:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-lg">
                         JOUER
                     </a>
-                    <a href="#"
-                        class="mt-4 text-center hidden lg:mt-0 lg:block text-ks-white hover:text-ks-black hover:lg:bg-ks-white lg:bg-ks-orange lg:px-2 lg:py-1 lg:rounded-lg">
+                    <a href="vueInscription.html"
+                        class="mt-4 text-center hidden md:mt-0 md:block text-ks-white hover:text-ks-black hover:md:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-lg">
                         SE CONNECTER
                     </a>
-                    <a href="vueInscription.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
-                            stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <a href="vueInscription.html" class="md:hidden">
+                        <svg class="md:hidden" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                            viewBox="0 0 24 24" fill="none" stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3" />
                             <circle cx="12" cy="10" r="3" />
                             <circle cx="12" cy="12" r="10" />
@@ -105,7 +107,7 @@
             </div>
         </nav>
 
-        <h1 class="text-white font-semibold mt-0 pt-40 text-4xl lg:text-6xl text-center my-40">VOTRE <span
+        <h1 class="text-white font-semibold mt-0 pt-40 text-4xl md:text-6xl text-center my-40 select-none">VOTRE <span
                 class="text-ks-orange">AVENTURE</span><br><span class="text-ks-orange">EN</span> EXTERIEUR
         </h1>
     </section>
@@ -125,7 +127,7 @@
     </section>
 
     <section
-        class="h-[20vh] bg-ks-grey px-4 text-xs lg:px-64 lg:py-6 lg:text-lg text-ks-white flex justify-between align-middle items-center">
+        class="h-[20vh] bg-ks-grey px-4 text-xs md:px-64 md:py-6 md:text-lg text-ks-white flex justify-between align-middle items-center">
         <div class="flex flex-col align-middle items-center text-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
                 stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
