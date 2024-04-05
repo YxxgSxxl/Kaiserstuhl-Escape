@@ -42,6 +42,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+
+    <style>
+        /* Ajout de styles CSS pour centrer les détails et augmenter la taille de la flèche et du texte */
+
+        /* Centrer les détails */
+        .details-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px; /* Ajustez la marge comme nécessaire */
+        }
+
+        /* Augmenter la taille de la flèche et du texte */
+        summary::-webkit-details-marker {
+            width: 20px; /* Ajustez la taille de la flèche */
+            height: 20px; /* Ajustez la taille de la flèche */
+            margin-right: 10px; /* Espacement entre la flèche et le texte */
+        }
+
+        summary {
+            font-size: 24px; /* Ajustez la taille du texte */
+        }
+    </style>
 </head>
 
 <body>
@@ -105,30 +129,67 @@
                 class="text-ks-orange">CONTACTER</span>
         </h1>
 
-
-        <div class="flex flex-col ">
-            <details class="flex flex-col justify-start items-start">
-                <summary class="border details-color text-ks-white text-lg">Faire un retour</summary>
-                <summary class="details-color text-ks-white text-lg ">Faire une suggestion</summary>
+        <!-- Conteneur pour centrer les détails -->
+        <div class="details-container">
+            <details class="details-color w-[300px]">
+                <summary class="details-color text-ks-white text-lg p-2">Faire un retour</summary>
+                <div class="px-2 py-1">
+                    <!-- Contenu des détails -->
+                </div>
             </details>
-            <details class="w-fit">
-                <summary class="details-color text-ks-white text-lg">Demande d'emploi ou stage</summary>
-                <p class="text-ks-white">Contactez-nous via le formulaire en cliquant sur le bouton
-                    via le formulaire ci-dessous. Ce formulaire de contact est
-                    seulement pour une demande d'emploi ou du stage, toute autre demande
-                    sera rejetée.
-                </p>
-
+            <details class="details-color w-[300px]">
+                <summary class="details-color text-ks-white text-lg p-2">Faire une suggestion</summary>
+                <div class="px-2 py-1">
+                    <!-- Contenu des détails -->
+                </div>
+            </details>
+            <details class="details-color w-[300px]">
+                <summary class="details-color text-ks-white text-lg p-2">Demande d'emploi ou stage</summary>
+                <div class="px-2 py-1">
+                    <p class="text-ks-white">
+                        Contactez-nous via le formulaire en cliquant sur le bouton
+                        via le formulaire ci-dessous. Ce formulaire de contact est
+                        seulement pour une demande d'emploi ou du stage, toute autre demande
+                        sera rejetée.
+                    </p>
+                </div>
             </details>
         </div>
-
+        
+        
+        
 
     </section>
+    <footer class="h-[60vh] md:h-[60vh]  bg-no-repeat" style="background-image: url('img/ks-bgfooter.png');">
+        <section class="flex justify-between items-center">
+            <img src="img/ks-logo1.png" alt="">
+            <div>
+                <h4 class="text-ks-white">NOTRE ENTREPRISE</h4>
+                <p  class="font-thin text-gray-300">A propos</p>
+                <p  class="font-thin text-gray-300">Notre équipe</p>
+                <p  class="font-thin text-gray-300">Mentions légales</p>
+                <p  class="font-thin text-gray-300">CGV</p>
+                <p  class="font-thin text-gray-300">Protection des données</p>
+            </div>
+            <div>
+                <h4 class="text-ks-white">INFOS</h4>
+                <p class="font-thin text-gray-300">FAQ</p>
+                <p class="font-thin text-gray-300">Escape Games</p>
+                <p class="font-thin text-gray-300">Bons de réduction</p>
+                <p class="font-thin text-gray-300">Nos partenaires</p>
+                <p class="font-thin text-gray-300">Emplois</p>
+            </div>
+            <div>
+            
+            </div>
+        </section>
 
 
-
+    </footer>
 
     <script src="js/script.js"></script>
+
+  
 </body>
 
 </html>
