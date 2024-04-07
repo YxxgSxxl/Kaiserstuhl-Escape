@@ -1,67 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- FOOTER COMPONENT -->
+<footer
+    class="bg-[url('../img/ks-bgfooter-sm.png')] lg:bg-[url('../img/ks-bgfooter-lg.png')] bg-cover lg:bg-cover text-ks-white flex flex-col gap-4 md:gap-18 lg:gap-24 items-center py-6 md:flex-row md:justify-between md:px-10 lg:px-24 lg:py-12 xl:px-36 2xl:px-64">
+    <div class="footer-logo">
+        <a href="index.php">
+            <img class="h-auto w-[200px] md:w-[180px] lg:w-[160px] xl:w-[200px]" loading="lazy" src="img/ks-logo3.png"
+                alt="Logo Kaiserstuhl Escape Game" />
+        </a>
+    </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaiserstuhl</title>
-    <link rel="stylesheet" href="../stylesheet/styles.css">
-</head>
-
-<body class="h-[100vh]">
-    <!-- FOOTER COMPONENT -->
-    <footer
-        class="bg-[url('../img/ks-bgfooter-sm.png')] lg:bg-[url('../img/ks-bgfooter-lg.png')] bg-cover lg:bg-cover text-ks-white flex flex-col gap-4 md:gap-18 lg:gap-24 items-center py-6 md:flex-row md:justify-between md:px-10 lg:px-24 lg:py-12 xl:px-36 2xl:px-64">
-        <div class="footer-logo">
-            <a href="../index.html">
-                <img class="h-auto w-[200px] md:w-[180px] lg:w-[160px] xl:w-[200px]" loading="lazy"
-                    src="../img/ks-logo3.png" alt="Logo Kaiserstuhl Escape Game" />
-            </a>
+    <div class="flex flex-row gap-4 md:gap-18 lg:gap-24">
+        <div class="footer-links1 flex flex-col gap-2 text-sm font-light lg:text-base">
+            <h4 class="underline text-base font-semibold md:text-sm lg:text-base">NOTRE ENTREPRISE</h4>
+            <a href="#">À propos</a>
+            <a href="#">Notre équipe</a>
+            <a href="#">Mention légales</a>
+            <a href="#">CGV</a>
+            <a href="#">Protection des données</a>
         </div>
 
-        <div class="flex flex-row gap-4 md:gap-18 lg:gap-24">
-            <div class="footer-links1 flex flex-col gap-2 text-sm font-light lg:text-base">
-                <h4 class="underline text-base font-semibold md:text-sm lg:text-base">NOTRE ENTREPRISE</h4>
-                <a href="#">À propos</a>
-                <a href="#">Notre équipe</a>
-                <a href="#">Mention légales</a>
-                <a href="#">CGV</a>
-                <a href="#">Protection des données</a>
+        <div class="footer-links2 flex flex-row gap-2 md:gap-18 lg:gap-24 text-sm font-thin lg:text-base">
+            <div class="footer-nav flex flex-col gap-2">
+                <h4 class="underline text-base font-semibold md:text-sm lg:text-base">INFORMATIONS</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Escape Games</a>
+                <a href="#">Bons de réductions</a>
+                <a href="#">Nos Partenaires</a>
+                <a href="#">Emplois</a>
             </div>
 
-            <div class="footer-links2 flex flex-row gap-2 md:gap-18 lg:gap-24 text-sm font-thin lg:text-base">
-                <div class="footer-nav flex flex-col gap-2">
-                    <h4 class="underline text-base font-semibold md:text-sm lg:text-base">INFORMATIONS</h4>
-                    <a href="#">FAQ</a>
-                    <a href="#">Escape Games</a>
-                    <a href="#">Bons de réductions</a>
-                    <a href="#">Nos Partenaires</a>
-                    <a href="#">Emplois</a>
-                </div>
-
-                <div class="footer-socials flex flex-col gap-9 md:hidden">
-                    <a href="#"><img src="../img/icons/youtube.svg" alt="Youtube icon social"
-                            class="w-[30px] lg:w-[40px]"></a>
-                    <a href="#"><img src="../img/icons/facebook.svg" alt="Facebook icon social"
-                            class="w-[30px] lg:w-[40px]"></a>
-                    <a href="#"><img src="../img/icons/instagram.svg" alt="Instagram icon social"
-                            class="w-[30px] lg:w-[40px]"></a>
-                </div>
+            <div class="footer-socials flex flex-col gap-9 md:hidden">
+                <a href="#"><img src="../img/icons/youtube.svg" alt="Youtube icon social"
+                        class="w-[30px] lg:w-[40px]"></a>
+                <a href="#"><img src="../img/icons/facebook.svg" alt="Facebook icon social"
+                        class="w-[30px] lg:w-[40px]"></a>
+                <a href="#"><img src="../img/icons/instagram.svg" alt="Instagram icon social"
+                        class="w-[30px] lg:w-[40px]"></a>
             </div>
-
-        </div>
-        <div class="footer-socials flex-col gap-9 hidden md:visible md:flex pr-0 md:pr-8 xl:pr-6">
-            <a href="#"><img src="../img/icons/youtube.svg" alt="Youtube icon social" class="w-[30px] lg:w-[40px]"></a>
-            <a href="#"><img src="../img/icons/facebook.svg" alt="Facebook icon social"
-                    class="w-[30px] lg:w-[40px]"></a>
-            <a href="#"><img src="../img/icons/instagram.svg" alt="Instagram icon social"
-                    class="w-[30px] lg:w-[40px]"></a>
         </div>
 
-    </footer>
-    <!-- END FOOTER COMPONENT -->
+    </div>
+    <div class="footer-socials flex-col gap-9 hidden md:visible md:flex pr-0 md:pr-8 xl:pr-6">
+        <a href="#"><img src="img/icons/youtube.svg" alt="Youtube icon social" class="w-[30px] lg:w-[40px]"></a>
+        <a href="#"><img src="img/icons/facebook.svg" alt="Facebook icon social" class="w-[30px] lg:w-[40px]"></a>
+        <a href="#"><img src="img/icons/instagram.svg" alt="Instagram icon social" class="w-[30px] lg:w-[40px]"></a>
+    </div>
+</footer>
+<!-- FOOTER SCRIPT -->
+<script>
 
-    <script src="../js/script.js"></script>
-</body>
-
-</html>
+</script>
+<!-- END FOOTER COMPONENT -->
