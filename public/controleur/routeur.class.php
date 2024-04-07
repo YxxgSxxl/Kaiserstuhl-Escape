@@ -1,8 +1,8 @@
 <?php
 require_once "controleur/ctlAvis.php";
-
 require_once "controleur/ctlInscription.php";
 require_once "controleur/ctlConnection.php";
+require_once "controleur/ctlJeux.php";
 require_once "controleur/ctlContact.php";
 require_once "controleur/ctlAbout.php";
 require_once "controleur/ctlBons.php";
@@ -12,7 +12,7 @@ require_once "config/config.class.php";
 
 class routeur
 {
-  private $ctlPage, $ctlAbout, $ctlBons, $ctlContact, $ctlConnection, $ctlInscription, $ctlAvis;
+  private $ctlPage, $ctlAbout, $ctlBons, $ctlContact, $ctlJeux, $ctlConnection, $ctlInscription, $ctlAvis;
 
   public function __construct()
   {
@@ -20,9 +20,9 @@ class routeur
     $this->ctlBons = new ctlBons();
     $this->ctlAbout = new ctlAbout();
     $this->ctlContact = new ctlContact();
+    $this->ctlJeux = new ctlJeux();
     $this->ctlConnection = new ctlConnection();
     $this->ctlInscription = new ctlInscription();
-
     $this->ctlAvis = new ctlAvis();
   }
 
@@ -42,6 +42,9 @@ class routeur
             break;
           case 'login':
             $this->ctlConnection->vueConnection();
+            break;
+          case 'play':
+            $this->ctlJeux->vueJeux();
             break;
           case 'register':
             $this->ctlInscription->vueInscription();

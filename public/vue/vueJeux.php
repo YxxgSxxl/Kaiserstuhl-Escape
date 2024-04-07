@@ -6,6 +6,6 @@ $title = "Kaiserstuhl - Jeux";
     <?php include "./components/header_notlogged.html"; ?>
 
     <h1 class="text-ks-white text-2xl mt-10 mb-8 md:mt-16 md:mb-8 text-center">
-        QUI NOUS <span class="text-ks-orange">SOMMES ?</span>
+        NOS <span class="text-ks-orange">JEUX</span>
     </h1>
 </section>
