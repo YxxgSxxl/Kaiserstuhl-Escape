@@ -3,7 +3,7 @@ Refonte d'un site web d'escape games
 
 Dans le cadre de notre SAE401, nous devons mettre en place une nouvelle maquette du site de ce client, faire la refonte du site web avec les exigeances du client et proposer la version finalisé au client.
 
-Le lien du site <a href="https://kaiserstuhl-escape.vercel.app/" target="_blank">déployé</a>.
+Le lien du site <a href="http://kaiserstuhl.infinityfreeapp.com/" target="_blank">déployé</a>.
 
 ## Framework
 <p align="left"> <a href="https://tailwindcss.com/"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" title="TailwindCSS" alt="TailwindCSS" width="40" height="40"/> </a> </p>
