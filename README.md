@@ -15,4 +15,4 @@ Le lien du site <a href="https://kaiserstuhl-escape.vercel.app/" target="_blank"
 <p align="left"> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="GIT" alt="GIT" width="40" height="40"/> </a> <a href="https://github.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" title="Github" alt="Github" width="40" height="40"/> </p>
 
 ## Deployment  
-<p align="left"> <a href="https://vercel.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vercel/vercel-original.svg" title="Vercel" alt="Vercel" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://www.infinityfree.com/" target="_blank" rel="noreferrer"> InfinityFree </a> </p>
