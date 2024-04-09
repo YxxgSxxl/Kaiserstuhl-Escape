@@ -6,7 +6,7 @@ class formulaire
 
     public function inputText($name, $label = "")
     {
-        return "<div class='form_elt'>
+        return "<div class=''>
         <label>
         <span>" . $label . "</span><input type='text' class='texte' name='" . $name . "' value=''><div style='color: red;'>*</div>
         </label>
