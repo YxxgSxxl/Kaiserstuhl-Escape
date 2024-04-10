@@ -19,7 +19,7 @@ $header = include "./components/header_notlogged.html";
         <?php $header ?>
 
         <div class="flex-1">
-
+            <h1>Customisez votre profile</h1>
         </div>
 
         <!-- Footer à la fin de la section principale -->
