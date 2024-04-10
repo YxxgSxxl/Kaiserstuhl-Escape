@@ -38,7 +38,9 @@ $title = "Kaiserstuhl - Inscription";
                 class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light">
         </div>
         <a href="index.php?action=regMember"><button type="submit"
-                class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10 w-full">S'inscrire</button></a>
+                class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10 w-full">S'inscrire</button>
+        </a>
+
         <hr class="hr-text" data-content="ou bien">
 
         <!-- Bouton de connexion avec les RS -->

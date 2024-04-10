@@ -1,5 +1,5 @@
 <?php
-require_once "modele/register.class.php";
+require_once "modele/members.class.php";
 
 require_once "controleur/ctlAvis.php";
 require_once "controleur/ctlUser.php";

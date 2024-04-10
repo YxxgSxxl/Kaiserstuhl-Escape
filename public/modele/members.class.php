@@ -4,7 +4,7 @@ require_once "modele/database.class.php";
 /****************************************************************
 Classe chargée de la gestion des articles dans la base de données
 ****************************************************************/
-class register extends database
+class members extends database
 {
     /*******************************************************
     Retourne la liste des items
@@ -16,7 +16,7 @@ class register extends database
     public function newMemberReg($username, $email, $mdp)
     {
         $req = 'INSERT INTO members(username, email, mdp) ' . 'VALUES (?, ?, ?)';
-        $reponse = $this->execReqPrep($req, array($username, $mdp, $email));
+        $reponse = $this->execReqPrep($req, array($username, $email, $mdp));
 
         if ($reponse == 1) {
             return TRUE;

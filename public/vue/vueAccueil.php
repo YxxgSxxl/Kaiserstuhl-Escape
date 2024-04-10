@@ -1,6 +1,8 @@
 <?php
 $title = "Kaiserstuhl Outdoor";
+$message = "";
 ?>
+
 <section class="h-[60vh] md:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
 
     <?php
