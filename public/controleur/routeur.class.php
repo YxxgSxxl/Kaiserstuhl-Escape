@@ -1,4 +1,6 @@
 <?php
+require_once "modele/register.class.php";
+
 require_once "controleur/ctlAvis.php";
 require_once "controleur/ctlUser.php";
 require_once "controleur/ctlInscription.php";
@@ -47,6 +49,9 @@ class routeur
             break;
           case 'register':
             $this->ctlInscription->vueInscription();
+            break;
+          case 'regMember':
+            $this->ctlInscription->regMember();
             break;
           case 'user':
             $this->ctlUser->vueUser();
