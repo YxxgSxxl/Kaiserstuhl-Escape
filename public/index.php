@@ -1,5 +1,5 @@
 <?php
-require_once "controleur/routeur.class.php";
+require "controleur/routeur.class.php";
 
 // Initialisation du routeur
 $index = new routeur();

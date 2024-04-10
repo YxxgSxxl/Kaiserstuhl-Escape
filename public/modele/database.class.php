@@ -1,5 +1,5 @@
 <?php
-require_once "includes/default_config.php";
+require_once "config/default_config.php";
 /*********************************************************
 Classe permettant la communication avec la base de données
 *********************************************************/
