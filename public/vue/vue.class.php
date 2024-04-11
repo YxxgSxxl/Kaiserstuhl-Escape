@@ -37,6 +37,11 @@ class vue
   {
     global $Conf;     // Récupère la configuration
 
+    if (isset($_SESSION['username'])) {
+      $header = include "./components/header_logged.html";
+    } else
+      $header = include "./components/header_notlogged.html";
+
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
 
     ob_start();       // Démarre la temporisation de sortie

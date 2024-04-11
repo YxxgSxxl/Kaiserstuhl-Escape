@@ -33,8 +33,6 @@ $title = "Kaiserstuhl - Contact";
 
 <section class="h-[100vh] lg:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
 
-    <?php require 'components/header_notlogged.html'; ?>
-
     <h1 class="text-white font-semibold mt-0 pt-40 text-4xl lg:text-6xl text-center my-40">NOUS <span
             class="text-ks-orange">CONTACTER</span>
     </h1>

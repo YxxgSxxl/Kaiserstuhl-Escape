@@ -4,7 +4,7 @@ $title = "Kaiserstuhl - Inscription";
 
 <section style="background-image: url('img/ks-bg2.jpg');"
     class="min-h-screen bg-cover bg-no-repeat flex flex-col justify-center items-center p-4 md:p-6 ">
-    <a href="index.php" class="absolute left-5 top-8 lg:left-0 z-10"><svg xmlns="http://www.w3.org/2000/svg" width="46"
+    <a href="index.php" class="absolute left-5 lg:left-10 top-8 z-10"><svg xmlns="http://www.w3.org/2000/svg" width="46"
             height="46" viewBox="0 0 24 24" fill="none" stroke="#FFFF" stroke-width="1" stroke-linecap="round"
             stroke-linejoin="round">
             <path d="M19 12H6M12 5l-7 7 7 7" />

@@ -12,6 +12,7 @@ require_once "controleur/ctlBons.php";
 require_once "controleur/ctlPage.php";
 require_once "config/config.class.php";
 
+session_start();
 
 class routeur
 {

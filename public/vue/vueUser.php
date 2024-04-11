@@ -1,6 +1,5 @@
 <?php
 $title = "Kaiserstuhl - Boutique";
-$header = include "./components/header_notlogged.html";
 ?>
 
 <!DOCTYPE html>
@@ -16,16 +15,12 @@ $header = include "./components/header_notlogged.html";
     <section
         class="flex flex-col min-h-screen bg-ks-black bg-[url('img/ks-bg5-sm.png')] lg:bg-[url('img/ks-bg5-lg.png')] xl:bg-[url('img/ks-bg5-xl.png')] bg-contain ">
         <!-- Header inclus dans la section principale -->
-        <?php $header ?>
 
         <div class="flex-1">
             <h1>Customisez votre profile</h1>
         </div>
 
-        <!-- Footer à la fin de la section principale -->
-        <footer class="bg-cover text-ks-white">
-            <!-- Contenu du footer ici -->
-        </footer>
+
     </section>
 </body>
 

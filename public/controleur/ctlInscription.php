@@ -20,6 +20,7 @@ class ctlInscription
 
     public function regMember()
     {
+
         extract($_POST);
 
         $message = "";
@@ -36,7 +37,10 @@ class ctlInscription
         if (empty($message)) {
             if ($this->member->newMemberReg($username, $email, $mdp)) {
                 echo $succes;
-                $vue = new vue("Inscription");
+
+                $_SESSION['username'] = $username;
+
+                $vue = new vue("User");
                 $vue->afficher(array('message' => $message));
             } else {
                 throw new Exception("Echec de l'enregistrement du nouveau client");
