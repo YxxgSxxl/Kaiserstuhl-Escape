@@ -1,17 +1,6 @@
 <?php
 $title = "Kaiserstuhl - Boutique";
 $header = include "./components/header_notlogged.html";
-
-$listeBons = "";
-
-foreach ($items as $item) {
-    $name = $item['name'];
-    $price = $item['price'];
-    $deltime = $item['delivery_time'];
-    // $listeBons .= include 'components/bons.php';
-}
-
-// var_dump($items);
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +28,17 @@ foreach ($items as $item) {
 
             <div class="flex items-center justify-center mb-32">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-16">
-                    <?php include 'components/bons.php'; ?>
+                    <?php
+                    $listeBons = "";
+
+                    foreach ($items as $item) {
+                        $img = $item['img'];
+                        $name = $item['name'];
+                        $price = $item['price'];
+                        $deltime = $item['delivery_time'];
+                        $listeBons .= include 'components/bons.php';
+                    }
+                    ?>
                 </div>
             </div>
         </div>

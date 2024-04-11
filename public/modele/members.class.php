@@ -16,7 +16,7 @@ class members extends database
     public function newMemberReg($username, $email, $mdp)
     {
         $req = 'INSERT INTO members(username, email, mdp) ' . 'VALUES (?, ?, ?)';
-        $reponse = $this->execReqPrep($req, array($username, $email, $mdp));
+        $reponse = $this->execReqPrep($req, array($username, $email, sha1($mdp)));
 
         if ($reponse == 1) {
             return TRUE;
