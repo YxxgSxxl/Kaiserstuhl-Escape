@@ -57,6 +57,9 @@ class routeur
           case 'user':
             $this->ctlUser->vueUser();
             break;
+          case 'logout':
+            $this->ctlUser->deconnexion();
+            break;
           case 'play':
             $this->ctlJeux->vueJeux();
             break;

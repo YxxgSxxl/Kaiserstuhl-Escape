@@ -2,7 +2,7 @@
 $title = "Kaiserstuhl - Inscription";
 ?>
 
-<section style="background-image: url('img/ks-bg2.jpg');"
+<section id="register-form" style="background-image: url('img/ks-bg2.jpg');"
     class="min-h-screen bg-cover bg-no-repeat flex flex-col justify-center items-center p-4 md:p-6 ">
     <a href="index.php" class="absolute left-5 lg:left-10 top-24 z-10"><svg xmlns="http://www.w3.org/2000/svg"
             width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#FFFF" stroke-width="1"
@@ -46,7 +46,7 @@ $title = "Kaiserstuhl - Inscription";
         <!-- Bouton de connexion avec les RS -->
         <?php require 'components/socials.html'; ?>
 
-        <p class="text-white/60 text-center text-sm">Déjà client ? <a href="index.php?action=login"
+        <p class="text-white/60 text-center text-sm">Déjà client ? <a href="index.php?action=login#login-form"
                 class="underline hover:text-white/80">Se connecter</a></p>
         <?php
         if (isset($message)) {
