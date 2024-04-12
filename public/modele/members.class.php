@@ -7,11 +7,49 @@ Classe chargée de la gestion des articles dans la base de données
 class members extends database
 {
     /*******************************************************
-    Retourne la liste des items
+    Enregistre un nouveau membre dans la base de données
+        Entrée : 
+
+        Retour : 
+            [string] : chaine de caractères contenant le nom d'utilisateur du membre
+    *******************************************************/
+    public function verifUsernameBDD($username)
+    {
+        $req = 'SELECT * FROM members WHERE username = ?';
+        $reponse = $this->execReqPrepNOARRAY($req, $username);
+
+        if ($reponse == 1) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /*******************************************************
+    Enregistre un nouveau membre dans la base de données
+        Entrée : 
+
+        Retour : 
+            [string] : chaine de caractères contenant le nom d'utilisateur du membre
+    *******************************************************/
+    public function verifEmailBDD($email)
+    {
+        $req = 'SELECT * FROM members WHERE email = ?';
+        $reponse = $this->execReqPrepNOARRAY($req, $email);
+
+        if ($reponse == 1) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /*******************************************************
+    Enregistre un nouveau membre dans la base de données
       Entrée : 
     
       Retour : 
-        [array] : Tableau associatif contenant la liste des items
+        [array] : Tableau contenant le membre
     *******************************************************/
     public function newMemberReg($username, $email, $mdp)
     {

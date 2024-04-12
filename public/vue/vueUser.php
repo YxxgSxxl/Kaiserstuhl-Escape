@@ -16,8 +16,10 @@ $title = "Kaiserstuhl - Boutique";
         class="flex flex-col min-h-screen bg-ks-black bg-[url('img/ks-bg5-sm.png')] lg:bg-[url('img/ks-bg5-lg.png')] xl:bg-[url('img/ks-bg5-xl.png')] bg-contain ">
         <!-- Header inclus dans la section principale -->
 
-        <div class="flex-1">
+        <div class="flex-1 text-ks-white">
             <h1>Customisez votre profile</h1>
+
+
         </div>
 
 

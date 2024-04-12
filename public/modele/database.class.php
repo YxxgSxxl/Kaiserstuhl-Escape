@@ -46,6 +46,28 @@ abstract class database
     }
     return FALSE;
   }
+
+  /*******************************************************
+  Execution d'une requête préparée qui n'utilise pas de tableaux
+    Entrée : 
+      req [string] : Requête préparée
+      data [string] : Chaine de caractère contenant les données utilisées par la requête préparée
+
+    Retour : 
+      [string] : Chaine de caractères contenant le résultat de la requête
+  *******************************************************/
+
+  protected function execReqPrepNOARRAY($req, $data)
+  {
+    $reponse = $this->connexionBDD()->prepare($req);
+    $reponse->execute(array($data));
+    if ($reponse->fetch()) {
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
+
   /*******************************************************
   Connexion à la BDD à partir des paramètres de configuration
     Entrée : 
