@@ -1,4 +1,5 @@
 <?php
+require_once "modele/games.class.php";
 require_once "modele/members.class.php";
 
 require_once "controleur/ctlAvis.php";

@@ -2,7 +2,7 @@
 require_once "modele/database.class.php";
 
 /****************************************************************
-Classe chargée de la gestion des articles dans la base de données
+Classe chargée de la gestion des items dans la base de données
 ****************************************************************/
 class items extends database
 {
@@ -30,7 +30,7 @@ class items extends database
   *******************************************************/
   public function getItem($idItems)
   {
-    $req = 'SELECT * FROM items; WHERE id_item=?;';
+    $req = 'SELECT * FROM items WHERE id_item=?;';
     $resultat = $this->execReqPrep($req, array($idItems));
     return $resultat[0];
   }

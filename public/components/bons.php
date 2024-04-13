@@ -1,9 +1,9 @@
 <!-- BONS COMPONENT -->
 <div class="flex flex-col">
-    <a href="index.php?action=id_bon">
+    <a href="index.php?action=items=&id=<?= $id ?>">
         <img class="w-[300px] h-auto" src="<?= $img ?>" alt="Image du bien à vendre">
     </a>
-    <div class="flex flex-raw justify-between bg-[#2A2A2A] w-full p-2">
+    <div class="flex flex-row justify-between bg-[#2A2A2A] w-full p-2">
         <div class="text-ks-white flex flex-col ">
             <h3 class="text-xl"><?= $name ?></h3>
             <small><span class="text-ks-orange">Temps</span> de livraison : <span

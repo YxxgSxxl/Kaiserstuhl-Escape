@@ -2,7 +2,7 @@
 require_once "modele/database.class.php";
 
 /****************************************************************
-Classe chargée de la gestion des articles dans la base de données
+Classe chargée de la gestion des membres dans la base de données
 ****************************************************************/
 class members extends database
 {
