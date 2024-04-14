@@ -11,12 +11,11 @@ $message = "";
 </section>
 
 <section class="h-[100vh] bg-ks-black">
-    <div>
-        <div class="flex">
+    <div class="">
+        <div class="flex items-center justify-center">
             <h2 class="text-ks-white text-4xl">In Vino Veritas - Trailer</h2>
             <img src="" alt="">
         </div>
-
     </div>
 </section>
 
