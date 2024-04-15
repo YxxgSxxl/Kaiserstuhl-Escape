@@ -32,6 +32,25 @@ class members extends database
         Retour : 
             [string] : chaine de caractères contenant le nom d'utilisateur du membre
     *******************************************************/
+    public function verifPassBDD($mdp, $username)
+    {
+        $req = 'SELECT * FROM members WHERE mdp = ? AND username = ?';
+        $reponse = $this->execReqPrep($req, array(sha1($mdp), $username));
+
+        if ($reponse && count($reponse) > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /*******************************************************
+    Enregistre un nouveau membre dans la base de données
+        Entrée : 
+
+        Retour : 
+            [string] : chaine de caractères contenant le nom d'utilisateur du membre
+    *******************************************************/
     public function verifEmailBDD($email)
     {
         $req = 'SELECT * FROM members WHERE email = ?';

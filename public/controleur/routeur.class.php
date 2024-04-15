@@ -49,6 +49,9 @@ class routeur
           case 'login':
             $this->ctlConnection->vueConnection();
             break;
+          case 'logMember':
+            $this->ctlConnection->logMember();
+            break;
           case 'register':
             $this->ctlInscription->vueInscription();
             break;
