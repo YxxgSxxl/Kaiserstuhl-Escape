@@ -21,7 +21,7 @@ $title = "Kaiserstuhl - Boutique";
 
             <div class="w-30 h-30 items-center flex justify-center">
                 <img class="rounded-[50%] border-solid border-4 hover:border-dashed border-ks-orange"
-                    src="upload/members/<?= $_SESSION['username'] ?>/<?= $_SESSION['username'] ?>.png"
+                    src="<?= $Conf->MEMBERSFOLDER . $_SESSION['username'] ?>/<?= $_SESSION['username'] ?>.png"
                     alt="Image de profile de <?= $_SESSION['username'] ?>">
             </div>
             <?php
