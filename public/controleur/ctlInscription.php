@@ -1,4 +1,6 @@
 <?php
+require_once "config/default_config.php";
+
 require_once "modele/members.class.php";
 
 require_once "vue/vue.class.php";
@@ -51,17 +53,33 @@ class ctlInscription
                 $vue->afficher(array('message' => $message));
             } else {
                 if ($this->member->newMemberReg($username, $email, $mdp)) {
+
+                    global $Conf; // Récupère les variables de configuration
+
                     // Réussite de l'enregistrement de l'utilisateur
                     echo $succes; // Message d'alerte disant que l'utilisateur est enregistré avec succès
                     require_once "components/alert.html"; // Inclut le script JS pour cacher l'alerte
 
+                    // Attribution du nom d'utilisateur à la session
                     $_SESSION['username'] = $username;
 
+                    // Création du dossier personnel de l'utilisateur
+                    if (file_exists($Conf->MEMBERSFOLDER . $username)) { // Si le dossier existe déjà
+                        $this->member->removeDir($Conf->MEMBERSFOLDER . $username); // Supprime le dossier existant
+
+                        mkdir($Conf->MEMBERSFOLDER . "/" . $username, 0777, true); // Creation du dossier avec le nom de l'utilisateur
+                        copy('img/template/default-pp.png', $Conf->MEMBERSFOLDER . "/" . $username . '/' . $username . '.png'); // Copy the default profile picture to the user's folder
+                    } elseif (!file_exists($Conf->MEMBERSFOLDER . "/" . $username)) { // Si le dossier n'existe pas
+                        mkdir($Conf->MEMBERSFOLDER . "/" . $username, 0777, true); // Creation du dossier avec le nom de l'utilisateur
+                        copy('img/template/default-pp.png', $Conf->MEMBERSFOLDER . "/" . $username . '/' . $username . '.png'); // Copy the default profile picture to the user's folder
+                    }
+
+                    // Affichage de la vue appropriée
                     $vue = new vue("User");
                     $vue->afficher(
                         array(
                             'message' => $message,
-                            'users' => $this->member->infoMember($_SESSION['username'])
+                            'users' => $this->member->infoMember($username)
                         )
                     );
                 } else {

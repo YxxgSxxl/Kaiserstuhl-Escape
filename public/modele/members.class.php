@@ -88,4 +88,21 @@ class members extends database
         $resultat = $this->execReqPrep($req, array($_SESSION['username']));
         return $resultat[0];
     }
+
+    public function removeDir(string $dir): void
+    {
+        $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
+        $files = new RecursiveIteratorIterator(
+            $it,
+            RecursiveIteratorIterator::CHILD_FIRST
+        );
+        foreach ($files as $file) {
+            if ($file->isDir()) {
+                rmdir($file->getPathname());
+            } else {
+                unlink($file->getPathname());
+            }
+        }
+        rmdir($dir);
+    }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement
