@@ -36,7 +36,12 @@ class ctlConnection
                     $_SESSION['username'] = $username;
 
                     $vue = new vue("Accueil"); // Instancie la vue appropriée
-                    $vue->afficher(array('message' => $message));
+                    $vue->afficher(
+                        array(
+                            'message' => $message,
+                            'user' => $username
+                        )
+                    );
                     // var_dump($_POST);
                 } else {
                     // MDP incorrect

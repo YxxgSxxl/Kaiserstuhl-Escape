@@ -24,6 +24,8 @@ $title = "Kaiserstuhl - Jeux";
                     $length = $game['length'];
                     $listeJeux .= include 'components/jeux.php';
                 }
+
+                // var_dump($games);
                 ?>
             </div>
         </div>

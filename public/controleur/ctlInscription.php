@@ -57,7 +57,9 @@ class ctlInscription
                     $_SESSION['username'] = $username;
 
                     $vue = new vue("User");
-                    $vue->afficher(array('message' => $message));
+                    $vue->afficher(
+                        array('message' => $message)
+                    );
                 } else {
                     // Echec de l'enregistrement Inconnu
                     $vue = new vue("Inscription");

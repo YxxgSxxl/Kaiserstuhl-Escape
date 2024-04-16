@@ -15,8 +15,8 @@ $title = "Kaiserstuhl - Connection";
         class="flex flex-col gap-form-gap bg-black/30 text-ks-white p-6 rounded-lg w-full backdrop-blur-xl sm:w-[28rem]">
         <h1 class="text-ks-white text-4xl text-center mb-4">Connexion</h1>
         <div class="ks-label">
-            <label class="lg:text-lg font-normal" for="username">Adresse <span class="text-ks-orange">mail</span> ou
-                <span class="text-ks-orange">pseudo</span>* :</label>
+            <label class="lg:text-lg font-normal" for="username">Nom d'<span class="text-ks-orange">utilisateur</span>*
+                :</label>
             <input type="text" name="username" placeholder="Entrez vos infortmations ici..."
                 class="h-10 px-4 py-1 rounded-lg md:w-[400px] font-light">
         </div>

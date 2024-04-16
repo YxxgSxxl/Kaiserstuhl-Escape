@@ -19,6 +19,15 @@ $title = "Kaiserstuhl - Boutique";
         <div class="flex-1 text-ks-white">
             <h1>Customisez votre profile</h1>
 
+            <?php
+            var_dump($users);
+            extract($users);
+
+            // var_dump($_SESSION);
+            
+            echo "<p>$username and $firstname and $email</p>";
+            ?>
+
             <form action="index.php?action=logout" method="post">
                 <button type="submit" class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10 w-full">Se
                     déconnecter</button>

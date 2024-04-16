@@ -81,4 +81,11 @@ class members extends database
             return FALSE;
         }
     }
+
+    public function infoMember($username)
+    {
+        $req = 'SELECT * FROM members WHERE username = ?;';
+        $resultat = $this->execReqPrep($req, array($_SESSION['username']));
+        return $resultat[0];
+    }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement
