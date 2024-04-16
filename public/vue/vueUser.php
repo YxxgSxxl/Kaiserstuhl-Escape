@@ -21,6 +21,7 @@ $title = "Kaiserstuhl - Boutique";
 
             <?php
             var_dump($users);
+
             extract($users);
 
             // var_dump($_SESSION);

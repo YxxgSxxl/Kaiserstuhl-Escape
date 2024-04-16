@@ -14,16 +14,16 @@ $title = "Kaiserstuhl - Inscription";
         class="flex flex-col gap-form-gap bg-black/30 text-ks-white p-4 rounded-lg w-full max-w-md mx-auto backdrop-blur-xl">
         <h1 class="text-ks-white text-4xl text-center mb-2">Inscription</h1>
         <div class="ks-label">
+            <label class="lg:text-lg font-normal" for="username">Nom d'<span class="text-ks-orange">utilisateur</span>*
+                :</label>
+            <input type="text" name="username" placeholder="Entrez le nom d'utilisateur ici..."
+                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" require>
+        </div>
+        <div class="ks-label">
             <label class="lg:text-lg font-normal" for="email">Adresse <span class="text-ks-orange">mail</span>*
                 :</label>
 
             <input type="text" name="email" placeholder="Entrez vos infortmations ici..."
-                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" require>
-        </div>
-        <div class="ks-label">
-            <label class="lg:text-lg font-normal" for="username">Nom d'<span class="text-ks-orange">utilisateur</span>*
-                :</label>
-            <input type="text" name="username" placeholder="Entrez le nom d'utilisateur ici..."
                 class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" require>
         </div>
         <div class="ks-label">
