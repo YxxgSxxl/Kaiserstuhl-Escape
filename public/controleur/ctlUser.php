@@ -20,6 +20,17 @@ class ctlUser
         $vue->afficher(array('users' => $users));
     }
 
+    // public function vueUserEdit()
+    // {
+    //     $users = $this->user->infoMember($_SESSION['username']);
+
+    //     $this->user->uploadMemberImg($users);
+
+    //     // var_dump($users);
+    //     $vue = new vue("User"); // Instancie la vue appropriée
+    //     $vue->afficher(array('users' => $users));
+    // }
+
     public function deconnexion()
     {
         $_SESSION = array();
