@@ -11,17 +11,17 @@ $title = "Kaiserstuhl - Connection";
             <path d="M19 12H6M12 5l-7 7 7 7" />
         </svg></a>
 
-    <form action="" method="post"
+    <form action="index.php?action=logMember" method="post"
         class="flex flex-col gap-form-gap bg-black/30 text-ks-white p-6 rounded-lg w-full backdrop-blur-xl sm:w-[28rem]">
         <h1 class="text-ks-white text-4xl text-center mb-4">Connexion</h1>
         <div class="ks-label">
-            <label class="lg:text-lg font-normal" for="text">Adresse <span class="text-ks-orange">mail</span> ou
-                <span class="text-ks-orange">pseudo</span> :</label>
-            <input type="text" name="email" placeholder="Entrez vos infortmations ici..."
+            <label class="lg:text-lg font-normal" for="username">Nom d'<span class="text-ks-orange">utilisateur</span>*
+                :</label>
+            <input type="text" name="username" placeholder="Entrez vos infortmations ici..."
                 class="h-10 px-4 py-1 rounded-lg md:w-[400px] font-light">
         </div>
         <div class="ks-label">
-            <label class="lg:text-lg font-normal" for="mdp">Mot de <span class="text-ks-orange">passe</span>
+            <label class="lg:text-lg font-normal" for="mdp">Mot de <span class="text-ks-orange">passe</span>*
                 :</label>
             <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..."
                 class="h-10 px-4 py-1 rounded-lg md:w-[400px] font-light">
@@ -35,4 +35,11 @@ $title = "Kaiserstuhl - Connection";
 
         <p class="text-white/60 text-center text-sm">Pas encore client ? <a
                 href="index.php?action=register#register-form" class="underline hover:text-white/80">S'inscrire</a></p>
+        <?php
+        if (isset($message)) {
+            echo $message;
+        } else {
+            echo "";
+        }
+        ?>
 </section>

@@ -1,6 +1,6 @@
 <!-- BONS COMPONENT -->
 <div class="flex flex-col">
-    <a href="index.php?action=items=&id=<?= $id ?>">
+    <a href="index.php?action=goods=&id=<?= $id ?>">
         <img class="w-[300px] h-auto" src="<?= $img ?>" alt="Image du bien à vendre">
     </a>
     <div class="flex flex-row justify-between bg-[#2A2A2A] w-full p-2">

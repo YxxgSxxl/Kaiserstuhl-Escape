@@ -17,6 +17,7 @@ $message = "";
         <P class="text-ks-white ">Défier l'inconnu, c'est ouvrir la porte vers l'extraordinaire, mais ce qui
             se cache derrière pourrait bien dépasser toute attente...</P>
         <button class="bg-ks-orange w-fit p-2 rounded">Découvrir nos jeux</button>
+
     </div>
     <img class="absolute translate-x-[100px]" src="img/image-removebg-preview (10) 1.png" alt="">
 </div>

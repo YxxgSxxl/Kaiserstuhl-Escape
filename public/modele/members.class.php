@@ -32,6 +32,25 @@ class members extends database
         Retour : 
             [string] : chaine de caractères contenant le nom d'utilisateur du membre
     *******************************************************/
+    public function verifPassBDD($mdp, $username)
+    {
+        $req = 'SELECT * FROM members WHERE mdp = ? AND username = ?';
+        $reponse = $this->execReqPrep($req, array(sha1($mdp), $username));
+
+        if ($reponse && count($reponse) > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /*******************************************************
+    Enregistre un nouveau membre dans la base de données
+        Entrée : 
+
+        Retour : 
+            [string] : chaine de caractères contenant le nom d'utilisateur du membre
+    *******************************************************/
     public function verifEmailBDD($email)
     {
         $req = 'SELECT * FROM members WHERE email = ?';
@@ -61,5 +80,29 @@ class members extends database
         } else {
             return FALSE;
         }
+    }
+
+    public function infoMember($username)
+    {
+        $req = 'SELECT * FROM members WHERE username = ?;';
+        $resultat = $this->execReqPrep($req, array($_SESSION['username']));
+        return $resultat[0];
+    }
+
+    public function removeDir(string $dir): void
+    {
+        $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
+        $files = new RecursiveIteratorIterator(
+            $it,
+            RecursiveIteratorIterator::CHILD_FIRST
+        );
+        foreach ($files as $file) {
+            if ($file->isDir()) {
+                rmdir($file->getPathname());
+            } else {
+                unlink($file->getPathname());
+            }
+        }
+        rmdir($dir);
     }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement
