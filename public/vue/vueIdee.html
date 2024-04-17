@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheet/styles.css">
+</head>
+
+<body>
+    <!-- HEADER COMPONENT -->
+    <header class="bg-ks-black/50 flex items-center justify-between ml-auto h-fit p-4 md:px-9 lg:px-12">
+        <div class="header-logo">
+            <a href="index.php">
+                <img class="w-[150px] lg:w-[250px]" loading="eager" src="../img/ks-logo1.png"
+                    alt="Logo Kaiserstuhl Escape Game" />
+            </a>
+        </div>
+
+        <!-- Header Menu -->
+        <div
+            class="header-menu bg-ks-black md:bg-transparent flex flex-col text-center items-center p-28 fixed top-0 left-0 h-[100vh] min-w-[100vw] transform -translate-x-full ease-linear duration-200 z-[2] md:w-auto md:h-auto md:relative md:min-w-[auto] md:translate-x-0 md:p-0 md:items-center md:text-center md:text-base md:justify-end">
+            <button type="button" class="header-menuexit cursor-pointer absolute top-4 right-4 md:invisible">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="15" y1="9" x2="9" y2="15"></line>
+                    <line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+            </button>
+            <ul class="text-ks-white md:items-center md:text-center md:m-0 md:flex md:gap-6">
+                <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=about"
+                        class="hover:underline hover:text-ks-orange">À
+                        PROPOS</a>
+                </li>
+                <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=goods"
+                        class="hover:underline hover:text-ks-orange">BONS</a></li>
+                <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=contact"
+                        class="hover:underline hover:text-ks-orange">CONTACT</a>
+                </li>
+                <li class="mb-4 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=play"
+                        class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">JOUER</a>
+                </li>
+                <li class="mb-4 text-lg md:mb-0 md:text-sm"><a href="index.php?action=login"
+                        class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">SE
+                        CONNECTER</a></li>
+                <select
+                    class="mb-4 text-lg px-2 py-1 rounded-lg cursor-pointer bg-ks-white/40 hover:bg-ks-grey md:mb-0 md:text-sm lg:text-base"
+                    name="" id="">
+                    <option value="FR">FR</option>
+                    <option value="EN">EN</option>
+                </select>
+            </ul>
+        </div>
+
+        <button type="button" class="header-burgericon cursor-pointer md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </header>
+
+
+    <section id="login-form" class="h-[100vh] bg-cover bg-no-repeat flex flex-col justify-center items-center p-4"
+        style="background-image: url('../img/ks-bg2_old.png');">
+
+        <a href="index.php" class="absolute left-2 lg:left-10 top-24 z-10"><svg xmlns="http://www.w3.org/2000/svg"
+                width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#FFFF" stroke-width="1"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H6M12 5l-7 7 7 7" />
+            </svg></a>
+
+        <h1 class="text-ks-white  text-4xl md:text-6xl text-center my-4">DONNEZ NOUS VOS <span
+                class="text-ks-orange">IDÉES ...</span></h1>
+
+
+        <form action="" method="post"
+            class="flex flex-col gap-form-gap bg-ks-black/50 text-ks-white p-6 rounded-lg w-full backdrop-blur-xl sm:w-[28rem]">
+            <div class="ks-label">
+                <select class="text-ks-black w-fit p-2 rounded" name="" id="">
+                    <option value="">Sélectionner un jeu</option>
+                    <option value="">Jeu 1</option>
+                    <option value="">Jeu 2</option>
+                    <option value="">Jeu 3</option>
+                </select>
+            </div>
+
+            <div class="ks-label">
+                <label class="lg:text-lg font-normal" for="mdp">Décrivez vos idées :</label>
+                <textarea class="text-ks-black rounded" name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="ks-label">
+                <label class="lg:text-lg font-normal" for="mdp">Déposez des images pour illustrer vos propos
+                    (facultatif) :</label>
+                <button class="w-fit rounded p-2 bg-ks-grey flex gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <path d="M20.4 14.5L16 10 4 20" />
+                    </svg>
+                    <p>Importer</p>
+                </button>
+            </div>
+            <button type="submit" class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10">Envoyer</button>
+
+
+
+
+    </section>
+
+    <!-- FOOTER COMPONENT -->
+    <footer
+        class="bg-[url('../img/ks-bgfooter-sm.png')] lg:bg-[url('../img/ks-bgfooter-lg.png')] bg-cover lg:bg-cover text-ks-white flex flex-col gap-4 md:gap-18 lg:gap-24 items-center py-6 md:flex-row md:justify-between md:px-10 lg:px-24 lg:py-12 xl:px-36 2xl:px-64">
+        <div class="footer-logo">
+            <a href="index.php">
+                <img class="h-auto w-[200px] md:w-[180px] lg:w-[160px] xl:w-[200px]" loading="lazy"
+                    src="img/ks-logo3.png" alt="Logo Kaiserstuhl Escape Game" />
+            </a>
+        </div>
+
+        <div class="flex flex-row gap-4 md:gap-18 lg:gap-24">
+            <div class="footer-links1 flex flex-col gap-2 text-sm font-light lg:text-base">
+                <h4 class="underline text-base font-semibold md:text-sm lg:text-base">NOTRE ENTREPRISE</h4>
+                <a href="index.php?action=about">À propos</a>
+                <a href="index.php?action=about#team">Notre équipe</a>
+                <a href="index.php?action=?">Mention légales</a>
+                <a href="index.php?action=?">CGV</a>
+                <a href="index.php?action=?">Protection des données</a>
+            </div>
+
+            <div class="footer-links2 flex flex-row gap-2 md:gap-18 lg:gap-24 text-sm font-thin lg:text-base">
+                <div class="footer-nav flex flex-col gap-2">
+                    <h4 class="underline text-base font-semibold md:text-sm lg:text-base">INFORMATIONS</h4>
+                    <a href="index.php?action=?">FAQ</a>
+                    <a href="index.php?action=play">Escape Games</a>
+                    <a href="index.php?action=goods">Bons de réductions</a>
+                    <a href="index.php#partners">Nos Partenaires</a>
+                    <a href="index.php?action=?">Emplois</a>
+                </div>
+
+                <div class="footer-socials flex flex-col gap-9 md:hidden">
+                    <a href="https://www.youtube.com/channel/UCAYvHk0MQBI-_SQ1j8nXIYw" target="_blank"><img
+                            src="img/icons/youtube.svg" alt="Youtube icon social" class="w-[30px] lg:w-[40px]"></a>
+                    <a href="https://www.facebook.com/weescapegmbh" target="_blank"><img src="img/icons/facebook.svg"
+                            alt="Facebook icon social" class="w-[30px] lg:w-[40px]"></a>
+                    <a href="https://www.instagram.com/we_escape_abenteuer/" target="_blank"><img
+                            src="img/icons/instagram.svg" alt="Instagram icon social" class="w-[30px] lg:w-[40px]"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-socials flex-col gap-9 hidden md:visible md:flex pr-0 md:pr-8 xl:pr-6">
+            <a href="#"><img src="img/icons/youtube.svg" alt="Youtube icon social" class="w-[30px] lg:w-[40px]"></a>
+            <a href="#"><img src="img/icons/facebook.svg" alt="Facebook icon social" class="w-[30px] lg:w-[40px]"></a>
+            <a href="#"><img src="img/icons/instagram.svg" alt="Instagram icon social" class="w-[30px] lg:w-[40px]"></a>
+        </div>
+    </footer>
+
+    <!-- HEADER SCRIPT -->
+    <script>
+        // burger Menu 
+        let burgerIcon = document.querySelector(".header-burgericon"); // burgerIcon to open headerMenu
+        let exitMenu = document.querySelector(".header-menuexit") // Cross to close headerMenu
+        let headerMenu = document.querySelector(".header-menu"); // headerMenu with all the hyperlinks
+        let menuTag = document.querySelectorAll("ul li a"); // All headerMenu hyperlinks
+
+        // // Burger Menu Opening
+        burgerIcon.addEventListener("click", () => {
+            headerMenu.style.transform = "translateX(0%)";
+        })
+
+        // Closing Header Menu
+        exitMenu.addEventListener("click", () => {
+            headerMenu.style.transform = "translateX(-100%)";
+        })
+
+        // Closing Header Menu When Clicking On A Hyperlink
+        for (let i = 0; i < menuTag.length; i++) {
+            menuTag[i].addEventListener("click", function () {
+                headerMenu.style.transform = "translateX(0%)";
+                burgerIcon.style.display = "none";
+            });
+        }
+    </script>
+    <!-- END HEADER COMPONENT -->
+</body>
+
+</html>
