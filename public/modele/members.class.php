@@ -70,10 +70,10 @@ class members extends database
       Retour : 
         [array] : Tableau contenant le membre
     *******************************************************/
-    public function newMemberReg($username, $email, $mdp)
+    public function newMemberReg($username, $email, $mdp, $member_role = 'Member') // Membre par défaut
     {
-        $req = 'INSERT INTO members(username, email, mdp) ' . 'VALUES (?, ?, ?)';
-        $reponse = $this->execReqPrep($req, array($username, $email, sha1($mdp)));
+        $req = 'INSERT INTO members(username, email, mdp, member_role) ' . 'VALUES (?, ?, ?, ?)';
+        $reponse = $this->execReqPrep($req, array($username, $email, sha1($mdp), $member_role));
 
         if ($reponse == 1) {
             return TRUE;

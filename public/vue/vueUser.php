@@ -2,11 +2,12 @@
 $title = "Kaiserstuhl - " . strtoupper($_SESSION['username']);
 
 extract($users);
+
+var_dump($users);
 ?>
 
 <section
     class="flex flex-col min-h-screen pt-8 bg-ks-black bg-[url('img/ks-bg5-sm.png')] lg:bg-[url('img/ks-bg5-lg.png')] xl:bg-[url('img/ks-bg5-xl.png')] bg-contain ">
-    <!-- Header inclus dans la section principale -->
 
     <div class="flex-1 flex flex-col gap-8 text-ks-white">
         <h1 class="flex justify-center text-xl">Customisez votre profil:</h1>
@@ -52,6 +53,16 @@ extract($users);
                 }
             }
         </script>
+
+        <?php
+        if ($member_role == 'Admin') {
+            echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un administrateur</p>";
+        } elseif ($member_role == 'Candidate') {
+            echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un Candidat</p>";
+        } else {
+            echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un Membre</p>";
+        }
+        ?>
 
         <form action="index.php?action=logout" method="post">
             <button type="submit" class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10 w-full">Se
