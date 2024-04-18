@@ -3,7 +3,7 @@ $title = "Kaiserstuhl - Boutique";
 ?>
 
 <section
-    class="flex flex-col min-h-screen bg-ks-black bg-[url('img/ks-bg5.png')] lg:bg-[url('img/ks-bg5.png')] xl:bg-[url('img/ks-bg5.png')] bg-contain"
+    class="flex flex-col min-h-screen bg-no-repeat bg-ks-black bg-[url('img/ks-bg5.png')] lg:bg-[url('img/ks-bg5.png')] xl:bg-[url('img/ks-bg5.png')] bg-contain"
     style="background-image: url('img/ks-bg5-xl.png');">
 
     <!-- Contenu principal qui s'étend pour remplir l'espace disponible, poussant le footer vers le bas -->
@@ -15,7 +15,7 @@ $title = "Kaiserstuhl - Boutique";
         </h1>
 
         <div class="flex items-center justify-center mb-32">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-16">
+            <div class="grid grid-cols-1 gap-10 sm:gap-4 sm:grid-cols-2 lg:gap-16">
                 <?php
                 $listeBons = "";
 

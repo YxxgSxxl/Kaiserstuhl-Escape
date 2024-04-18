@@ -48,6 +48,7 @@
 </head>
 
 <body>
+
   <?php $header ?>
 
   <?= $contenu ?>
