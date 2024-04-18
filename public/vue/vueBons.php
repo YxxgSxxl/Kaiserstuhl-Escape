@@ -1,5 +1,9 @@
 <?php
 $title = "Kaiserstuhl - Boutique";
+
+
+extract($users);
+// var_dump($users);
 ?>
 
 <section
@@ -25,6 +29,7 @@ $title = "Kaiserstuhl - Boutique";
                     $name = $item['name'];
                     $price = $item['price'];
                     $deltime = $item['delivery_time'];
+
                     $listeBons .= include 'components/bons.php';
                 }
                 ?>
