@@ -12,7 +12,7 @@ extract($users);
         </h1>
 
         <div class="flex flex-col md:flex-row">
-            <div class="items-center flex flex-col gap-4 justify-center">
+            <div class="items-center flex flex-col gap-4 justify-center mb-4">
                 <img id="profilePic"
                     class="rounded-[50%] w-[200px] h-[200px] text-center items-center bg-cover border-solid border-4 hover:border-dashed active:animate-ping border-ks-orange cursor-pointer"
                     src="<?= $Conf->MEMBERSFOLDER . $_SESSION['username'] ?>/<?= $avatar ?>"

@@ -110,4 +110,21 @@ class ctlUser
         $vue = new vue("Accueil"); // Instancie la vue appropriée
         $vue->afficher(array());
     }
+
+    public function deleteUser()
+    {
+        global $Conf;
+
+        $users = $this->user->infoMember($_SESSION['username']);
+        extract($users);
+
+        $this->user->removeDir($Conf->MEMBERSFOLDER . $username);
+
+        $this->user->removeMember($users['id_member']);
+
+        $this->deconnexion();
+
+        $vue = new vue("User"); // Instancie la vue appropriée
+        $vue->afficher(array('users' => $users));
+    }
 }

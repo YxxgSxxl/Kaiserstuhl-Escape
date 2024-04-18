@@ -112,4 +112,11 @@ class members extends database
         }
         rmdir($dir);
     }
+
+    public function removeMember($id_member)
+    {
+        $req = 'DELETE FROM members WHERE id_member = ?;';
+        $resultat = $this->execReqPrep($req, array($id_member));
+        return $resultat;
+    }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement
