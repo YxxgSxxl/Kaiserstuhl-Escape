@@ -25,7 +25,7 @@ class ctlUser
             $users = $this->user->infoMember($_SESSION['username']);
             extract($users);
 
-            if ($_FILES["newImage"]["size"] < 500000) {
+            if ($_FILES["newImage"]["size"] < 2000000) {
                 $isFileInDir = count(glob("$target_file/*")) === 0 ? "FALSE" : "TRUE"; // Si il y a un ou des fichiers -> TRUE, sinon FALSE
 
                 if ($file_type == ".png" || $file_type == ".PNG") { // On vérifie si le fichier est au format PNG
