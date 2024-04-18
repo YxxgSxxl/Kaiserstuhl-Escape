@@ -14,40 +14,45 @@ extract($users);
 
         <div class="items-center flex flex-col gap-4 justify-center">
             <img id="profilePic"
-                class="rounded-[50%] w-[200px] border-solid border-4 hover:border-dashed active:animate-ping border-ks-orange cursor-pointer"
-                src="<?= $Conf->MEMBERSFOLDER . $_SESSION['username'] ?>/<?= $_SESSION['username'] ?>.png"
+                class="rounded-[50%] w-[200px] h-[200px] text-center items-center bg-cover border-solid border-4 hover:border-dashed active:animate-ping border-ks-orange cursor-pointer"
+                src="<?= $Conf->MEMBERSFOLDER . $_SESSION['username'] ?>/<?= $avatar ?>"
                 alt="Image de profil de <?= $_SESSION['username'] ?>" onclick="openFileExplorer()">
-            <!-- Ajout d'un input file caché -->
-            <input id="fileInput" type="file" style="display:none;" accept=".png,.jpg,.jpeg"
-                onchange="uploadImage(this)">
 
             <?= "Name: " . $username . " and Email: " . $email ?>
+            <?php echo (count(glob("upload/members/test/*")) === 0) ? "FALSE" : "TRUE"; ?>
         </div>
 
-        <form id="imageUploadForm" style="display:none;" action="index.php?action=userUploadImg" method="post"
+        <form id="imageUploadForm" style="display:none;" action="index.php?action=user" method="post"
             enctype="multipart/form-data">
-            <input type="file" name="newImage" accept=".png,.jpg,.jpeg">
-            <input type="submit" value="Uploader">
+            <!-- Ajout d'un input file caché -->
+            <input id="fileInput" type="file" name="newImage" style="display:none;" accept=".png,.jpg,.jpeg">
+            <input class="hidden" id="fileSubmit" type="submit" value="Uploader" style="dislay:none;">
         </form>
 
         <script>
+            document.querySelector("#fileInput").addEventListener("change", uploadImage)
+
             function openFileExplorer() {
                 // Simuler un clic sur le bouton de sélection de fichier
                 document.getElementById('fileInput').click();
             }
 
-            function uploadImage(input) {
+            function uploadImage(event) {
+                const input = event.target;
                 // Vérifier si un fichier a été sélectionné
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
                     reader.onload = function (e) {
                         // Soumettre le formulaire d'upload d'image
-                        document.getElementById('imageUploadForm').submit();
+                        // setInterval(() => {
+                        document.getElementById('fileSubmit').click();
+                        // }, 1000);
                     };
 
                     // Lire le fichier en tant que Data URL
                     reader.readAsDataURL(input.files[0]);
+                    console.log(reader.readAsDataURL(input.files[0]));
                 }
             }
         </script>
@@ -59,6 +64,12 @@ extract($users);
             echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un Candidat</p>";
         } else {
             echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un Membre</p>";
+        }
+
+        if (isset($message)) {
+            echo $message;
+        } else {
+            echo "";
         }
         ?>
 

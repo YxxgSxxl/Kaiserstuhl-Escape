@@ -51,7 +51,7 @@ $title = "Kaiserstuhl - Contact";
                 <!-- Contenu des détails -->
             </div>
         </details>
-        <details class="details-color w-[300px]">
+        <details class="details-color w-[300px]" open>
             <summary class="details-color text-ks-white text-lg p-2">Demande d'emploi ou stage</summary>
             <div class="px-2 py-1">
                 <p class="text-ks-white">

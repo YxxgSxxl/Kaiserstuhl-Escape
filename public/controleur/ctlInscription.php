@@ -52,7 +52,7 @@ class ctlInscription
                 $vue = new vue("Inscription");
                 $vue->afficher(array('message' => $message));
             } else {
-                if ($this->member->newMemberReg($username, $email, $mdp)) {
+                if ($this->member->newMemberReg("$username.png", $username, $email, $mdp)) {
 
                     global $Conf; // Récupère les variables de configuration
 
@@ -62,6 +62,8 @@ class ctlInscription
 
                     // Attribution du nom d'utilisateur à la session
                     $_SESSION['username'] = $username;
+
+                    // $this->member->insertAvatar($username);
 
                     // Création du dossier personnel de l'utilisateur
                     if (file_exists($Conf->MEMBERSFOLDER . $username)) { // Si le dossier existe déjà
