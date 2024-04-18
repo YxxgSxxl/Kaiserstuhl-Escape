@@ -61,6 +61,9 @@ class routeur
           case 'user':
             $this->ctlUser->vueUser();
             break;
+          case 'userUploadImg':
+            $this->ctlUser->userRegImg();
+            break;
           case 'logout':
             $this->ctlUser->deconnexion();
             break;

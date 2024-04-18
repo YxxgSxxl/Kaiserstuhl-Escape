@@ -20,16 +20,19 @@ class ctlUser
         $vue->afficher(array('users' => $users));
     }
 
-    // public function vueUserEdit()
-    // {
-    //     $users = $this->user->infoMember($_SESSION['username']);
+    public function userRegImg()
+    {
+        $users = $this->user->infoMember($_SESSION['username']);
 
-    //     $this->user->uploadMemberImg($users);
+        // $this->user->uploadMemberImg($users);
 
-    //     // var_dump($users);
-    //     $vue = new vue("User"); // Instancie la vue appropriée
-    //     $vue->afficher(array('users' => $users));
-    // }
+        // var_dump($_POST);
+        // var_dump($_FILES);
+
+        // var_dump($users);
+        $vue = new vue("User"); // Instancie la vue appropriée
+        $vue->afficher(array('users' => $users));
+    }
 
     public function deconnexion()
     {

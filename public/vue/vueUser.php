@@ -3,7 +3,7 @@ $title = "Kaiserstuhl - " . strtoupper($_SESSION['username']);
 
 extract($users);
 
-var_dump($users);
+// var_dump($users);
 ?>
 
 <section
@@ -42,8 +42,6 @@ var_dump($users);
                     var reader = new FileReader();
 
                     reader.onload = function (e) {
-                        // Mettre à jour l'image de profil avec l'image sélectionnée
-                        document.getElementById('profilePic').src = e.target.result;
                         // Soumettre le formulaire d'upload d'image
                         document.getElementById('imageUploadForm').submit();
                     };
