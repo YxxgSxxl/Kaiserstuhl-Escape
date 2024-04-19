@@ -1,6 +1,8 @@
 <?php
 $title = "Kaiserstuhl Outdoor";
 $message = "";
+
+// var_dump($user);
 ?>
 
 <body class="overflow-x-hidden bg-ks-black">

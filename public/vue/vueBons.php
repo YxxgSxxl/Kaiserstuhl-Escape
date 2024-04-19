@@ -1,8 +1,12 @@
 <?php
 $title = "Kaiserstuhl - Boutique";
 
+if (isset($_SESSION['username'])) {
+    extract($users);
+} else {
+    null;
+}
 
-extract($users);
 // var_dump($users);
 ?>
 

@@ -24,7 +24,11 @@ class ctlBons
     public function vueBons()
     {
         $items = $this->item->getItems();
-        $users = $this->user->infoMember($_SESSION['username']);
+        if (isset($_SESSION['username'])) {
+            $users = $this->user->infoMember($_SESSION['username']);
+        } else {
+            $users = "";
+        }
         $vue = new vue("Bons"); // Instancie la vue appropriée
         $vue->afficher(
             array(
