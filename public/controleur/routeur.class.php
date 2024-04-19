@@ -61,6 +61,9 @@ class routeur
           case 'user':
             $this->ctlUser->vueUser();
             break;
+          case 'userDelete':
+            $this->ctlUser->deleteUser();
+            break;
           case 'logout':
             $this->ctlUser->deconnexion();
             break;

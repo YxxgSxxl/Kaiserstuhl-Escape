@@ -47,7 +47,8 @@
   <link href="stylesheet/styles.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="">
+
   <?php $header ?>
 
   <?= $contenu ?>

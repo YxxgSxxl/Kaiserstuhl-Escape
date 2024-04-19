@@ -17,26 +17,26 @@ $title = "Kaiserstuhl - Inscription";
             <label class="lg:text-lg font-normal" for="username">Nom d'<span class="text-ks-orange">utilisateur</span>*
                 :</label>
             <input type="text" name="username" placeholder="Entrez le nom d'utilisateur ici..."
-                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" require>
+                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" autocomplete="off" require>
         </div>
         <div class="ks-label">
             <label class="lg:text-lg font-normal" for="email">Adresse <span class="text-ks-orange">mail</span>*
                 :</label>
 
             <input type="text" name="email" placeholder="Entrez vos infortmations ici..."
-                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" require>
+                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" autocomplete="off" require>
         </div>
         <div class="ks-label">
             <label class="lg:text-lg font-normal" for="mdp">Mot de<span class="text-ks-orange"> passe</span>*
                 :</label>
             <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..."
-                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" require>
+                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" autocomplete="off" require>
         </div>
         <div class="ks-label">
             <label class="lg:text-lg font-normal" for="mdp_confirm">Confirmation du mot de<span class="text-ks-orange">
                     passe</span>* :</label>
             <input type="password" name="mdp_confirm" placeholder="Confirmez votre mot de passe ici..."
-                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" require>
+                class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" autocomplete="off" require>
         </div>
         <a href="index.php?action=regMember"><button type="submit"
                 class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10 w-full">S'inscrire</button>
