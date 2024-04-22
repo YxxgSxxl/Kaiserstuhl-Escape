@@ -20,12 +20,10 @@ $title = "Kaiserstuhl - Jeux";
                     $title = $game['title'];
                     $minidesc = $game['minidesc'];
                     $duration = $game['duration'];
-
                     $length = $game['length'];
+
                     $listeJeux .= include 'components/jeux.php';
                 }
-
-                // var_dump($games);
                 ?>
             </div>
         </div>

@@ -11,10 +11,10 @@ extract($users);
         <h1 class="text-center text-2xl">LE PROFIL DE <span class="text-ks-orange"><?= strtoupper($username) ?></span>
         </h1>
 
-        <div class="flex flex-col md:flex-row">
+        <div class="flex flex-col justify-center md:flex-row md:gap-4">
             <div class="items-center flex flex-col gap-4 justify-center mb-4">
                 <img id="profilePic"
-                    class="rounded-[50%] w-[200px] h-[200px] text-center items-center bg-cover border-solid border-4 hover:border-dashed active:animate-ping border-ks-orange cursor-pointer"
+                    class="rounded-[50%] w-[200px] md:w-[300px} h-[200px] md:h-[300px} text-center items-center bg-cover border-solid border-4 hover:border-dashed active:animate-ping border-ks-orange cursor-pointer"
                     src="<?= $Conf->MEMBERSFOLDER . $_SESSION['username'] ?>/<?= $avatar ?>"
                     alt="Image de profil de <?= $_SESSION['username'] ?>" onclick="openFileExplorer()">
 
@@ -64,19 +64,19 @@ extract($users);
                     echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un Membre</p>";
                 }
                 ?>
+
+                <?php
+                if (isset($message)) {
+                    echo $message;
+                } else {
+                    echo "";
+
+                }
+                ?>
             </div>
 
-            <?php
-            if (isset($message)) {
-                echo $message;
-            } else {
-                echo "";
-
-            }
-            ?>
-
             <div
-                class="bg-ks-white/20 text-ks-white flex flex-col gap-4 items-start mx-auto justify-between rounded-lg p-4 w-[80%]">
+                class="bg-ks-white/20 md:bg-transparent text-ks-white flex flex-col gap-4 items-start mx-auto md:mx-0 justify-between rounded-lg p-4 w-[80%] md:w-[30%] md:items-center">
                 <p class='text-lg underline underline-offset-2'>Email:</p><?= $email ?></p>
 
                 <?php
@@ -100,6 +100,12 @@ extract($users);
                 }
                 ?>
                 </p>
+
+                <form class="w-fit items-center mx-auto mb-0" action="index.php?action=userDelete" method="post">
+                    <button type="submit"
+                        class="bg-orange-500 rounded-lg p-2 px-6 font-bold text-sm lg:text-lg h-10 w-full">Modifier
+                        mes informations</button>
+                </form>
             </div>
 
         </div>
@@ -113,19 +119,14 @@ extract($users);
         <hr class="w-[80%] mx-auto">
 
 
-        <form class="w-[80%] items-center mx-auto mb-0" action="index.php?action=logout" method="post">
-            <button type="submit" class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10 w-full">Se
+        <form class="w-fit items-center mx-auto mb-0" action="index.php?action=logout" method="post">
+            <button type="submit" class="bg-ks-orange rounded-lg p-2 px-6 font-bold lg:text-lg h-10 w-full">Se
                 déconnecter</button>
         </form>
 
-        <form class="w-[80%] items-center mx-auto mb-0" action="index.php?action=userDelete" method="post">
-            <button type="submit" class="bg-orange-500 rounded-lg p-2 font-bold text-sm lg:text-lg h-10 w-full">Modifier
-                mes informations</button>
-        </form>
-
-        <a id="confirm" class="cursor-pointer w-[80%] items-center mx-auto">
+        <a id="confirm" class="cursor-pointer w-fit items-center mx-auto">
             <form class="w-full mb-8" action="index.php?action=userDelete" method="post">
-                <button type="submit" class="bg-red-500 rounded-lg p-2 font-bold text-sm lg:text-lg h-10 w-full">Je
+                <button type="submit" class="bg-red-500 rounded-lg p-2 px-6 font-bold text-sm lg:text-lg h-10 w-full">Je
                     souhaite
                     supprimer mon compte</button>
             </form>
