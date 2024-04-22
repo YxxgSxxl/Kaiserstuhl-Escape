@@ -101,7 +101,7 @@ extract($users);
                 ?>
                 </p>
 
-                <form class="w-fit items-center mx-auto mb-0" action="index.php?action=userDelete" method="post">
+                <form class="w-fit items-center mx-auto mb-0" action="index.php?action=userModify" method="post">
                     <button type="submit"
                         class="bg-orange-500 rounded-lg p-2 px-6 font-bold text-sm lg:text-lg h-10 w-full">Modifier
                         mes informations</button>

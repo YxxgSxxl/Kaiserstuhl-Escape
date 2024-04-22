@@ -1,4 +1,7 @@
 <?php
+/*******************************************************
+Classe permettant de générer des tableaux
+*******************************************************/
 class tableau
 {
     private $data;
@@ -35,7 +38,7 @@ class tableau
     public static function foot($data = [])
     {
         if ($data) {
-            return '<tfoot>' . self::row($data,'th') . '</tfoot></table>';
+            return '<tfoot>' . self::row($data, 'th') . '</tfoot></table>';
         } else {
             return '</table>';
         }

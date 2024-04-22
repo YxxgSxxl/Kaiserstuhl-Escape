@@ -111,6 +111,27 @@ class ctlUser
         $vue->afficher(array());
     }
 
+    public function modifyUser()
+    {
+        $users = $this->user->infoMember($_SESSION['username']);
+        extract($users);
+
+        $vue = new vue("UserModify"); // Instancie la vue appropriée
+        $vue->afficher(array('users' => $users));
+    }
+
+    public function modifyUserConfirm()
+    {
+        // Modifie les informations de l'utilisateur
+        $this->user->updateMember($_POST['username'], $_POST['email'], $_POST['password']);
+
+        $users = $this->user->infoMember($_SESSION['username']);
+        extract($users);
+
+        $vue = new vue("User"); // Instancie la vue appropriée
+        $vue->afficher(array('users' => $users));
+    }
+
     public function deleteUser()
     {
         global $Conf;

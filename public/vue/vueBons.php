@@ -40,9 +40,4 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
-
-    <!-- Footer à la fin de la section principale -->
-    <footer class="bg-cover text-ks-white">
-        <!-- Contenu du footer ici -->
-    </footer>
 </section>

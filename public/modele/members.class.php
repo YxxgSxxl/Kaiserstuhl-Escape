@@ -96,6 +96,14 @@ class members extends database
         return $resultat;
     }
 
+    public function updateMember($username, $email, $pass)
+    {
+        $req = 'UPDATE members SET username = ?, email = ? WHERE id_member = ?;';
+        $resultat = $this->execReqPrep($req, array($username, $email, $pass, $_SESSION['username']));
+        return $resultat;
+    }
+
+
     public function removeDir(string $dir): void
     {
         $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);

@@ -61,6 +61,12 @@ class routeur
           case 'user':
             $this->ctlUser->vueUser();
             break;
+          case 'userModify':
+            $this->ctlUser->modifyUser();
+            break;
+          case 'userModifyConfirm':
+            $this->ctlUser->modifyUser();
+            break;
           case 'userDelete':
             $this->ctlUser->deleteUser();
             break;
