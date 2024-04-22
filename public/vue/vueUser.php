@@ -106,6 +106,11 @@ extract($users);
                         class="bg-orange-500 rounded-lg p-2 px-6 font-bold text-sm lg:text-lg h-10 w-full">Modifier
                         mes informations</button>
                 </form>
+
+                <form class="w-fit items-center mx-auto mb-0" action="index.php?action=logout" method="post">
+                    <button type="submit" class="bg-ks-orange rounded-lg p-2 px-6 font-bold lg:text-lg h-10 w-full">Se
+                        déconnecter</button>
+                </form>
             </div>
 
         </div>
@@ -117,12 +122,6 @@ extract($users);
         </div>
 
         <hr class="w-[80%] mx-auto">
-
-
-        <form class="w-fit items-center mx-auto mb-0" action="index.php?action=logout" method="post">
-            <button type="submit" class="bg-ks-orange rounded-lg p-2 px-6 font-bold lg:text-lg h-10 w-full">Se
-                déconnecter</button>
-        </form>
 
         <a id="confirm" class="cursor-pointer w-fit items-center mx-auto">
             <form class="w-full mb-8" action="index.php?action=userDelete" method="post">
