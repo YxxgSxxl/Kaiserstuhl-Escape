@@ -76,7 +76,7 @@ extract($users);
             </div>
 
             <div
-                class="bg-ks-white/20 md:bg-transparent text-ks-white flex flex-col gap-4 items-start mx-auto md:mx-0 justify-between rounded-lg p-4 w-[80%] md:w-[30%] md:items-center">
+                class="bg-ks-white/0 md:bg-transparent text-ks-white flex flex-col gap-4 items-start mx-auto md:mx-0 justify-between rounded-lg p-4 w-[80%] md:w-[30%] md:items-center">
                 <p class='text-lg underline underline-offset-2'>Email:</p><?= $email ?></p>
 
                 <?php
@@ -94,7 +94,7 @@ extract($users);
                 <p class='text-lg underline underline-offset-2'>Age:</p>
                 <?php
                 if ($age) {
-                    echo "<p class='text-center'>$age</p>";
+                    echo "<p class='text-center'>$age ans</p>";
                 } else {
                     echo "/";
                 }
