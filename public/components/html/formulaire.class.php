@@ -21,62 +21,32 @@ class formulaire
     {
         return "<div class='ks-label'>
         <label class='lg:text-lg font-normal'>$label</label>
-        <input type='text' class='texte' name='" . $name . "' value='' placeholder='Entrez vos infortmations ici...'
-        class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light'>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='text' class='texte' name='" . $name . "' value='' placeholder='Entrez vos infortmations ici...'>
         </div>";
     }
 
-    // public function inputPassword($name, $label = "")
-    // {
-    //     return "<div class='ks-label'>
-    //     <label class='lg:text-lg font-normal'>
-    //     <span>" . $label . "</span><input type='password' class='texte' name='" . $name . "' value=''><div style='color: red;'>*</div>
-    //     </label>
-    //     </div>";
-    // }
+    public function inputEmail($name, $label = "")
+    {
+        return "<div class='ks-label'>
+        <label class='lg:text-lg font-normal'>$label</label>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='email' class='texte' name='" . $name . "' value='' placeholder='Entrez vos infortmations ici...'>
+        </div>";
+    }
 
-    // public function inputEmail($name, $label = "")
-    // {
-    //     return "<div class='ks-label'>
-    //     <label class='lg:text-lg font-normal'>
-    //     <span>" . $label . "</span><input type='email' class='texte' name='" . $name . "' value=''><div style='color: red;'>*</div>
-    //     </label>
-    //     </div>";
-    // }
-
-    // public function inputTel($name, $label = "")
-    // {
-    //     return "<div class='ks-label'>
-    //     <label class='lg:text-lg font-normal'>
-    //     <span>" . $label . "</span><input type='tel' class='texte' name='" . $name . "' value=''><div style='color: red;'>*</div>
-    //     </label>
-    //     </div>";
-    // }
-
-    // public function inputDate($name, $label = "")
-    // {
-    //     return "<div class='ks-label'>
-    //     <label class='lg:text-lg font-normal'>
-    //     <span>" . $label . "</span><input type='date' class='texte' name='" . $name . "' value=''><div style='color: red;'>*</div>
-    //     </label>
-    //     </div>";
-    // }
-
-    // public function inputNumber($name, $label = "")
-    // {
-    //     return "<div class='ks-label'>
-    //     <label class='lg:text-lg font-normal'>
-    //     <span>" . $label . "</span><input type='number' class='texte' name='" . $name . "' value=''><div style='color: red;'>*</div>
-    //     </label>
-    //     </div>";
-    // }
+    public function inputPassword($name, $label = "")
+    {
+        return "<div class='ks-label'>
+        <label class='lg:text-lg font-normal'>$label</label>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='password' class='texte' name='" . $name . "' value='' placeholder='Entrez vos infortmations ici...'>
+        </div>";
+    }
 
     public function inputHidden($name, $value)
     {
         return "<input type='hidden' name='" . $name . "' value='" . $value . "'>";
     }
 
-    public function submit($name, $value)
+    public function submit($value)
     {
         return "<button type='submit' class='bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10'>" . $value . "</button>";
     }

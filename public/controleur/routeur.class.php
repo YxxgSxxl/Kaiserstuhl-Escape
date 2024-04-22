@@ -65,7 +65,7 @@ class routeur
             $this->ctlUser->modifyUser();
             break;
           case 'userModifyConfirm':
-            $this->ctlUser->modifyUser();
+            $this->ctlUser->modifyUserConfirm();
             break;
           case 'userDelete':
             $this->ctlUser->deleteUser();

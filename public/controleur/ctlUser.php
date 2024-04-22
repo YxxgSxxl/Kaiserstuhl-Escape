@@ -123,7 +123,9 @@ class ctlUser
     public function modifyUserConfirm()
     {
         // Modifie les informations de l'utilisateur
-        $this->user->updateMember($_POST['username'], $_POST['email'], $_POST['password']);
+        $this->user->updateMember($_POST['email'], $_POST['password']);
+
+        var_dump($_POST);
 
         $users = $this->user->infoMember($_SESSION['username']);
         extract($users);
