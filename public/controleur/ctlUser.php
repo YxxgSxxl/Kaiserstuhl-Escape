@@ -122,16 +122,21 @@ class ctlUser
 
     public function modifyUserConfirm()
     {
-        // Modifie les informations de l'utilisateur
-        $this->user->updateMember($_POST['email'], $_POST['password']);
-
-        var_dump($_POST);
-
         $users = $this->user->infoMember($_SESSION['username']);
         extract($users);
 
-        $vue = new vue("User"); // Instancie la vue appropriée
-        $vue->afficher(array('users' => $users));
+        if (empty($_POST['password'])) {
+            // Modifie les informations de l'utilisateur
+            $this->user->updateMemberInfo($_POST['email'], $id_member);
+        } else {
+            // Modifie les informations de l'utilisateur
+            $this->user->updateMemberInfo($_POST['email'], $id_member);
+
+            // Modifie le mot de passe de l'utilisateur
+            $this->user->updateMemberPass($_POST['password'], $id_member);
+        }
+
+        header("Location: index.php?action=user");
     }
 
     public function deleteUser()

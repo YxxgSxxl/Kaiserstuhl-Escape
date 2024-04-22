@@ -9,7 +9,7 @@ class formulaire
 
     public function debutForm($method, $action, $enctype)
     {
-        echo "<form method='" . $method . "' action='" . $action . "' enctype='" . $enctype . "' class='flex flex-col gap-form-gap bg-black/30 text-ks-white p-6 rounded-lg w-full backdrop-blur-xl sm:w-[28rem]'>";
+        echo "<form method='" . $method . "' action='" . $action . "' enctype='" . $enctype . "' class='flex flex-col gap-form-gap bg-transparent md:bg-black/30 text-ks-white p-6 rounded-lg w-full backdrop-blur-xl sm:w-[28rem]'>";
     }
 
     public function finForm()
@@ -17,27 +17,27 @@ class formulaire
         echo "</form>";
     }
 
-    public function inputText($name, $label = "")
+    public function inputText($name, $label = "", $value = "")
     {
         return "<div class='ks-label'>
-        <label class='lg:text-lg font-normal'>$label</label>
-        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='text' class='texte' name='" . $name . "' value='' placeholder='Entrez vos infortmations ici...'>
+        <label class='lg:text-lg font-normal'>$label:</label>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='text' class='texte' name='" . $name . "' value='" . $value . "' placeholder='Entrez vos infortmations ici...'>
         </div>";
     }
 
-    public function inputEmail($name, $label = "")
+    public function inputEmail($name, $label = "", $value = "")
     {
         return "<div class='ks-label'>
-        <label class='lg:text-lg font-normal'>$label</label>
-        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='email' class='texte' name='" . $name . "' value='' placeholder='Entrez vos infortmations ici...'>
+        <label class='lg:text-lg font-normal'>$label:</label>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='email' class='texte' name='" . $name . "' value='" . $value . "' placeholder='Entrez vos infortmations ici...'>
         </div>";
     }
 
-    public function inputPassword($name, $label = "")
+    public function inputPassword($name, $label = "", $value = "")
     {
         return "<div class='ks-label'>
-        <label class='lg:text-lg font-normal'>$label</label>
-        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='password' class='texte' name='" . $name . "' value='' placeholder='Entrez vos infortmations ici...'>
+        <label class='lg:text-lg font-normal'>$label:</label>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='password' class='texte' name='" . $name . "' value='" . $value . "' placeholder='Entrez vos infortmations ici...'>
         </div>";
     }
 

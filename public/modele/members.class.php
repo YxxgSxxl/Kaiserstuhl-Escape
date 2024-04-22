@@ -96,13 +96,19 @@ class members extends database
         return $resultat;
     }
 
-    public function updateMember($email, $pass)
+    public function updateMemberInfo($email, $id)
     {
-        $req = 'UPDATE members SET username = ?, email = ? WHERE id_member = ?;';
-        $resultat = $this->execReqPrep($req, array($email, sha1($pass), $_SESSION['username']));
+        $req = 'UPDATE members SET email = ? WHERE id_member = ?;';
+        $resultat = $this->execReqPrep($req, array($email, $id));
         return $resultat;
     }
 
+    public function updateMemberPass($pass, $id)
+    {
+        $req = 'UPDATE members SET mdp = ? WHERE id_member = ?;';
+        $resultat = $this->execReqPrep($req, array(sha1($pass), $id));
+        return $resultat;
+    }
 
     public function removeDir(string $dir): void
     {

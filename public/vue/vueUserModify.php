@@ -3,7 +3,7 @@ $title = "Kaiserstuhl - Vos informations";
 
 global $Conf;
 
-var_dump($users);
+// var_dump($users);
 ?>
 
 <section
@@ -11,7 +11,7 @@ var_dump($users);
 
     <!-- Contenu principal qui s'étend pour remplir l'espace disponible, poussant le footer vers le bas -->
     <div class="flex-1">
-        <h1 class="text-white font-semibold mt-0 pt-20 text-4xl md:text-6xl text-center mb-24 select-none">
+        <h1 class="text-white font-semibold mt-0 pt-20 text-4xl md:text-6xl text-center mb-20 select-none">
             <span class="text-ks-orange">MODIFIEZ</span> VOS INFORMATIONS
         </h1>
 
@@ -26,7 +26,7 @@ var_dump($users);
             $form = new Formulaire();
 
             echo $form->debutForm("POST", "index.php?action=userModifyConfirm", "multipart/form-data");
-            echo $form->inputEmail("email", "Email");
+            echo $form->inputEmail("email", "Email", $users['email'] ? $users['email'] : '');
             echo $form->inputPassword("password", "Mot de passe");
             echo $form->submit("Modifier");
             echo $form->finForm();
