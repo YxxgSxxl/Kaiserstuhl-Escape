@@ -10,7 +10,8 @@
             <?= $minidesc ?>
         </small>
     </div>
-    <a href="index.php?action=games=&idGameAdmin=<?= $id ?>"
+    <!-- <a href="index.php?action=games=&idGameAdmin= $id " -->
+    <a href="index.php?action=games=&idGame=<?= $id ?>"
         class="flex gap-2 justify-center bg-ks-orange hover:bg-orange-300 text-ks-white p-2 items-center text-center">
         <p class="text-lg font-bold">En savoir plus</p>
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
