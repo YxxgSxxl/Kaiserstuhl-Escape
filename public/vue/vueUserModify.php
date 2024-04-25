@@ -28,6 +28,13 @@ global $Conf;
             echo $form->debutForm("POST", "index.php?action=userModifyConfirm", "multipart/form-data");
             echo $form->inputEmail("email", "Email", $users['email'] ? $users['email'] : '');
             echo $form->inputPassword("password", "Mot de passe");
+            echo $form->inputText("firstname", "Prénom");
+            echo $form->inputText("lastname", "Nom");
+            echo $form->inputText("street", "Adresse");
+            echo $form->inputText("zip_code", "Code postal");
+            echo $form->inputText("city", "Ville");
+            echo $form->inputText("country", "Pays");
+            echo $form->inputText("phonenum", "téléphone");
             echo $form->submit("Modifier");
             echo $form->finForm();
             ?>

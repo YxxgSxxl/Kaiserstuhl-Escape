@@ -125,12 +125,18 @@ class ctlUser
         $users = $this->user->infoMember($_SESSION['username']);
         extract($users);
 
+        // var_dump($users);
+        // var_dump($_POST);
+
+        // $vue = new vue("User"); // Instancie la vue appropriée
+        // $vue->afficher(array('users' => $users));
+
         if (empty($_POST['password'])) {
             // Modifie les informations de l'utilisateur
-            $this->user->updateMemberInfo($_POST['email'], $id_member);
+            $this->user->updateMemberInfo($_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['phonenum'], $_POST['country'], $_POST['zip_code'], $_POST['city'], $_POST['street'], $id_member);
         } else {
             // Modifie les informations de l'utilisateur
-            $this->user->updateMemberInfo($_POST['email'], $id_member);
+            $this->user->updateMemberInfo($_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['phonenum'], $_POST['country'], $_POST['zip_code'], $_POST['city'], $_POST['street'], $id_member);
 
             // Modifie le mot de passe de l'utilisateur
             $this->user->updateMemberPass($_POST['password'], $id_member);

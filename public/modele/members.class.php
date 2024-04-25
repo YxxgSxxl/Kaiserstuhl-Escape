@@ -96,10 +96,10 @@ class members extends database
         return $resultat;
     }
 
-    public function updateMemberInfo($email, $id)
+    public function updateMemberInfo($email, $firstname, $lastname, $phonenum, $country, $zip_code, $city, $street, $id)
     {
-        $req = 'UPDATE members SET email = ? WHERE id_member = ?;';
-        $resultat = $this->execReqPrep($req, array($email, $id));
+        $req = 'UPDATE members SET email = ?, firstname = ?, lastname = ?, phonenum = ?, country = ?, zip_code = ?, city = ?, street = ? WHERE id_member = ?;';
+        $resultat = $this->execReqPrep($req, array($email, $firstname, $lastname, $phonenum, $country, $zip_code, $city, $street, $id));
         return $resultat;
     }
 
