@@ -19,8 +19,8 @@ class ctlJeux
 
     public function vueJeu($id)
     {
-        $games = $this->game->getGame($id);
-        $vue = new vue("Jeux"); // Instancie la vue appropriée
-        $vue->afficher(array('games' => $games));
+        $game = $this->game->getGame($id);
+        $vue = new vue("Jeu"); // Instancie la vue appropriée
+        $vue->afficher(array('game' => $game));
     }
 }
