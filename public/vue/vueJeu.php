@@ -1,6 +1,6 @@
 <?php
 extract($game);
-var_dump($game);
+// var_dump($game);
 
 $title = "Kaiserstuhl - " . " $title";
 ?>
@@ -12,15 +12,15 @@ $title = "Kaiserstuhl - " . " $title";
 
         <form action="index.php?action=chekout" method="post">
             <div class="flex flex-col gap-3">
-                <label for="quantity">Quantité:</label>
-                <input type="number" name="quantity" id="quantity" min="1" max="99" value="1"
-                    class="w-1/4 md:w-auto p-1 md:p-4 md:text-xl border-solid border-2 border-ks-orange bg-ks-black/40 text-ks-white rounded-md">
-                <div class="bg-ks-orange rounded-md py-1 md:py-2 hover:bg-ks-white/50 text-center cursor-pointer">
-                    Ajouter au
-                    panier</div>
-                <input type="submit" value="Acheter"
-                    class="text-ks-white bg-ks-green rounded-md py-1 md:py-2 hover:bg-ks-white/50 cursor-pointer">
-                </input>
+                <button type="submit"
+                    class="flex flex-row gap-2 text-ks-white text-lg bg-ks-green rounded-md px-4 py-1 md:py-2 hover:bg-green-500 cursor-pointer">
+                    Je réserve
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </button>
             </div>
         </form>
     </div>

@@ -16,8 +16,8 @@ $title = "Kaiserstuhl - " . " $name";
         </div>
 
         <div class="flex flex-col gap-1 w-[auto] md:w-[50%]">
-            <h1 class="text-xl md:text-2xl"><?= $name ?></h1>
-            <p class="text-lg mb-2"><?= $price ?>€</p>
+            <h1 class="text-xl md:text-2xl lg:text-4xl"><?= $name ?></h1>
+            <p class="text-lg lg:text-xl mb-2"><?= $price ?>€</p>
             <p class="mb-2 text-sm"><?= $description ?></p>
             <p class="mb-4">Livraison : <span class="text-ks-orange"><?= $delivery_time ?></span></p>
 
@@ -26,11 +26,12 @@ $title = "Kaiserstuhl - " . " $name";
                     <label for="quantity">Quantité:</label>
                     <input type="number" name="quantity" id="quantity" min="1" max="99" value="1"
                         class="w-1/4 md:w-auto p-1 md:p-4 md:text-xl border-solid border-2 border-ks-orange bg-ks-black/40 text-ks-white rounded-md">
-                    <div class="bg-ks-orange rounded-md py-1 md:py-2 hover:bg-ks-white/50 text-center cursor-pointer">
+                    <div
+                        class="bg-ks-orange hover:bg-orange-300 rounded-md py-1 md:py-2 hover:bg-ks-white/50 text-center cursor-pointer">
                         Ajouter au
                         panier</div>
                     <input type="submit" value="Acheter"
-                        class="text-ks-white bg-ks-green rounded-md py-1 md:py-2 hover:bg-ks-white/50 cursor-pointer">
+                        class="text-ks-white bg-ks-green hover:bg-green-500 rounded-md py-1 md:py-2 hover:bg-ks-white/50 cursor-pointer">
                     </input>
                 </div>
             </form>
