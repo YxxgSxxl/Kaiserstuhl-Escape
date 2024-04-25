@@ -43,8 +43,8 @@ class routeur
           case 'goods':
             $this->ctlBons->vueBons();
             break;
-          case 'goods' && isset($_GET['id']):
-            $this->ctlBons->vueBon($_GET['id']);
+          case 'goods' && isset($_GET['idItem']):
+            $this->ctlBons->vueBon($_GET['idItem']);
             break;
           case 'contact':
             $this->ctlContact->vueContact();
@@ -76,8 +76,11 @@ class routeur
           case 'logout':
             $this->ctlUser->deconnexion();
             break;
-          case 'play':
+          case 'games':
             $this->ctlJeux->vueJeux();
+            break;
+          case 'games' && isset($_GET['idGame']):
+            $this->ctlJeux->vueJeu($_GET['idGame']);
             break;
           case 'review':
             $this->ctlAvis->vueAvis();
