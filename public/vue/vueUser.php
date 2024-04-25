@@ -57,9 +57,9 @@ extract($users);
 
                 <?php
                 if ($member_role == 'Admin') {
-                    echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un administrateur</p>";
+                    echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un <span class='text-red-500'>administrateur</span></p>";
                 } elseif ($member_role == 'Candidate') {
-                    echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un Candidat</p>";
+                    echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un <span class='text-ks-white'>Candidat</span></p>";
                 } else {
                     echo "<p class='text-ks-orange text-center animate-pulse'>Vous êtes un Membre</p>";
                 }

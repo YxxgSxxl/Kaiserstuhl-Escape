@@ -43,6 +43,9 @@ class routeur
           case 'goods':
             $this->ctlBons->vueBons();
             break;
+          case 'goods' && isset($_GET['id']):
+            $this->ctlBons->vueBon($_GET['id']);
+            break;
           case 'contact':
             $this->ctlContact->vueContact();
             break;
