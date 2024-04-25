@@ -1,9 +1,16 @@
 <?php
 $title = "Kaiserstuhl - Jeux";
 
-var_dump($games);
+if (isset($_SESSION['username'])) {
+    extract($users);
+} else {
+    null;
+}
+
+// var_dump($games);
 ?>
-<section class="h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
+<section class="flex flex-col min-h-screen bg-contain bg-no-repeat bg-ks-black"
+    style="background-image: url('img/ks-bg1.png');">
     <div class="flex-1">
         <h1 class="text-white font-semibold mt-0 pt-20 text-4xl md:text-6xl text-center mb-32 select-none">
             CHOISISSEZ
@@ -11,15 +18,15 @@ var_dump($games);
                 class="text-ks-orange">OFFRIR</span>
         </h1>
 
-        <div class="flex items-center justify-center mb-32">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-16">
+        <div class="flex flex-col items-center gap-12 justify-center mb-32">
+            <div class="grid grid-cols-1 gap-10 sm:gap-4 sm:grid-cols-2 lg:gap-16">
                 <?php
                 $listeJeux = "";
 
                 foreach ($games as $game) {
                     $id = $game['id_game'];
                     $img = $game['img'];
-                    $title = $game['title'];
+                    $titre = $game['title'];
                     $minidesc = $game['minidesc'];
                     $duration = $game['duration'];
                     $length = $game['length'];
@@ -28,6 +35,23 @@ var_dump($games);
                 }
                 ?>
             </div>
+            <?php
+            if (isset($_SESSION['username'])) {
+                if ($member_role == 'Admin') {
+                    echo '<form action="index.php?action=gameAdd" method="POST">
+                        <button type="submit"
+                            class="flex flex-row gap-2 bg-ks-orange hover:bg-orange-300 text-white text-xl font-bold py-2 px-4 rounded">
+                            Ajouter un Jeu
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon><line x1="3" y1="22" x2="21" y2="22"></line></svg>
+                        </button>
+                    </form>';
+                } else {
+                    null;
+                }
+            } else {
+                null;
+            }
+            ?>
         </div>
     </div>
 </section>

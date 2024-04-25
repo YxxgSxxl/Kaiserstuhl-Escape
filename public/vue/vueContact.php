@@ -31,27 +31,27 @@ $title = "Kaiserstuhl - Contact";
     }
 </style>
 
-<section class="h-[100vh] lg:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
+<section class="flex flex-col min-h-screen bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
 
-    <h1 class="text-white font-semibold mt-0 pt-40 text-4xl lg:text-6xl text-center my-40">NOUS <span
+    <h1 class="text-white font-semibold mt-0 pt-20 text-4xl lg:text-6xl text-center my-4O">NOUS <span
             class="text-ks-orange">CONTACTER</span>
     </h1>
 
     <!-- Conteneur pour centrer les détails -->
     <div class="details-container">
-        <details class="details-color w-[300px]">
+        <details class="details-color w-[300px] select-none cursor-pointer">
             <summary class="details-color text-ks-white text-lg p-2">Faire un retour</summary>
             <div class="px-2 py-1">
                 <!-- Contenu des détails -->
             </div>
         </details>
-        <details class="details-color w-[300px]">
+        <details class="details-color w-[300px] select-none cursor-pointer">
             <summary class="details-color text-ks-white text-lg p-2">Faire une suggestion</summary>
             <div class="px-2 py-1">
                 <!-- Contenu des détails -->
             </div>
         </details>
-        <details class="details-color w-[300px]" open>
+        <details class="details-color w-[300px] select-none cursor-pointer" open>
             <summary class="details-color text-ks-white text-lg p-2">Demande d'emploi ou stage</summary>
             <div class="px-2 py-1">
                 <p class="text-ks-white">

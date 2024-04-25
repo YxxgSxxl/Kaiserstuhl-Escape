@@ -22,7 +22,7 @@ if (isset($_SESSION['username'])) {
                 class="text-ks-orange">OFFRIR</span>
         </h1>
 
-        <div class="flex items-center justify-center mb-32">
+        <div class="flex flex-col gap-12 items-center justify-center mb-32">
             <div class="grid grid-cols-1 gap-10 sm:gap-4 sm:grid-cols-2 lg:gap-16">
                 <?php
                 $listeBons = "";
@@ -35,6 +35,25 @@ if (isset($_SESSION['username'])) {
                     $deltime = $item['delivery_time'];
 
                     $listeBons .= include 'components/bons.php';
+                }
+                ?>
+            </div>
+            <div>
+                <?php
+                if (isset($_SESSION['username'])) {
+                    if ($member_role == 'Admin') {
+                        echo '<form action="index.php?action=itemAdd" method="POST">
+                        <button type="submit"
+                            class="flex flex-row gap-2 bg-ks-orange hover:bg-orange-300 text-white text-xl font-bold py-2 px-4 rounded">
+                            Ajouter un cadeau
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="14 2 18 6 7 17 3 17 3 13 14 2"></polygon><line x1="3" y1="22" x2="21" y2="22"></line></svg>
+                        </button>
+                    </form>';
+                    } else {
+                        null;
+                    }
+                } else {
+                    null;
                 }
                 ?>
             </div>

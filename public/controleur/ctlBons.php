@@ -15,13 +15,6 @@ class ctlBons
         $this->user = new members(); // Members
     }
 
-    public function vueBon($id)
-    {
-        $item = $this->item->getItem($id);
-
-        $vue = new vue("Bon"); // Instancie la vue appropriée
-        $vue->afficher(array('item' => $item));
-    }
 
     public function vueBons()
     {
@@ -38,5 +31,12 @@ class ctlBons
                 'users' => $users
             )
         );
+    }
+    public function vueBon($id)
+    {
+        $item = $this->item->getItem($id);
+
+        $vue = new vue("Bon"); // Instancie la vue appropriée
+        $vue->afficher(array('item' => $item));
     }
 }
