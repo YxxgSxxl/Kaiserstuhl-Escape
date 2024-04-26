@@ -87,4 +87,19 @@ class ctlBons
             $users = "";
         }
     }
+
+    public function vuePanier()
+    {
+        $items = $this->item->getItems();
+        $users = $this->user->infoMember($_SESSION['username']);
+
+        $vue = new vue("Panier"); // Instancie la vue appropriée
+        $vue->afficher(
+            array(
+                'items' => $items,
+                'users' => $users
+
+            )
+        );
+    }
 }

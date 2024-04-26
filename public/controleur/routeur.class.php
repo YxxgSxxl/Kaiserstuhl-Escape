@@ -37,9 +37,6 @@ class routeur
     try {
       if (isset($_GET['action'])) {
         switch ($_GET['action']) {
-          case 'about':
-            $this->ctlAbout->vueAbout();
-            break;
           // ITEMS side
           case 'goods':
             $this->ctlBons->vueBons();
@@ -55,6 +52,14 @@ class routeur
             break;
           case 'payment' && isset($_GET['idItemModif']):
             $this->ctlBons->vueModifBon();
+            break;
+          // CART side
+          case 'cart':
+            $this->ctlBons->vuePanier();
+            break;
+          // ABOUT side
+          case 'about':
+            $this->ctlAbout->vueAbout();
             break;
           // CONTACT side
           case 'contact':
