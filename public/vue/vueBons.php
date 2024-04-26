@@ -9,6 +9,8 @@ if (isset($_SESSION['username'])) {
 
 var_dump($_FILES);
 
+global $Conf;
+
 // var_dump($users);
 ?>
 
@@ -31,7 +33,7 @@ var_dump($_FILES);
 
                 foreach ($items as $item) {
                     $id = $item['id_item'];
-                    $img = $item['img'];
+                    $img = $Conf->ITEMSFOLDER . $item['img'];
                     $name = $item['name'];
                     $price = $item['price'];
                     $deltime = $item['delivery_time'];

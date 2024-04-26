@@ -7,6 +7,8 @@ if (isset($_SESSION['username'])) {
     null;
 }
 
+global $Conf;
+
 // var_dump($games);
 ?>
 <section class="flex flex-col min-h-screen bg-contain bg-no-repeat bg-ks-black"
@@ -24,7 +26,7 @@ if (isset($_SESSION['username'])) {
 
                 foreach ($games as $game) {
                     $id = $game['id_game'];
-                    $img = $game['img'];
+                    $img = $Conf->GAMESFOLDER . $game['img'];
                     $titre = $game['title'];
                     $minidesc = $game['minidesc'];
                     $duration = $game['duration'];
