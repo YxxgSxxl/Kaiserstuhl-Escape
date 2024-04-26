@@ -40,15 +40,27 @@ class routeur
           case 'about':
             $this->ctlAbout->vueAbout();
             break;
+          // ITEMS side
           case 'goods':
             $this->ctlBons->vueBons();
             break;
           case 'goods' && isset($_GET['idItem']):
             $this->ctlBons->vueBon($_GET['idItem']);
             break;
+          case 'goodAdd':
+            $this->ctlBons->vueAjoutBon();
+            break;
+          case 'goodAddConfirm':
+            $this->ctlBons->addBon();
+            break;
+          case 'payment' && isset($_GET['idItemModif']):
+            $this->ctlBons->vueModifBon();
+            break;
+          // CONTACT side
           case 'contact':
             $this->ctlContact->vueContact();
             break;
+          // USER side
           case 'login':
             $this->ctlConnection->vueConnection();
             break;
@@ -76,6 +88,7 @@ class routeur
           case 'logout':
             $this->ctlUser->deconnexion();
             break;
+          // GAMES side
           case 'games':
             $this->ctlJeux->vueJeux();
             break;
