@@ -7,7 +7,7 @@ if (isset($_SESSION['username'])) {
     null;
 }
 
-// var_dump($_FILES);
+var_dump($_FILES);
 
 // var_dump($users);
 ?>
