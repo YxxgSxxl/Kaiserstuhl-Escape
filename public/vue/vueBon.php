@@ -4,7 +4,7 @@ extract($item);
 
 $title = "Kaiserstuhl - " . " $name";
 
-
+global $Conf;
 ?>
 
 <section class="flex flex-col min-h-screen p-8 bg-no-repeat bg-ks-black">
@@ -12,7 +12,7 @@ $title = "Kaiserstuhl - " . " $name";
     <div
         class="bg-ks-white/10 w-[100%] md:w-[80%] rounded-lg text-ks-white flex flex-col md:flex-row justify-center mx-auto p-8">
         <div class="w-[80%] md:w-[40%] mx-auto mb-6 flex h-auto justify-center items-center">
-            <img src="<?= $img ?>" alt="" class="border-solid border-4 border-ks-orange">
+            <img src="<?= $Conf->ITEMSFOLDER . $img ?>" alt="" class="border-solid border-4 border-ks-orange">
         </div>
 
         <div class="flex flex-col gap-1 w-[auto] md:w-[50%]">
