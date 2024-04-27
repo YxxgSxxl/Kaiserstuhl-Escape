@@ -1,4 +1,5 @@
 <?php
+require_once "modele/items.class.php";
 require_once "modele/games.class.php";
 require_once "modele/members.class.php";
 
@@ -14,6 +15,14 @@ require_once "controleur/ctlPage.php";
 require_once "config/config.class.php";
 
 session_start();
+
+// Si il n'y a pas de panier, on en crée un
+if (!isset($_SESSION['panier'])) {
+  $_SESSION['panier'] = array();
+  $_SESSION['panier']['idItem'] = array();
+}
+
+// var_dump($_SESSION);
 
 class routeur
 {
@@ -37,18 +46,38 @@ class routeur
     try {
       if (isset($_GET['action'])) {
         switch ($_GET['action']) {
-          case 'about':
-            $this->ctlAbout->vueAbout();
-            break;
+          // ITEMS side
           case 'goods':
             $this->ctlBons->vueBons();
             break;
           case 'goods' && isset($_GET['idItem']):
             $this->ctlBons->vueBon($_GET['idItem']);
             break;
+          case 'goodAdd':
+            $this->ctlBons->vueAjoutBon();
+            break;
+          case 'goodAddConfirm':
+            $this->ctlBons->addBon();
+            break;
+          case 'payment' && isset($_GET['idItemModif']):
+            $this->ctlBons->vueModifBon();
+            break;
+          // CART side
+          case 'cart':
+            $this->ctlBons->vuePanier();
+            break;
+          case 'flushCart':
+            $this->ctlBons->flushCart();
+            break;
+          // ABOUT side
+          case 'about':
+            $this->ctlAbout->vueAbout();
+            break;
+          // CONTACT side
           case 'contact':
             $this->ctlContact->vueContact();
             break;
+          // USER side
           case 'login':
             $this->ctlConnection->vueConnection();
             break;
@@ -76,6 +105,7 @@ class routeur
           case 'logout':
             $this->ctlUser->deconnexion();
             break;
+          // GAMES side
           case 'games':
             $this->ctlJeux->vueJeux();
             break;

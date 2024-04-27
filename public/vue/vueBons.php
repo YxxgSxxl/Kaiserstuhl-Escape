@@ -7,6 +7,11 @@ if (isset($_SESSION['username'])) {
     null;
 }
 
+var_dump($_FILES);
+var_dump($_SESSION);
+
+global $Conf;
+
 // var_dump($users);
 ?>
 
@@ -29,7 +34,7 @@ if (isset($_SESSION['username'])) {
 
                 foreach ($items as $item) {
                     $id = $item['id_item'];
-                    $img = $item['img'];
+                    $img = $Conf->ITEMSFOLDER . $item['img'];
                     $name = $item['name'];
                     $price = $item['price'];
                     $deltime = $item['delivery_time'];
@@ -42,7 +47,7 @@ if (isset($_SESSION['username'])) {
                 <?php
                 if (isset($_SESSION['username'])) {
                     if ($member_role == 'Admin') {
-                        echo '<form action="index.php?action=itemAdd" method="POST">
+                        echo '<form action="index.php?action=goodAdd" method="POST">
                         <button type="submit"
                             class="flex flex-row gap-2 bg-ks-orange hover:bg-orange-300 text-white text-xl font-bold py-2 px-4 rounded">
                             Ajouter un cadeau

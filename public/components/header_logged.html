@@ -45,8 +45,8 @@
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
                 </a>
-                <a href="" class="hidden md:inline">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                <a href="index.php?action=cart" class="hidden md:inline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"
                         stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="10" cy="20.5" r="1" />
                         <circle cx="18" cy="20.5" r="1" />
@@ -57,7 +57,7 @@
         </ul>
     </div>
 
-    <button type="button" class="header-burgericon cursor-pointer flex items-center gap-3 md:hidden">
+    <div class="flex items-center gap-3">
         <a href="index.php?action=user" class="inline md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"
                 stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -65,7 +65,7 @@
                 <circle cx="12" cy="7" r="4"></circle>
             </svg>
         </a>
-        <a href="" class="inline md:hidden">
+        <a href="index.php?action=cart" class="inline md:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"
                 stroke="#f2f2f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="20.5" r="1" />
@@ -73,13 +73,15 @@
                 <path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
             </svg>
         </a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
-            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </button>
+        <button type="button" class="header-burgericon cursor-pointer md:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+    </div>
 </header>
 <!-- HEADER SCRIPT -->
 <script>
