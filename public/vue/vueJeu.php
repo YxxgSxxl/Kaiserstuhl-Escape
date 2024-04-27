@@ -3,6 +3,8 @@ extract($game);
 var_dump($game);
 
 $title = "Kaiserstuhl - " . " $title";
+
+global $Conf;
 ?>
 
 <section class="flex flex-col min-h-screen p-8 bg-no-repeat bg-ks-black">
@@ -13,7 +15,8 @@ $title = "Kaiserstuhl - " . " $title";
         <form action="index.php?action=chekout" method="post">
             <div class="flex flex-col gap-3">
                 <h1 class="text-3xl md:text-4xl text-center font-semibold"><?= $title ?></h1>
-                <img src="<?= $img ?>" alt="<?= $title ?>" class="w-[100%] md:w-[50%] mx-auto rounded-lg">
+                <img src="<?= $Conf->GAMESFOLDER . $img ?>" alt="<?= $title ?>"
+                    class="w-[100%] md:w-[50%] mx-auto rounded-lg">
             </div>
             <div class="flex flex-col gap-3">
                 <p class="text-lg md

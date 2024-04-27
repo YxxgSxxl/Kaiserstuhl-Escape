@@ -11,7 +11,7 @@
         </div>
         <div class="text-ks-orange text-2xl font-semibold items-center"><?= $price ?>€</div>
     </div>
-    <a href="index.php?action=payment"
+    <a href="index.php?action=cart&idProduct=<?= $id ?>"
         class="flex gap-2 justify-center bg-ks-orange hover:bg-orange-300 text-ks-white p-2 items-center text-center">
         <p class="text-lg font-bold">Ajouter au panier</p>
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff"

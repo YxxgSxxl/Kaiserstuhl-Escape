@@ -8,6 +8,7 @@ if (isset($_SESSION['username'])) {
 }
 
 var_dump($_FILES);
+var_dump($_SESSION);
 
 global $Conf;
 
