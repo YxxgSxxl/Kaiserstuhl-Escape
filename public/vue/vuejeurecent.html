@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../stylesheet/styles.css">
+
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 120vh;
+        }
+
+        main {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .item {
+            width: 200px;
+            height: 300px;
+            list-style-type: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            background-position: center;
+            background-size: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+            transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transform: none;
+                border-radius: 0;
+                box-shadow: none;
+                opacity: 1;
+            }
+
+            &:nth-child(3) {
+                left: 50%;
+            }
+
+            &:nth-child(4) {
+                left: calc(50% + 220px);
+            }
+
+            &:nth-child(5) {
+                left: calc(50% + 440px);
+            }
+
+            &:nth-child(6) {
+                left: calc(50% + 660px);
+                opacity: 0;
+            }
+        }
+
+        .content {
+            width: min(30vw, 400px);
+            position: absolute;
+            top: 50%;
+            left: 3rem;
+            transform: translateY(-50%);
+            font: 400 0.85rem helvetica, sans-serif;
+            color: white;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            display: none;
+
+            & .title {
+                font-family: "arial-black";
+                text-transform: uppercase;
+            }
+
+            & .description {
+                line-height: 1.7;
+                margin: 1rem 0 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            & button {
+                width: fit-content;
+                background-color: rgba(0, 0, 0, 0.1);
+                color: white;
+                border: 2px solid white;
+                border-radius: 0.25rem;
+                padding: 0.75rem;
+                cursor: pointer;
+            }
+        }
+
+        .item:nth-of-type(2) .content {
+            display: block;
+            animation: show 0.75s ease-in-out 0.3s forwards;
+        }
+
+        @keyframes show {
+            0% {
+                filter: blur(5px);
+                transform: translateY(calc(-50% + 75px));
+            }
+
+            100% {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        .nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            user-select: none;
+
+            & .btn {
+                background-color: rgba(255, 255, 255, 0.5);
+                color: rgba(0, 0, 0, 0.7);
+                border: 2px solid rgba(0, 0, 0, 0.6);
+                margin: 0 0.25rem;
+                padding: 0.75rem;
+                border-radius: 50%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+
+        @media (width > 650px) and (width < 900px) {
+            .content {
+                & .title {
+                    font-size: 1rem;
+                }
+
+                & .description {
+                    font-size: 0.7rem;
+                }
+
+                & button {
+                    font-size: 0.7rem;
+                }
+            }
+
+            .item {
+                width: 160px;
+                height: 270px;
+
+                &:nth-child(3) {
+                    left: 50%;
+                }
+
+                &:nth-child(4) {
+                    left: calc(50% + 170px);
+                }
+
+                &:nth-child(5) {
+                    left: calc(50% + 340px);
+                }
+
+                &:nth-child(6) {
+                    left: calc(50% + 510px);
+                    opacity: 0;
+                }
+            }
+        }
+
+        @media (width < 650px) {
+            .content {
+                & .title {
+                    font-size: 0.9rem;
+                }
+
+                & .description {
+                    font-size: 0.65rem;
+                }
+
+                & button {
+                    font-size: 0.7rem;
+                }
+            }
+
+            .item {
+                width: 130px;
+                height: 220px;
+
+                &:nth-child(3) {
+                    left: 50%;
+                }
+
+                &:nth-child(4) {
+                    left: calc(50% + 140px);
+                }
+
+                &:nth-child(5) {
+                    left: calc(50% + 280px);
+                }
+
+                &:nth-child(6) {
+                    left: calc(50% + 420px);
+                    opacity: 0;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- HEADER COMPONENT -->
+<header class="bg-ks-black/80 flex items-center justify-between ml-auto h-fit p-4 md:px-9 lg:px-12">
+    <div class="header-logo">
+        <a href="index.php">
+            <img class="w-[150px] lg:w-[250px]" loading="eager" src="img/ks-logo1.png"
+                alt="Logo Kaiserstuhl Escape Game" />
+        </a>
+    </div>
+
+    <!-- Header Menu -->
+    <div
+        class="header-menu bg-ks-black md:bg-transparent flex flex-col text-center items-center p-28 fixed top-0 left-0 h-[100vh] min-w-[100vw] transform -translate-x-full ease-linear duration-200 z-[2] md:w-auto md:h-auto md:relative md:min-w-[auto] md:translate-x-0 md:p-0 md:items-center md:text-center md:text-base md:justify-end">
+        <button type="button" class="header-menuexit cursor-pointer absolute top-4 right-4 md:invisible">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="15" y1="9" x2="9" y2="15"></line>
+                <line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+        </button>
+        <ul class="text-ks-white md:items-center md:text-center md:m-0 md:flex md:gap-6">
+            <li class="mb-5 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=about"
+                    class="hover:underline hover:text-ks-orange">À
+                    PROPOS</a>
+            </li>
+            <li class="mb-5 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=goods"
+                    class="hover:underline hover:text-ks-orange">BONS</a></li>
+            <li class="mb-5 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=contact"
+                    class="hover:underline hover:text-ks-orange">CONTACT</a>
+            </li>
+            <li class="mb-5 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=games"
+                    class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">JOUER</a>
+            </li>
+            <li class="mb-5 text-lg md:mb-0 md:text-sm"><a href="index.php?action=login#login-form"
+                    class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">SE
+                    CONNECTER</a></li>
+            <select
+                class="mb-5 text-lg px-2 py-1 rounded-lg cursor-pointer bg-ks-white/40 hover:bg-ks-grey md:mb-0 md:text-sm lg:text-base"
+                name="" id="">
+                <option value="FR">FR</option>
+                <option value="EN">EN</option>
+            </select>
+        </ul>
+    </div>
+
+    <button type="button" class="header-burgericon cursor-pointer md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+</header>
+    <main>
+        <ul class='slider'>
+            <li class='item'
+                style="background-image: url('../img/Fluch-der-9-Linden-002.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"Lossless Youths"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                        praesentium nisi. Id laboriosam ipsam enim. </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../img/Heading-In-Cantata-Vinum.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"Estrange Bond"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                        praesentium nisi. Id laboriosam ipsam enim. </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item'
+                style="background-image: url('../img/Fluch-der-9-Linden-002.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"The Gate Keeper"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                        praesentium nisi. Id laboriosam ipsam enim. </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('https://images7.alphacoders.com/878/878663.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"Last Trace Of Us"</h2>
+                    <p class='description'>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis
+                        inventore praesentium nisi. Id laboriosam ipsam enim.
+                    </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item'
+                style="background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"Urban Decay"</h2>
+                    <p class='description'>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis
+                        inventore praesentium nisi. Id laboriosam ipsam enim.
+                    </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg')">
+                <div class='content'>
+                    <h2 class='title'>"The Migration"</h2>
+                    <p class='description'> Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+                        praesentium nisi. Id laboriosam ipsam enim. </p>
+                    <button>Read More</button>
+                </div>
+            </li>
+        </ul>
+        <nav class='nav'>
+            <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+            <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    </div>
+
+
+
+
+    <script> const slider = document.querySelector(".slider");
+
+        function activate(e) {
+            const items = document.querySelectorAll(".item");
+            e.target.matches(".next") && slider.append(items[0]);
+            e.target.matches(".prev") && slider.prepend(items[items.length - 1]);
+        }
+
+        document.addEventListener("click", activate, false);</script>
+
+
+
+
+
+    <!-- END HEADER COMPONENT -->
+</body>
+
+</html>
