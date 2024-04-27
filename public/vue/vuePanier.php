@@ -27,6 +27,7 @@ var_dump($_SESSION);
         <div class="flex flex-col gap-4 mb-8">
             <?php
             $listePanier = "";
+            $paniers = array();
 
             if (!empty($_SESSION['panier'])) {
                 foreach ($_SESSION['panier'] as $panier) {

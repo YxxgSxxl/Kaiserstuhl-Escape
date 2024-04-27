@@ -30,7 +30,7 @@ global $Conf;
                     $titre = $game['title'];
                     $minidesc = $game['minidesc'];
                     $duration = $game['duration'];
-                    $length = $game['length'];
+                    $length = $game['lengths'];
 
                     $listeJeux .= include 'components/jeux.php';
                 }

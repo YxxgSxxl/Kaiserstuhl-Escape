@@ -24,7 +24,7 @@ global $Conf;
                 <p class="text-lg md
                 :text-xl">Durée: <?= $duration ?> heures</p>
                 <p class="text-lg md
-                :text-xl">Longueur du parcours: <?= $length ?>km</p>
+                :text-xl">Longueur du parcours: <?= $lengths ?>km</p>
                 <input type="hidden" name="id_game" value="<?= $id_game ?>">
 
                 <button type="submit"

@@ -2,7 +2,7 @@
 extract($item);
 var_dump($item);
 
-$title = "Kaiserstuhl - " . " $name";
+$title = "Kaiserstuhl - " . " $goodname";
 
 global $Conf;
 ?>
@@ -16,7 +16,7 @@ global $Conf;
         </div>
 
         <div class="flex flex-col gap-1 w-[auto] md:w-[50%]">
-            <h1 class="text-xl md:text-2xl lg:text-4xl"><?= $name ?></h1>
+            <h1 class="text-xl md:text-2xl lg:text-4xl"><?= $goodname ?></h1>
             <p class="text-lg lg:text-xl mb-2"><?= $price ?>€</p>
             <p class="mb-2 text-sm"><?= $description ?></p>
             <p class="mb-4">Livraison : <span class="text-ks-orange"><?= $delivery_time ?></span></p>

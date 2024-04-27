@@ -21,6 +21,8 @@ if (!isset($_SESSION['panier'])) {
   $_SESSION['panier'] = array();
 
   // $_SESSION['panier']['idItem'] = array();
+} else {
+
 }
 
 // var_dump($_SESSION);
@@ -60,8 +62,24 @@ class routeur
           case 'goodAddConfirm':
             $this->ctlBons->addBon();
             break;
-          case 'payment' && isset($_GET['idItemModif']):
+          case 'modification' && isset($_GET['idItemModif']):
             $this->ctlBons->vueModifBon();
+            break;
+          case 'modification' && isset($_GET['goodDelete']):
+            $this->ctlBons->deleteBon();
+            break;
+          // GAMES side
+          case 'games':
+            $this->ctlJeux->vueJeux();
+            break;
+          case 'games' && isset($_GET['idGame']):
+            $this->ctlJeux->vueJeu($_GET['idGame']);
+            break;
+          case 'modification' && isset($_GET['idGameModif']):
+            $this->ctlBons->vueModifGame();
+            break;
+          case 'review':
+            $this->ctlAvis->vueAvis();
             break;
           // CART side
           case 'cart':
@@ -105,16 +123,6 @@ class routeur
             break;
           case 'logout':
             $this->ctlUser->deconnexion();
-            break;
-          // GAMES side
-          case 'games':
-            $this->ctlJeux->vueJeux();
-            break;
-          case 'games' && isset($_GET['idGame']):
-            $this->ctlJeux->vueJeu($_GET['idGame']);
-            break;
-          case 'review':
-            $this->ctlAvis->vueAvis();
             break;
         }
       } else {

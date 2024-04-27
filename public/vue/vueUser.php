@@ -134,7 +134,7 @@ extract($users);
         <!-- Script de confirmation de suppression de compte -->
         <script>
             document.getElementById('confirm').addEventListener('click', function () {
-                if (confirm('Voulez-vous vraiment supprimer votre compte ?')) {
+                if (confirm('Do you really want to delete your user?')) {
                     document.getElementById('confirm').submit();
                 } else {
                     event.preventDefault();

@@ -12,6 +12,9 @@ class ctlUser
         $this->user = new members();
     }
 
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function vueUser()
     {
         $message = "";
@@ -99,9 +102,11 @@ class ctlUser
             $vue = new vue("User"); // Instancie la vue appropriée
             $vue->afficher(array('users' => $users));
         }
-
-
     }
+
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function deconnexion()
     {
         $_SESSION = array();
@@ -111,6 +116,9 @@ class ctlUser
         $vue->afficher(array());
     }
 
+    ////////////////////
+    // FONCTION MEMBRE//
+    ////////////////////
     public function modifyUser()
     {
         $users = $this->user->infoMember($_SESSION['username']);
@@ -120,6 +128,9 @@ class ctlUser
         $vue->afficher(array('users' => $users));
     }
 
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function modifyUserConfirm()
     {
         $users = $this->user->infoMember($_SESSION['username']);
@@ -145,6 +156,9 @@ class ctlUser
         header("Location: index.php?action=user");
     }
 
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function deleteUser()
     {
         global $Conf;

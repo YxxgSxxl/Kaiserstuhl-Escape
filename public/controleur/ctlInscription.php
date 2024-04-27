@@ -20,6 +20,9 @@ class ctlInscription
         $vue->afficher(array());
     }
 
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function regMember()
     {
         extract($_POST);

@@ -40,7 +40,9 @@ class ctlBons
         $vue->afficher(array('item' => $item));
     }
 
-    // Foncion nécessitant d'être ADMIN
+    ////////////////////
+    // FONCTION ADMIN //
+    ////////////////////
     public function vueAjoutBon()
     {
         if ($_SESSION['username']) {
@@ -57,10 +59,44 @@ class ctlBons
         }
     }
 
+    ////////////////////
+    // FONCTION ADMIN //
+    ////////////////////
     public function addBon()
     {
         $items = $this->item->getItems();
         $users = $this->user->infoMember($_SESSION['username']);
+
+        global $Conf;
+
+        if (isset($_POST['submit'])) {
+            // Vérifier s'il y a des erreurs lors du téléchargement
+            if ($_FILES['newImage']['error'] === UPLOAD_ERR_OK) {
+                // Déplacer le fichier téléchargé vers le dossier de destination
+                $destination = $Conf->ITEMSFOLDER . $_FILES['newImage']['name'];
+                if (move_uploaded_file($_FILES['newImage']['tmp_name'], $destination)) {
+                    // Récupérer les autres données du formulaire
+                    $img = $_FILES['newImage']['name'];
+                    $goodname = $_POST['goodname'];
+                    $gooddesc = $_POST['gooddesc'];
+                    $price = $_POST['price'];
+                    $delivery_time = $_POST['delivery_time'];
+
+                    // Ajouter les données à la base de données
+                    $this->item->addItem($img, $goodname, $gooddesc, $price, $delivery_time);
+
+                    // Rediriger l'utilisateur vers une autre page
+                    header('Location: index.php?action=goods');
+                    exit; // Terminer l'exécution du script après la redirection
+                } else {
+                    // Gérer l'échec du déplacement du fichier
+                    echo "Erreur lors du déplacement du fichier vers le dossier de destination.";
+                }
+            } else {
+                // Gérer les erreurs de téléchargement
+                echo "Erreur lors du téléchargement du fichier.";
+            }
+        }
 
         $vue = new vue("Bons"); // Instancie la vue appropriée
         $vue->afficher(
@@ -72,6 +108,9 @@ class ctlBons
         );
     }
 
+    ////////////////////
+    // FONCTION ADMIN //
+    ////////////////////
     public function vueModifBon()
     {
         if ($_SESSION['username']) {
@@ -88,6 +127,55 @@ class ctlBons
         }
     }
 
+    ////////////////////
+    // FONCTION ADMIN //
+    ////////////////////
+    public function deleteBon()
+    {
+        $items = $this->item->getItems();
+        $users = $this->user->infoMember($_SESSION['username']);
+
+        global $Conf;
+
+
+        if ($users['member_role'] == 'Admin') {
+            if (isset($_GET['goodDelete'])) {
+
+                $item = $this->item->getItem($_GET['goodDelete']);
+                extract($item);
+
+                var_dump($item);
+
+                // Delete the image file from the goods directory
+                if (file_exists($Conf->ITEMSFOLDER . $item['img'])) {
+                    unlink($Conf->ITEMSFOLDER . $item['img']);
+                }
+
+                $this->item->deleteItem($_GET['goodDelete']);
+
+                header('Location: index.php?action=goods');
+
+                $vue = new vue("Bons"); // Instancie la vue appropriée
+                $vue->afficher(
+                    array(
+                        'items' => $items,
+                        'users' => $users
+                    )
+                );
+            }
+        } else {
+            $erreur = "Vous n'avez pas les droits pour supprimer un item";
+            $vue = new vue("Bons"); // Instancie la vue appropriée
+            $vue->afficher(
+                array('erreur' => $erreur)
+            );
+        }
+
+    }
+
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function vuePanier()
     {
         $items = $this->item->getItems();
@@ -143,6 +231,9 @@ class ctlBons
         }
     }
 
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function flushCart()
     {
         unset($_SESSION['panier']);

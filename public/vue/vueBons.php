@@ -7,8 +7,9 @@ if (isset($_SESSION['username'])) {
     null;
 }
 
-// var_dump($_FILES);
+var_dump($_FILES);
 var_dump($_SESSION);
+// var_dump($users);
 
 global $Conf;
 
@@ -35,7 +36,7 @@ global $Conf;
                 foreach ($items as $item) {
                     $id = $item['id_item'];
                     $img = $Conf->ITEMSFOLDER . $item['img'];
-                    $name = $item['name'];
+                    $name = $item['goodname'];
                     $price = $item['price'];
                     $deltime = $item['delivery_time'];
 
@@ -43,7 +44,7 @@ global $Conf;
                 }
                 ?>
             </div>
-            
+
             <div>
                 <?php
                 if (isset($_SESSION['username'])) {

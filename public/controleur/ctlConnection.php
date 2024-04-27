@@ -12,12 +12,18 @@ class ctlConnection
         $this->member = new members();
     }
 
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function vueConnection()
     {
         $vue = new vue("Connection"); // Instancie la vue appropriée
         $vue->afficher(array());
     }
 
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function logMember()
     {
         extract($_POST);
