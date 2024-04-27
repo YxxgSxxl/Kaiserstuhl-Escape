@@ -19,7 +19,8 @@ session_start();
 // Si il n'y a pas de panier, on en crée un
 if (!isset($_SESSION['panier'])) {
   $_SESSION['panier'] = array();
-  $_SESSION['panier']['idItem'] = array();
+
+  // $_SESSION['panier']['idItem'] = array();
 }
 
 // var_dump($_SESSION);

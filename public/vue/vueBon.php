@@ -21,7 +21,7 @@ global $Conf;
             <p class="mb-2 text-sm"><?= $description ?></p>
             <p class="mb-4">Livraison : <span class="text-ks-orange"><?= $delivery_time ?></span></p>
 
-            <form action="index.php?action=games" method="post">
+            <form action="index.php?action=checkout" method="post">
                 <div class="flex flex-col gap-3">
                     <label for="quantity">Quantité:</label>
                     <input type="number" name="quantity" id="quantity" min="1" max="99" value="1"

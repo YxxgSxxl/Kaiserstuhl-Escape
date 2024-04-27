@@ -7,7 +7,10 @@ $message = "";
 
 <body class="overflow-x-hidden bg-ks-black">
     <section class="h-[60vh] md:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
-        <?= require_once "components/animatedTitle.html" ?>
+
+        <h1 class="text-white font-semibold mt-0 pt-40 text-4xl md:text-6xl text-center my-40 select-none">VOTRE <span
+                class="text-ks-orange">AVENTURE</span><br><span class="text-ks-orange">EN</span> EXTERIEUR
+        </h1>
     </section>
 
     <section class="relative h-[100vh] mb-2 bg-ks-black">

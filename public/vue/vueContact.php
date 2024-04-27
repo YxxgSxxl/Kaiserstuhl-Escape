@@ -33,26 +33,37 @@ $title = "Kaiserstuhl - Contact";
 
 <section class="flex flex-col min-h-screen bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
 
-    <h1 class="text-white font-semibold mt-0 pt-20 text-4xl lg:text-6xl text-center my-4O">NOUS <span
+    <h1 class="text-white font-semibold mt-0 pt-20 text-6xl text-center my-4O">NOUS <span
             class="text-ks-orange">CONTACTER</span>
     </h1>
 
     <!-- Conteneur pour centrer les détails -->
-    <div class="details-container">
-        <details class="details-color w-[300px] select-none cursor-pointer">
-            <summary class="details-color text-ks-white text-lg p-2">Faire un retour</summary>
+    <div class="details-container flex flex-col gap-4">
+        <details class="details-color w-[300px] md:w-[500px] md:text-base lg:text-lg select-none cursor-pointer" open>
+            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">Faire un retour</summary>
             <div class="px-2 py-1">
                 <!-- Contenu des détails -->
+                <p class="text-ks-white">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sapiente dolor, corporis, est
+                    explicabo consequuntur accusamus rem, optio perspiciatis numquam incidunt. Quos cupiditate
+                    temporibus,
+                    nulla fuga aut ut commodi. Placeat.
+                </p>
             </div>
         </details>
-        <details class="details-color w-[300px] select-none cursor-pointer">
-            <summary class="details-color text-ks-white text-lg p-2">Faire une suggestion</summary>
+        <details class="details-color w-[300px] md:w-[500px] md:text-base lg:text-lg select-none cursor-pointer">
+            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">Faire une suggestion</summary>
             <div class="px-2 py-1">
                 <!-- Contenu des détails -->
+                <p class="text-ks-white">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero corrupti non, aut sint repudiandae,
+                    iure ut voluptatum porro dicta error et eos. Possimus numquam animi excepturi soluta, consequuntur
+                    libero in!
+                </p>
             </div>
         </details>
-        <details class="details-color w-[300px] select-none cursor-pointer" open>
-            <summary class="details-color text-ks-white text-lg p-2">Demande d'emploi ou stage</summary>
+        <details class="details-color w-[300px] md:w-[500px] md:text-base lg:text-lg select-none cursor-pointer">
+            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">Demande d'emploi ou stage</summary>
             <div class="px-2 py-1">
                 <p class="text-ks-white">
                     Contactez-nous via le formulaire en cliquant sur le bouton

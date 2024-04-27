@@ -95,6 +95,8 @@ class ctlBons
 
         // Si il y a un idProduct dans l'URL, on le met dans la variable $id
         if (isset($_GET['idProduct'])) {
+
+            $panier = $this->item->getItem($_GET['idProduct']); // IMPORTANT
             // var_dump("LOL");
 
             // On vérifie que l'idProduct est bien un item
@@ -102,11 +104,13 @@ class ctlBons
                 // On ajoute l'idProduct dans le panier
                 // array_push($_SESSION['panier'], $_GET['idProduct']);
 
+                $infos = $this->item->getItem($_GET['idProduct']);
 
-                if (isset($_SESSION['panier']['produits'][$_GET['idProduct']])) {
-                    $_SESSION['panier']['produits'][$_GET['idProduct']]++;
+                if (isset($_SESSION['panier'][$_GET['idProduct']])) {
+                    $_SESSION['panier'][$_GET['idProduct']]['quantité']++;
+                    // $_SESSION['panier'][$_GET['idProduct']] .= [array($infos)];
                 } else {
-                    $_SESSION['panier']['produits'][$_GET['idProduct']] = 1;
+                    $_SESSION['panier'][$_GET['idProduct']]['quantité'] = 1;
                     // echo "L'item a bien été ajouté au panier";
                 }
 
@@ -116,9 +120,9 @@ class ctlBons
                 $vue = new vue("Panier"); // Instancie la vue appropriée
                 $vue->afficher(
                     array(
+                        'panier' => $panier,
                         'items' => $items,
                         'users' => $users
-
                     )
                 );
             } elseif ($this->item->verifItem($_GET['idProduct']) == FALSE) {
@@ -134,7 +138,6 @@ class ctlBons
                 array(
                     'items' => $items,
                     'users' => $users
-
                 )
             );
         }
