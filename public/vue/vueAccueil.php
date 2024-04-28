@@ -26,17 +26,18 @@ $message = "";
             <div class="flex flex-col md:w-[40vw] text-ks-white">
                 <p data-aos="fade-up">Mulhouse</p>
                 <h2 data-aos="fade-up" class="text-4xl md:text-4xl lg:text-6xl text-ks-orange">We-Escape</h2>
-                <p data-aos="fade-up" class="md:text-base lg:text-2xl">Lorem ipsum dolor sit amet consectetur,
+                <p data-aos="fade-up" class="md:text-base lg:text-2xl mb-4">Lorem ipsum dolor sit amet consectetur,
                     adipisicing
                     elit.
                     Corporis quod
                     molestias magnam nemo,
                     hic
                     ratione fugit veritatis ea possimus nihil ut repellendus consequuntur veniam deserunt? Consequuntur
-                    tempora sed quaerat error.</p>
+                    tempora sed quaerat error.
+                </p>
 
-                <div data-aos="fade-up" class="buttons flex gap-4 mt-2 ">
-                    <a style="--clr: #000000" class="button" href="#">
+                <div data-aos="fade-up" class="buttons flex gap-4 mt-2">
+                    <a style="--clr: #000000" class="button text-base md:text-lg" href="index.php?action=games">
                         <span class="button__icon-wrapper">
                             <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 15">
@@ -67,7 +68,7 @@ $message = "";
                 L'<strong>ÉVÉNEMENT </strong>D'<span class="text-ks-orange">ÉQUIPE </span><strong>PARFAIT</strong> AVEC
                 <strong>100% </strong>DE <span class="text-ks-orange">PLAISIR</span> <strong>GARANTI</strong> POUR LES
                 <strong>ENTREPRISES</strong>, LES <strong>ASSOCIATIONS</strong>, LA <strong>FAMILLE</strong> ET LES
-                <strong>AMIS</strong>
+                <strong>AMIS.</strong>
             </p>
             <div data-aos="fade-up" class="leaderboard">
                 <div class=" flex justify-center item-center">
@@ -83,7 +84,7 @@ $message = "";
             </div>
         </section>
 
-        <section class="h-[80vh] bg-ks-black bg-cover bg-no-repeat flex flex-col justify-around"
+        <section class="h-[90vh] bg-ks-black bg-cover bg-no-repeat flex flex-col gap-10 items-center justify-center"
             style="background-image: url('img/teamevent-2.jpg');">
             <h2 class="text-center text-ks-white text-2xl md:text-4xl">Qui sommes-nous ?</h2>
             <div
