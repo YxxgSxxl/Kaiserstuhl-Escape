@@ -87,6 +87,9 @@ class routeur
           case 'cart':
             $this->ctlBons->vuePanier();
             break;
+          case 'cart' && isset($_GET['deleteCartItem']):
+            $this->ctlBons->deleteCartItem($_GET['deleteCartItem']);
+            break;
           case 'flushCart':
             $this->ctlBons->flushCart();
             break;

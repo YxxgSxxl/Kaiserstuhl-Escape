@@ -339,6 +339,29 @@ class ctlBons
     /////////////////////
     // FONCTION MEMBRE //
     /////////////////////
+    public function deleteCartItem($id)
+    {
+        $items = $this->item->getItems();
+        $users = $this->user->infoMember($_SESSION['username']);
+
+        // On supprime l'item du panier
+        unset($_SESSION['panier'][$id]);
+
+        // On redirige vers la page du panier
+        header('Location: index.php?action=cart');
+
+        $vue = new vue("Panier"); // Instancie la vue appropriée
+        $vue->afficher(
+            array(
+                'items' => $items,
+                'users' => $users
+            )
+        );
+    }
+
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function flushCart()
     {
         unset($_SESSION['panier']);
