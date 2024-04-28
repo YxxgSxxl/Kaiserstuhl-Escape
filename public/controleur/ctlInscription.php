@@ -55,7 +55,7 @@ class ctlInscription
                 $vue = new vue("Inscription");
                 $vue->afficher(array('message' => $message));
             } else {
-                if ($this->member->newMemberReg("$username.png", $username, $email, $mdp)) {
+                if ($this->member->newMemberReg(securize("$username.png"), securize($username), securize($email), $mdp)) {
 
                     global $Conf; // Récupère les variables de configuration
 

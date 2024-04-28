@@ -144,10 +144,10 @@ class ctlUser
 
         if (empty($_POST['password'])) {
             // Modifie les informations de l'utilisateur
-            $this->user->updateMemberInfo($_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['phonenum'], $_POST['country'], $_POST['zip_code'], $_POST['city'], $_POST['street'], $id_member);
+            $this->user->updateMemberInfo(securize($_POST['email']), securize($_POST['firstname']), securize($_POST['lastname']), securize($_POST['age']), securize($_POST['phonenum']), securize($_POST['country']), securize($_POST['zip_code']), securize($_POST['city']), securize($_POST['street']), $id_member);
         } else {
             // Modifie les informations de l'utilisateur
-            $this->user->updateMemberInfo($_POST['email'], $_POST['firstname'], $_POST['lastname'], $_POST['phonenum'], $_POST['country'], $_POST['zip_code'], $_POST['city'], $_POST['street'], $id_member);
+            $this->user->updateMemberInfo(securize($_POST['email']), securize($_POST['firstname']), securize($_POST['lastname']), securize($_POST['age']), securize($_POST['phonenum']), securize($_POST['country']), securize($_POST['zip_code']), securize($_POST['city']), securize($_POST['street']), $id_member);
 
             // Modifie le mot de passe de l'utilisateur
             $this->user->updateMemberPass($_POST['password'], $id_member);

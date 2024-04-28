@@ -26,6 +26,7 @@ global $Conf;
             echo $form->inputPassword("password", "Mot de passe");
             echo $form->inputText("firstname", "Prénom", $users['firstname'] ? $users['firstname'] : '');
             echo $form->inputText("lastname", "Nom", $users['lastname'] ? $users['lastname'] : '');
+            echo $form->inputText("age", "Age", $users['age'] ? $users['age'] : '');
             echo $form->inputText("street", "Adresse", $users['street'] ? $users['street'] : '');
             echo $form->inputText("zip_code", "Code postal", $users['zip_code'] ? $users['zip_code'] : '');
             echo $form->inputText("city", "Ville", $users['city'] ? $users['city'] : '');

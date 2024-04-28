@@ -36,7 +36,7 @@ class ctlConnection
             $message .= "<span class='text-red-500'>*Veuillez remplir tous les champs</span><br>";
         }
         if (empty($message)) {
-            if ($this->member->verifUsernameBDD($username) == TRUE) {
+            if ($this->member->verifUsernameBDD(securize($username)) == TRUE) {
                 if ($this->member->verifPassBDD($mdp, $username) == TRUE) {
                     // Réussite de la connexion
                     $_SESSION['username'] = $username;
