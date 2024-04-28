@@ -1,7 +1,7 @@
 <?php
 $title = "Kaiserstuhl - Panier";
 
-var_dump($_SESSION);
+// var_dump($_SESSION['panier']);
 // var_dump($items);
 // var_dump($users);
 // var_dump($panier);
@@ -24,20 +24,48 @@ var_dump($_SESSION);
             ?>
         </small>
 
-        <div class="flex flex-col gap-4 mb-8">
+        <div class="flex flex-col gap-4 mb-8 items-center">
             <?php
             $listePanier = "";
             $paniers = array();
 
             if (!empty($_SESSION['panier'])) {
-                foreach ($_SESSION['panier'] as $panier) {
-
+                foreach ($_SESSION['panier'] as $id => $quantite) {
+                    foreach ($items as $item) {
+                        if ($item['id_item'] == $id) {
+                            $panier = $item;
+                            $panier['quantite'] = $quantite;
+                            $paniers[] = $panier;
+                            // var_dump($item);
+                            // var_dump($panier);            
+                        }
+                    }
+                    // $pan = $_SESSION['panier'] + $panier;
+                    // var_dump($pan);
+                    // if ($_SESSION['panier'])
+            
+                    // var_dump($id);
+                    // var_dump($quantite);
+                    // var_dump($panier);
+            
+                    // foreach ($_SESSION['panier'] as $key => $value) {
+                    //     var_dump($key);
+                    //     var_dump($value);
+                    // }
+            
                     $listePanier .= include 'components/cartItem.php';
                 }
             } else {
                 echo "<span class='text-ks-white mx-auto'>Votre panier est vide</span>";
             }
             ?>
+        </div>
+
+        <div class="my-12">
+            <div class="flex justify-between items-center mb-4">
+                <p class="text-ks-white">Total (HT)</p>
+                <p class="text-ks-orange font-bold">€</p>
+            </div>
         </div>
 
         <a href="index.php?action=payment"

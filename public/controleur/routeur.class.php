@@ -90,10 +90,6 @@ class routeur
           case 'flushCart':
             $this->ctlBons->flushCart();
             break;
-          // ABOUT side
-          case 'about':
-            $this->ctlAbout->vueAbout();
-            break;
           // CONTACT side
           case 'contact':
             $this->ctlContact->vueContact();

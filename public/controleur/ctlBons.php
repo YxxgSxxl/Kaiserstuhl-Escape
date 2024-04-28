@@ -284,14 +284,11 @@ class ctlBons
         if (isset($_GET['idProduct'])) {
 
             $panier = $this->item->getItem($_GET['idProduct']); // IMPORTANT
-            // var_dump("LOL");
 
             // On vérifie que l'idProduct est bien un item
             if ($this->item->verifItem($_GET['idProduct']) == TRUE) {
                 // On ajoute l'idProduct dans le panier
                 // array_push($_SESSION['panier'], $_GET['idProduct']);
-
-                $infos = $this->item->getItem($_GET['idProduct']);
 
                 if (isset($_SESSION['panier'][$_GET['idProduct']])) {
                     $_SESSION['panier'][$_GET['idProduct']]['quantité']++;
@@ -320,9 +317,18 @@ class ctlBons
             }
 
         } else {
+            $panier = "";
+
+            $panier = array();
+            foreach ($_SESSION['panier'] as $idProduct => $infos) {
+                $item = $this->item->getItem($idProduct);
+                $panier[] = $item;
+            }
+
             $vue = new vue("Panier"); // Instancie la vue appropriée
             $vue->afficher(
                 array(
+                    'panier' => $panier,
                     'items' => $items,
                     'users' => $users
                 )

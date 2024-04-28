@@ -1,6 +1,6 @@
 <?php
 extract($item);
-var_dump($item);
+// var_dump($item);
 
 $title = "Kaiserstuhl - " . " $goodname";
 
