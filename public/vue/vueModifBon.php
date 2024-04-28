@@ -1,5 +1,5 @@
 <?php
-$title = "Kaiserstuhl - Boutique";
+$title = "Kaiserstuhl - Modifier Bon";
 
 if (isset($_SESSION['username'])) {
     extract($users);
@@ -7,7 +7,7 @@ if (isset($_SESSION['username'])) {
     null;
 }
 
-// var_dump($items);
+var_dump($item);
 ?>
 
 <section
@@ -19,9 +19,23 @@ if (isset($_SESSION['username'])) {
             <span class="text-ks-orange">MODIFIER </span>UN<span class="text-ks-orange"> CADEAU</span>
         </h1>
 
-        <div class="flex flex-col gap-12 items-center justify-center mb-32">
-            <div class="grid grid-cols-1 gap-10 sm:gap-4 sm:grid-cols-2 lg:gap-16">
-            </div>
+        <div class="flex items-center justify-center mb-32">
+            <?php
+
+            require_once 'components/html/formulaire.class.php';
+
+            $form = new Formulaire();
+
+            echo $form->debutForm("POST", "index.php?action=modificationConfirm", "multipart/form-data");
+            echo $form->inputText("id_item", "ID", $item['id_item'] ? $item['id_item'] : '');
+            echo $form->inputText("goodname", "Nom", $item['goodname'] ? $item['goodname'] : '');
+            echo $form->inputText("gooddesc", "Description", $item['gooddesc'] ? $item['gooddesc'] : '');
+            echo $form->inputNumber("price", "Prix", $item['price'] ? $item['price'] : '');
+            echo $form->inputSelect("delivery_time", "Délai de livraison", ['Instantané' => 'Instantané', '1 Jour' => '1 Jour', '2 Jours' => '2 Jours', '3 Jours' => '3 Jours', '4 Jours' => '4 Jours', '5 Jours' => '5 Jours', '6 Jours' => '6 Jours', '7 Jours' => '7 Jours'], $item['delivery_time'] ? $item['delivery_time'] : '');
+            echo $form->inputImage("img", "Image");
+            echo $form->submit("Modifier");
+            echo $form->finForm();
+            ?>
         </div>
     </div>
 </section>

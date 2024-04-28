@@ -72,29 +72,53 @@ class ctlBons
         if (isset($_POST['submit'])) {
             // Vérifier s'il y a des erreurs lors du téléchargement
             if ($_FILES['newImage']['error'] === UPLOAD_ERR_OK) {
-                // Déplacer le fichier téléchargé vers le dossier de destination
-                $destination = $Conf->ITEMSFOLDER . $_FILES['newImage']['name'];
-                if (move_uploaded_file($_FILES['newImage']['tmp_name'], $destination)) {
-                    // Récupérer les autres données du formulaire
-                    $img = $_FILES['newImage']['name'];
-                    $goodname = $_POST['goodname'];
-                    $gooddesc = $_POST['gooddesc'];
-                    $price = $_POST['price'];
-                    $delivery_time = $_POST['delivery_time'];
+                // Vérifier la taille du fichier téléchargé
+                $maxFileSize = 2 * 1024 * 1024; // 2MB
+                if ($_FILES['newImage']['size'] > $maxFileSize) {
+                    $erreur = "The image size is too large, you need to choose a smaller file.<br>Maximum permitted is 2MB.";
 
-                    // Ajouter les données à la base de données
-                    $this->item->addItem($img, $goodname, $gooddesc, $price, $delivery_time);
-
-                    // Rediriger l'utilisateur vers une autre page
-                    header('Location: index.php?action=goods');
-                    exit; // Terminer l'exécution du script après la redirection
+                    $vue = new vue("Erreur"); // Instancie la vue appropriée
+                    $vue->afficher(
+                        array('erreur' => $erreur)
+                    );
+                    return;
                 } else {
-                    // Gérer l'échec du déplacement du fichier
-                    echo "Erreur lors du déplacement du fichier vers le dossier de destination.";
+                    // Déplacer le fichier téléchargé vers le dossier de destination
+                    $destination = $Conf->ITEMSFOLDER . $_FILES['newImage']['name'];
+                    if (move_uploaded_file($_FILES['newImage']['tmp_name'], $destination)) {
+                        // Récupérer les autres données du formulaire
+                        $img = $_FILES['newImage']['name'];
+                        $goodname = $_POST['goodname'];
+                        $gooddesc = $_POST['gooddesc'];
+                        $price = $_POST['price'];
+                        $delivery_time = $_POST['delivery_time'];
+
+                        // Ajouter les données à la base de données
+                        $this->item->addItem($img, $goodname, $gooddesc, $price, $delivery_time);
+
+                        // Rediriger l'utilisateur vers une autre page
+                        header('Location: index.php?action=goods');
+                        exit; // Terminer l'exécution du script après la redirection
+                    } else {
+                        // Gérer l'échec du déplacement du fichier
+                        $erreur = "Error moving the image file to destination folder.";
+
+                        $vue = new vue("Erreur"); // Instancie la vue appropriée
+                        $vue->afficher(
+                            array('erreur' => $erreur)
+                        );
+                        return;
+                    }
                 }
             } else {
                 // Gérer les erreurs de téléchargement
-                echo "Erreur lors du téléchargement du fichier.";
+                $erreur = "Error while downloading the image file.";
+
+                $vue = new vue("Erreur"); // Instancie la vue appropriée
+                $vue->afficher(
+                    array('erreur' => $erreur)
+                );
+                return;
             }
         }
 
@@ -115,17 +139,92 @@ class ctlBons
     {
         if ($_SESSION['username']) {
             $users = $this->user->infoMember($_SESSION['username']);
+            $item = $this->item->getItem($_GET['idItemModif']);
 
             if ($users['member_role'] == 'Admin') {
                 $vue = new vue("modifBon"); // Instancie la vue appropriée
-                $vue->afficher(array('users' => $users));
+                $vue->afficher(
+                    array(
+                        'users' => $users,
+                        'item' => $item
+                    )
+                );
             } else {
-                header('Location: index.php?action=goods');
+                $erreur = "You don't have the permission to modify an item";
+
+                $vue = new vue("Erreur"); // Instancie la vue appropriée
+                $vue->afficher(
+                    array('erreur' => $erreur)
+                );
             }
-        } else {
-            $users = "";
         }
     }
+
+    ////////////////////
+    // FONCTION ADMIN //
+    ////////////////////
+    public function modifBon()
+    {
+        global $Conf;
+
+        // Vérifier si des données ont été soumises via le formulaire
+        if (!empty($_POST)) {
+            // Récupérer les données du formulaire
+            $id_item = $_POST['id_item'];
+            $goodname = $_POST['goodname'];
+            $gooddesc = $_POST['gooddesc'];
+            $price = $_POST['price'];
+            $delivery_time = $_POST['delivery_time'];
+
+            // Récupérer les informations sur l'article
+            $item = $this->item->getItem($id_item);
+
+            // Vérifier si un fichier a été téléchargé
+            if (!empty($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
+                // Vérifier la taille du fichier téléchargé
+                $maxFileSize = 2 * 1024 * 1024; // 2MB
+                if ($_FILES['img']['size'] > $maxFileSize) {
+                    $erreur = "The image size is too large, you need to choose a smaller file.<br>Maximum permitted is 2MB.";
+                    $vue = new vue("Erreur"); // Instancie la vue appropriée
+                    $vue->afficher(array('erreur' => $erreur));
+                    return; // Arrêter l'exécution de la fonction
+                }
+
+                // Chemin de l'ancienne image
+                $oldImagePath = $Conf->ITEMSFOLDER . $item['img'];
+
+                // Vérifier si l'ancienne image existe et la supprimer
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
+
+                // Déplacer le nouveau fichier téléchargé vers le dossier de destination
+                $newImageName = $_FILES['img']['name'];
+                $destination = $Conf->ITEMSFOLDER . $newImageName;
+                if (!move_uploaded_file($_FILES['img']['tmp_name'], $destination)) {
+                    $erreur = "Error moving the image file to destination folder.";
+                    $vue = new vue("Erreur"); // Instancie la vue appropriée
+                    $vue->afficher(array('erreur' => $erreur));
+                    return; // Arrêter l'exécution de la fonction
+                }
+            } else {
+                // Si aucun fichier n'a été téléchargé, conserver l'ancienne image
+                $newImageName = $item['img'];
+            }
+
+            // Mettre à jour les données dans la base de données
+            $this->item->modifItem(securize($goodname), securize($gooddesc), $price, $delivery_time, $id_item);
+            $this->item->modifImg($newImageName, $id_item);
+
+            // Rediriger l'utilisateur vers une autre page
+            header('Location: index.php?action=goods');
+        } else {
+            // Si aucune donnée n'a été soumise, rediriger l'utilisateur vers une autre page
+            header('Location: index.php?action=goods');
+        }
+    }
+
+
 
     ////////////////////
     // FONCTION ADMIN //

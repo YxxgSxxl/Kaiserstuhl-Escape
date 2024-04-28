@@ -17,29 +17,68 @@ class formulaire
         echo "</form>";
     }
 
-    public function inputText($name, $label = "", $value = "")
+    public function inputText($name, $label = "", $value = "", $placeholder = "")
     {
         return "<div class='ks-label'>
         <label class='lg:text-lg font-normal'>$label:</label>
-        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='text' class='texte' name='" . $name . "' value='" . $value . "' placeholder='Entrez vos infortmations ici...'>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='text' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "''>
         </div>";
     }
 
-    public function inputEmail($name, $label = "", $value = "")
+    public function inputEmail($name, $label = "", $value = "", $placeholder = "")
     {
         return "<div class='ks-label'>
         <label class='lg:text-lg font-normal'>$label:</label>
-        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='email' class='texte' name='" . $name . "' value='" . $value . "' placeholder='Entrez vos infortmations ici...'>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='email' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "''>
         </div>";
     }
 
-    public function inputPassword($name, $label = "", $value = "")
+    public function inputPassword($name, $label = "", $value = "", $placeholder = "")
     {
         return "<div class='ks-label'>
         <label class='lg:text-lg font-normal'>$label:</label>
-        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='password' class='texte' name='" . $name . "' value='" . $value . "' placeholder='Entrez vos infortmations ici...'>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='password' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "''>
         </div>";
     }
+
+    public function inputNumber($name, $label = "", $value = "", $placeholder = "")
+    {
+        return "<div class='ks-label'>
+        <label class='lg:text-lg font-normal'>$label:</label>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='number' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "''>
+        </div>";
+    }
+
+    public function inputSelect($name, $label = "", $options = [], $selected = "")
+    {
+        $selectOptions = "";
+        foreach ($options as $value => $text) {
+            $selectedAttr = ($value == $selected) ? "selected" : "";
+            $selectOptions .= "<option class='text-black' value='" . $value . "' " . $selectedAttr . ">" . $text . "</option>";
+        }
+
+        return "<style>
+        .select-text {
+            color: black;
+        }
+        </style>
+        <div class='ks-label text-white'>
+            <label class='lg:text-lg font-normal text-white'>$label:</label>
+            <select class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light text-white select-text' name='" . $name . "'>
+                " . $selectOptions . "
+            </select>
+        </div>";
+    }
+    public function inputImage($name, $label = "", $required = false)
+    {
+        $requiredAttribute = $required ? "required" : ""; // On ajoute l'attribut required si on le veut, sinon rien
+
+        return "<div class='ks-label text-white'>
+            <label class='lg:text-lg font-normal text-white'>$label:</label>
+            <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light text-white' type='file' name='" . $name . "' accept='.png,.jpg,.jpeg' $requiredAttribute>
+            </div>";
+    }
+
 
     public function inputHidden($name, $value)
     {
@@ -48,6 +87,6 @@ class formulaire
 
     public function submit($value)
     {
-        return "<button type='submit' class='bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10'>" . $value . "</button>";
+        return "<button type='submit' name='submit' class='bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10'>" . $value . "</button>";
     }
 }

@@ -17,10 +17,6 @@ global $Conf;
 
         <div class="flex items-center justify-center mb-32">
             <?php
-            // foreach ($users as $key => $value) {
-            //     echo "Clé : " . $key . ", Valeur : " . $value . "<br>";
-            // }
-            
             require_once 'components/html/formulaire.class.php';
 
             $form = new Formulaire();

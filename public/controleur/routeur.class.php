@@ -64,6 +64,9 @@ class routeur
           case 'modification' && isset($_GET['idItemModif']):
             $this->ctlBons->vueModifBon();
             break;
+          case 'modificationConfirm':
+            $this->ctlBons->modifBon();
+            break;
           case 'modification' && isset($_GET['goodDelete']):
             $this->ctlBons->deleteBon();
             break;

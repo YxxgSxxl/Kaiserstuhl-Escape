@@ -86,6 +86,20 @@ class items extends database
     }
   }
 
+  public function modifItem($goodname, $gooddesc, $price, $delivery_time, $idItem)
+  {
+    $req = 'UPDATE items SET goodname=?, gooddesc=?, price=?, delivery_time=? WHERE id_item=?;';
+    $resultat = $this->execReqPrep($req, array($goodname, $gooddesc, $price, $delivery_time, $idItem));
+    return $resultat;
+  }
+
+  public function modifImg($img, $idItem)
+  {
+    $req = 'UPDATE items SET img=? WHERE id_item=?;';
+    $resultat = $this->execReqPrep($req, array($img, $idItem));
+    return $resultat;
+  }
+
   public function deleteItem($idItem)
   {
     $req = 'DELETE FROM items WHERE id_item=?;';

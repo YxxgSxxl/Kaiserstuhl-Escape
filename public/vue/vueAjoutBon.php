@@ -16,25 +16,32 @@ global $Conf;
         </h1>
 
         <div class="flex items-center justify-center mb-32">
-            <form id="imageUploadForm" style="" action="index.php?action=goodAddConfirm" method="post"
-                enctype="multipart/form-data">
-                <input id="fileInput" type="file" name="newImage" style="" accept=".png,.jpg,.jpeg" required>
-                <input type="hidden" name="MAX_FILE_SIZE" value="30000">
-                <input type="text" name="goodname" placeholder="Nom du bon" required>
-                <input type="number" name="price" placeholder="Prix" required>
-                <input type="text" name="gooddesc" placeholder="Description" required>
-                <select name="delivery_time">
-                    <option value="Instantané">Instantané</option>
-                    <option value="1 jours">1 jour</option>
-                    <option value="2 jours">2 jours</option>
-                    <option value="3 jours">3 jours</option>
-                    <option value="4 jours">4 jours</option>
-                    <option value="5 jours">5 jours</option>
-                    <option value="6 jours">6 jours</option>
-                    <option value="7 jours">7 jours</option>
-                </select>
-                <input type="submit" name="submit">
-            </form>
+            <?php
+            require_once 'components/html/formulaire.class.php';
+
+            $form = new Formulaire();
+
+            echo $form->debutForm("POST", "index.php?action=goodAddConfirm", "multipart/form-data");
+            echo $form->inputImage("newImage", "Image", TRUE);
+            echo $form->inputHidden("MAX_FILE_SIZE", "30000");
+            echo $form->inputText("goodname", "Nom", "", "Nom du bon");
+            echo $form->inputText("gooddesc", "Description", "", "Description du bon");
+            echo $form->inputNumber("price", "Prix", "", "Prix du bon");
+            echo $form->inputSelect("delivery_time", "Délai de livraison", [
+                'Instantané' => 'Instantané',
+                '1 Jour' => '1
+            Jour',
+                '2 Jours' => '2 Jours',
+                '3 Jours' => '3 Jours',
+                '4 Jours' => '4 Jours',
+                '5 Jours' => '5 Jours',
+                '6
+            Jours' => '6 Jours',
+                '7 Jours' => '7 Jours'
+            ]);
+            echo $form->submit("Ajouter");
+            echo $form->finForm();
+            ?>
         </div>
     </div>
 </section>

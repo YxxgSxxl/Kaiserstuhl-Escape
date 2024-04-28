@@ -84,7 +84,7 @@ abstract class database
         $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
         $this->bdd = new PDO('mysql:host=' . $Conf->DBHOST . ';dbname=' . $Conf->DBNAME, $Conf->DBUSER, $Conf->DBPWD, $options);
       } catch (Exception $err) {   // Erreur lors de la connexion à la BDD
-        throw new Exception("Connexion à la BDD"); //.$err->getMessage());
+        throw new Exception("Connection to the DataBase"); //.$err->getMessage());
       }
 
     return $this->bdd;
