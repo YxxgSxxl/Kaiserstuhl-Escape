@@ -5,7 +5,7 @@ global $Conf;
 <div>
     <div
         class="bg-ks-white/10 w-[60%] md:w-[90%] lg:w-[80%] xl:w-[70%] rounded-lg text-ks-white flex flex-col md:flex-row mx-auto mb-2 py-4 px-9 relative">
-        <a href="index.php?action=cart=&deleteCartItem=<?= $id ?>" class="absolute top-4 right-4">
+        <a href="index.php?action=cart=&deleteCartItem=<?= $id ?>" class="absolute top-2 right-1 md:top-4 md:right-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
                 stroke="#787878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -25,7 +25,7 @@ global $Conf;
             </div>
             <div class="text-md w-fit">
                 <label class="text-base text-ks-orange">Prix:</label>
-                <p><?= $panier['price'] ?> €</p>
+                <p class="whitespace-nowrap"><?= $panier['price'] ?> €</p>
             </div>
             <div class="text-md w-fit">
                 <label class="text-base text-ks-orange">Livraison:</label>

@@ -277,46 +277,55 @@ class ctlBons
     /////////////////////
     public function vuePanier()
     {
-        $items = $this->item->getItems();
-        $users = $this->user->infoMember($_SESSION['username']);
 
         // Si il y a un idProduct dans l'URL, on le met dans la variable $id
         if (isset($_GET['idProduct'])) {
 
-            $panier = $this->item->getItem($_GET['idProduct']); // IMPORTANT
+            if (empty($_SESSION['username'])) {
+                $erreur = "Vous devez être connecté pour ajouter un produit au panier";
 
-            // On vérifie que l'idProduct est bien un item
-            if ($this->item->verifItem($_GET['idProduct']) == TRUE) {
-                // On ajoute l'idProduct dans le panier
-                // array_push($_SESSION['panier'], $_GET['idProduct']);
-
-                if (isset($_SESSION['panier'][$_GET['idProduct']])) {
-                    $_SESSION['panier'][$_GET['idProduct']]['quantité']++;
-                    // $_SESSION['panier'][$_GET['idProduct']] .= [array($infos)];
-                } else {
-                    $_SESSION['panier'][$_GET['idProduct']]['quantité'] = 1;
-                    // echo "L'item a bien été ajouté au panier";
-                }
-
-                // On redirige vers la page du panier
-                header('Location: index.php?action=goods');
-
-                $vue = new vue("Panier"); // Instancie la vue appropriée
-                $vue->afficher(
-                    array(
-                        'panier' => $panier,
-                        'items' => $items,
-                        'users' => $users
-                    )
-                );
-            } elseif ($this->item->verifItem($_GET['idProduct']) == FALSE) {
-                // Sinon on redirige vers la page des erreurs
-                $erreur = "Le produit n'existe pas";
                 $vue = new vue("Erreur"); // Instancie la vue appropriée
                 $vue->afficher(array("erreur" => $erreur));
-            }
+            } else {
+                $items = $this->item->getItems();
+                $users = $this->user->infoMember($_SESSION['username']);
+                $panier = $this->item->getItem($_GET['idProduct']); // IMPORTANT
 
+                // On vérifie que l'idProduct est bien un item
+                if ($this->item->verifItem($_GET['idProduct']) == TRUE) {
+                    // On ajoute l'idProduct dans le panier
+                    // array_push($_SESSION['panier'], $_GET['idProduct']);
+
+                    if (isset($_SESSION['panier'][$_GET['idProduct']])) {
+                        $_SESSION['panier'][$_GET['idProduct']]['quantité']++;
+                        // $_SESSION['panier'][$_GET['idProduct']] .= [array($infos)];
+                    } else {
+                        $_SESSION['panier'][$_GET['idProduct']]['quantité'] = 1;
+                        // echo "L'item a bien été ajouté au panier";
+                    }
+
+                    // On redirige vers la page du panier
+                    header('Location: index.php?action=goods');
+
+                    $vue = new vue("Panier"); // Instancie la vue appropriée
+                    $vue->afficher(
+                        array(
+                            'panier' => $panier,
+                            'items' => $items,
+                            'users' => $users
+                        )
+                    );
+                } elseif ($this->item->verifItem($_GET['idProduct']) == FALSE) {
+                    // Sinon on redirige vers la page des erreurs
+                    $erreur = "Le produit n'existe pas";
+                    $vue = new vue("Erreur"); // Instancie la vue appropriée
+                    $vue->afficher(array("erreur" => $erreur));
+                }
+            }
         } else {
+            $items = $this->item->getItems();
+            $users = $this->user->infoMember($_SESSION['username']);
+
             $panier = "";
 
             $panier = array();

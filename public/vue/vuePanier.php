@@ -61,7 +61,7 @@ $title = "Kaiserstuhl - Panier";
             ?>
         </div>
 
-        <div class="my-12 mx-auto w-[40%] md:w-[80%] lg:w-[60%]">
+        <div class="my-12 mx-auto w-[50%] md:w-[80%] lg:w-[60%]">
             <div class="flex justify-between items-center mb-4">
                 <p class="text-ks-white">Total (HT)</p>
                 <p class="text-ks-orange font-bold text-2xl">€</p>
