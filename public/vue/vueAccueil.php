@@ -175,7 +175,7 @@ $message = "";
 
         <section
             class="flex flex-col gap-18 md:gap-12 items-center h-[240vh] md:h-[100vh] mb-0 md:mb-[360px] bg-ks-black">
-            <h2 class="text-4xl text-ks-white text-center py-20">FAITES-VOUS PLAISIR !</h2>
+            <h2 class="text-4xl lg:text-6xl text-ks-white text-center py-20">FAITES-VOUS PLAISIR !</h2>
 
             <div class="flex flex-col md:flex-row gap-6 md:gap-12 px-12 mb-28">
                 <div class="mx-auto">
