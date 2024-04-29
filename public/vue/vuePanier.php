@@ -36,6 +36,9 @@ $title = "Kaiserstuhl - Panier";
                             $panier = $item;
                             $panier['quantite'] = $quantite;
                             $paniers[] = $panier;
+
+
+
                             // var_dump($item);
                             // var_dump($panier);            
                         }
@@ -64,7 +67,15 @@ $title = "Kaiserstuhl - Panier";
         <div class="my-12 mx-auto w-[50%] md:w-[80%] lg:w-[60%]">
             <div class="flex justify-between items-center mb-4">
                 <p class="text-ks-white">Total (HT)</p>
-                <p class="text-ks-orange font-bold text-2xl">€</p>
+                <p class="text-ks-orange font-bold text-2xl">
+                    <?php
+                    $totalPanier = 0;
+                    foreach ($paniers as $panier) {
+                        $totalPanier += $panier['price'] * $panier['quantite']['quantité'];
+                    }
+                    echo $totalPanier;
+                    ?>€
+                </p>
             </div>
         </div>
 
