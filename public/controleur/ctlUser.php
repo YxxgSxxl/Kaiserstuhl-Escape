@@ -112,6 +112,8 @@ class ctlUser
         $_SESSION = array();
         session_destroy();
 
+        $_SESSION['lang'] = 'FR';
+
         $vue = new vue("Accueil"); // Instancie la vue appropriée
         $vue->afficher(array());
     }

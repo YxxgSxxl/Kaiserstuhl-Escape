@@ -33,13 +33,24 @@
             </li>
             <li class="mb-5 text-lg md:mb-0 md:text-sm"><a href="index.php?action=login#login-form"
                     class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">SE
-                    CONNECTER</a></li>
-            <select
-                class="mb-5 text-lg px-2 py-1 rounded-lg cursor-pointer bg-ks-white/40 hover:bg-ks-grey md:mb-0 md:text-sm lg:text-base"
-                name="" id="">
-                <option value="FR">FR</option>
-                <option value="EN">EN</option>
-            </select>
+                    CONNECTER</a>
+            </li>
+            <form id="langForm" action="index.php?action=changeLang" method="post">
+                <select onchange="submitForm()"
+                    class="mb-5 text-lg px-2 py-1 rounded-lg cursor-pointer text-ks-white bg-ks-white/40 hover:bg-ks-grey md:mb-0 md:text-sm lg:text-base"
+                    name="langue" id="">
+                    <option value="FR" name="fr" <?php if ($_SESSION['lang'] === 'FR')
+                        echo 'selected'; ?>>FR</option>
+                    <option value="ENG" name="eng" <?php if ($_SESSION['lang'] === 'ENG')
+                        echo 'selected'; ?>>ENG</option>
+                </select>
+            </form>
+
+            <script>
+                function submitForm() {
+                    document.getElementById("langForm").submit();
+                }
+            </script>
         </ul>
     </div>
 

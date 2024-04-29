@@ -24,7 +24,17 @@ if (!isset($_SESSION['panier'])) {
 
 }
 
-// var_dump($_SESSION);
+$_SESSION['lang'] = 'FR';
+
+if (isset($_POST['langue'])) {
+  $_SESSION['lang'] = $_POST['langue'];
+} else {
+  if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'fr';
+  }
+}
+
+var_dump($_SESSION);
 
 class routeur
 {
@@ -48,6 +58,10 @@ class routeur
     try {
       if (isset($_GET['action'])) {
         switch ($_GET['action']) {
+          // LANGUAGE side
+          case 'changeLang':
+            $this->ctlPage->changeLang();
+            break;
           // ITEMS side
           case 'goods':
             $this->ctlBons->vueBons();

@@ -40,10 +40,10 @@ class vue
     ob_start();       // Démarre la temporisation de sortie
 
     if (isset($_SESSION['username'])) {
-      $header = include "./components/header_logged.html";
+      $header = include "./components/header_logged.php";
 
     } else
-      $header = include "./components/header_notlogged.html";
+      $header = include "./components/header_notlogged.php";
 
     extract($data);   // Extrait les valeurs du tableau associatif $data dans des variables
 
