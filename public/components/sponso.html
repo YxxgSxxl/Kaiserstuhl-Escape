@@ -1,0 +1,75 @@
+<style>
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+    .logos {
+        overflow: hidden;
+        padding: 60px 0;
+        background: white;
+        white-space: nowrap;
+        position: relative;
+    }
+
+    .logos:before,
+    .logos:after {
+        position: absolute;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        content: "";
+        z-index: 2;
+    }
+
+    .logos:before {
+        left: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+    }
+
+    .logos:after {
+        right: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+    }
+
+    .logos:hover .logos-slide {
+        animation-play-state: paused;
+    }
+
+    .logos-slide {
+        display: inline-block;
+        animation: 35s slide infinite linear;
+    }
+
+    .logos-slide img {
+        height: 50px;
+        margin: 0 40px;
+    }
+</style>
+
+<section class="h-[140vh] mt-[100px] bg-ks-black">
+    <div class="logos overflow-hidden py-60 bg-white whitespace-nowrap relative">
+        <div class="logos-slide">
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web01.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web02.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web03.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web04.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web06.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web07.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web08.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web09.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web010.png" />
+            <img class="inline-block h-16 mx-10 select-none" src="img/logos/Logo_web012.png" />
+        </div>
+    </div>
+</section>
+
+<script>
+    var copy = document.querySelector(".logos-slide").cloneNode(true);
+    document.querySelector(".logos").appendChild(copy);
+</script>

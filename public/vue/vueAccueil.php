@@ -172,6 +172,82 @@ $message = "";
         <section class="h-[80vh] bg-ks-black">
             <div></div>
         </section>
+
+        <section
+            class="flex flex-col gap-18 md:gap-12 items-center h-[240vh] md:h-[100vh] mb-0 md:mb-[360px] bg-ks-black">
+            <h2 class="text-4xl text-ks-white text-center py-20">FAITES-VOUS PLAISIR !</h2>
+
+            <div class="flex flex-col md:flex-row gap-6 md:gap-12 px-12 mb-28">
+                <div class="mx-auto">
+                    <img class="h-auto max-w-[300px]" src="img/bonTemplate.jpeg" alt="Template de bon">
+                </div>
+
+                <div class="flex flex-col gap-4">
+                    <h3 class="text-xl md:text-2xl text-ks-white text-center md:text-start">
+                        <strong>Découvrez</strong> nos bons pour des aventures <br><span
+                            class="text-ks-orange">incroyables</span> et <span class="text-ks-orange">mystérieuse</span>
+                        !
+                    </h3>
+                    <div data-aos="fade-up" class="buttons flex gap-4 mt-4 justify-center md:justify-start">
+                        <a style="--clr: #000000" class="button" href="index.php?action=about">
+                            <span class="button__icon-wrapper">
+                                <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 14 15">
+                                    <path fill="currentColor"
+                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
+                                </svg>
+                                <svg class="button__icon-svg  button__icon-svg--copy" xmlns="http://www.w3.org/2000/svg"
+                                    width="10" fill="none" viewBox="0 0 14 15">
+                                    <path fill="currentColor"
+                                        d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
+                                </svg>
+                            </span>
+                            Découvrir nos bons
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-12">
+                <h3 class="text-ks-white text-xl md:text-2xl text-center mb-6">
+                    <strong><span class="text-ks-orange">Utilisez</span> votre</strong> bon d'achat dans une
+                    <strong>énigme</strong> !
+                </h3>
+
+                <div class="flex flex-col md:flex-row gap-6 items-center">
+                    <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]" src="img/Faecher_2.jpg"
+                        alt="Template de bon">
+                    <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]" src="img/Puzzel_2.jpg"
+                        alt="Template de bon">
+                    <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]" src="img/Hertz_4.jpg"
+                        alt="Template de bon">
+                </div>
+
+                <div data-aos="fade-up" class="buttons flex gap-4 mt-6 justify-center">
+                    <a style="--clr: #000000" class="button" href="index.php?action=games">
+                        <span class="button__icon-wrapper">
+                            <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 15">
+                                <path fill="currentColor"
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
+                            </svg>
+                            <svg class="button__icon-svg  button__icon-svg--copy" xmlns="http://www.w3.org/2000/svg"
+                                width="10" fill="none" viewBox="0 0 14 15">
+                                <path fill="currentColor"
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
+                            </svg>
+                        </span>
+                        Découvrir nos énigmes
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <?= require_once "components/sponso.html" ?>
+
+        <section class="h-[80vh] bg-ks-black">
+            <div></div>
+        </section>
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
