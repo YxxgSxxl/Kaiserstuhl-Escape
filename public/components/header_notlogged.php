@@ -20,20 +20,34 @@
         </button>
         <ul class="text-ks-white md:items-center md:text-center md:m-0 md:flex md:gap-6">
             <li class="mb-5 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php#about"
-                    class="hover:underline hover:text-ks-orange">À
-                    PROPOS</a>
+                    class="hover:underline hover:text-ks-orange"><?php if ($_SESSION['lang'] === 'ENG')
+                        echo 'ABOUT';
+                    else
+                        echo "À PROPOS";
+                    ?></a>
             </li>
             <li class="mb-5 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=goods"
-                    class="hover:underline hover:text-ks-orange">BONS</a></li>
+                    class="hover:underline hover:text-ks-orange"><?php if ($_SESSION['lang'] === 'ENG')
+                        echo 'GOODS';
+                    else
+                        echo "BONS";
+                    ?></a></li>
             <li class="mb-5 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=contact"
                     class="hover:underline hover:text-ks-orange">CONTACT</a>
             </li>
             <li class="mb-5 text-lg md:mb-0 md:text-sm lg:text-base"><a href="index.php?action=games"
-                    class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">JOUER</a>
+                    class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md"><?php if ($_SESSION['lang'] === 'ENG')
+                        echo 'PLAY!';
+                    else
+                        echo "JOUER";
+                    ?></a>
             </li>
             <li class="mb-5 text-lg md:mb-0 md:text-sm"><a href="index.php?action=login#login-form"
-                    class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md">SE
-                    CONNECTER</a>
+                    class="hover:text-ks-orange hover:bg-ks-white md:bg-ks-orange md:px-2 md:py-1 md:rounded-md"><?php if ($_SESSION['lang'] === 'ENG')
+                        echo 'LOGIN';
+                    else
+                        echo "SE CONNECTER";
+                    ?></a>
             </li>
             <form id="langForm" action="index.php?action=changeLang" method="post">
                 <select onchange="submitForm()"

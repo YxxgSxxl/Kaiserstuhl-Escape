@@ -1,13 +1,11 @@
 <?php
 $title = "Kaiserstuhl Outdoor";
 $message = "";
-
-// var_dump($user);
 ?>
 
 <body class="overflow-x-hidden bg-ks-black">
     <section class="h-[60vh] md:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
-        <?= require_once "components/animatedTitle.html" ?>
+        <?= require_once "components/animatedTitle.php" ?>
 
         <div class="absolute top-3/4 md:top-[100%]] left-1/2 transform -translate-x-1/2 ">
             <div
@@ -52,7 +50,11 @@ $message = "";
                                 </path>
                             </svg>
                         </span>
-                        découvrir nos jeux
+                        <?php if ($_SESSION['lang'] === 'ENG')
+                            echo 'discover our game';
+                        else
+                            echo "découvrir nos jeux";
+                        ?>
                     </a>
                 </div>
             </div>
@@ -65,14 +67,28 @@ $message = "";
         <section
             class="h-[140vh] md:w-[120vh] mx-auto bg-ks-black flex flex-col items-center justify-center gap-[4rem]">
             <p fade-up class="text-center text-3xl md:text-4xl w-[80%] text-ks-white">
-                L'<strong>ÉVÉNEMENT </strong>D'<span class="text-ks-orange">ÉQUIPE </span><strong>PARFAIT</strong> AVEC
-                <strong>100% </strong>DE <span class="text-ks-orange">PLAISIR</span> <strong>GARANTI</strong> POUR LES
-                <strong>ENTREPRISES</strong>, LES <strong>ASSOCIATIONS</strong>, LA <strong>FAMILLE</strong> ET LES
-                <strong>AMIS.</strong>
+                <?php if ($_SESSION['lang'] === 'ENG')
+                    echo "THE PERFECT <strong>TEAM </strong><span class='text-ks-orange'>EVENT </span> WITH
+                    <strong>100% </strong><span class='text-ks-orange'>PLEASURE</span> FOR THE
+                    <strong>ENTREPRISES</strong>, THE <strong>ASSOCIATIONS</strong>, THE <strong>FAMILY</strong> AND
+                    <strong>FRIENDS.</strong>";
+                else
+                    echo "L'<strong>ÉVÉNEMENT </strong>D'<span class='text-ks-orange'>ÉQUIPE </span><strong>PARFAIT</strong> AVEC
+                    <strong>100% </strong>DE <span class='text-ks-orange'>PLAISIR</span> <strong>GARANTI</strong> POUR LES
+                    <strong>ENTREPRISES</strong>, LES <strong>ASSOCIATIONS</strong>, LA <strong>FAMILLE</strong> ET LES
+                    <strong>AMIS.</strong>";
+                ?>
+
             </p>
             <div data-aos="fade-up" class="leaderboard">
                 <div class=" flex justify-center item-center">
-                    <h4 class="text-base md:text-4xl font-light md:font-semibold">Most active Players</h4>
+                    <h4 class="text-base md:text-4xl font-light md:font-semibold">
+                        <?php if ($_SESSION['lang'] === 'ENG')
+                            echo 'Most Active Players';
+                        else
+                            echo "Les Joueurs les Plus Actifs";
+                        ?>
+                    </h4>
                 </div>
                 <ol class="w-[80%] md:w-[100%] mx-auto">
                     <li><mark>Jerry Wood</mark><small>315</small></li>
@@ -86,7 +102,11 @@ $message = "";
 
         <section class="h-[90vh] bg-ks-black bg-cover bg-no-repeat flex flex-col gap-10 items-center justify-center"
             style="background-image: url('img/teamevent-2.jpg');">
-            <h2 class="text-center text-ks-white text-2xl md:text-4xl">Qui sommes-nous ?</h2>
+            <h2 class="text-center text-ks-white text-2xl md:text-4xl"><?php if ($_SESSION['lang'] === 'ENG')
+                echo 'Wo are we?';
+            else
+                echo "Qui sommes-nous ?";
+            ?></h2>
             <div
                 class="h-[60vh] p-4 flex flex-col w-[80%] gap-form-gap backdrop-blur-xl bg-black/30 text-ks-white rounded-xl max-w-md mx-auto justify-center items-center px-[10%] md:px-[30%]">
                 <div class="flex gap-8 ">
@@ -133,7 +153,11 @@ $message = "";
                                         d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
                                 </svg>
                             </span>
-                            En savoir plus
+                            <?php if ($_SESSION['lang'] === 'ENG')
+                                echo 'learn more';
+                            else
+                                echo "en savoir plus";
+                            ?>
                         </a>
                     </div>
                 </div>
@@ -147,7 +171,11 @@ $message = "";
                     <circle cx="12" cy="12" r="10" />
                     <path d="M16.2 7.8l-2 6.3-6.4 2.1 2-6.3z" />
                 </svg>
-                <p>L'AVENTURE</p>
+                <p> <?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'ADVENTURE';
+                else
+                    echo "L'AVENTURE";
+                ?></p>
             </div>
             <div class="flex flex-col align-middle items-center text-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none"
@@ -165,7 +193,11 @@ $message = "";
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
                 </svg>
-                <p>MYSTERES</p>
+                <p> <?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'MYSTERIES';
+                else
+                    echo "MYSTERES";
+                ?></p>
             </div>
         </section>
 
@@ -175,7 +207,11 @@ $message = "";
 
         <section
             class="flex flex-col gap-18 md:gap-12 items-center h-[240vh] md:h-[100vh] mb-0 md:mb-[360px] bg-ks-black">
-            <h2 class="text-4xl lg:text-6xl text-ks-white text-center py-20">FAITES-VOUS PLAISIR !</h2>
+            <h2 class="text-4xl lg:text-6xl text-ks-white text-center py-20"><?php if ($_SESSION['lang'] === 'ENG')
+                echo 'HAVE FUN!';
+            else
+                echo "FAITES-VOUS PLAISIR !";
+            ?></h2>
 
             <div class="flex flex-col md:flex-row gap-6 md:gap-12 px-12 mb-28">
                 <div class="mx-auto">
@@ -183,13 +219,21 @@ $message = "";
                 </div>
 
                 <div class="flex flex-col gap-4">
-                    <h3 class="text-xl md:text-2xl text-ks-white text-center md:text-start">
+                    <?php if ($_SESSION['lang'] === 'ENG')
+                        echo "<h3 class='text-xl md:text-2xl text-ks-white text-center md:text-start'>
+                        <strong>Discover</strong> our goods for adventure <br><span
+                            class='text-ks-orange'>awesome</span> and <span class='text-ks-orange'>mysterious</span>!
+                    </h3>";
+                    else
+                        echo "<h3 class='text-xl md:text-2xl text-ks-white text-center md:text-start'>
                         <strong>Découvrez</strong> nos bons pour des aventures <br><span
-                            class="text-ks-orange">incroyables</span> et <span class="text-ks-orange">mystérieuse</span>
+                            class='text-ks-orange'>incroyables</span> et <span class='text-ks-orange'>mystérieuse</span>
                         !
-                    </h3>
+                    </h3>";
+                    ?>
+
                     <div data-aos="fade-up" class="buttons flex gap-4 mt-4 justify-center md:justify-start">
-                        <a style="--clr: #000000" class="button" href="index.php?action=about">
+                        <a style="--clr: #000000" class="button" href="index.php?action=goods">
                             <span class="button__icon-wrapper">
                                 <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 14 15">
@@ -202,7 +246,11 @@ $message = "";
                                         d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
                                 </svg>
                             </span>
-                            Découvrir nos bons
+                            <?php if ($_SESSION['lang'] === 'ENG')
+                                echo 'discover our goods';
+                            else
+                                echo "découvrez nos bons";
+                            ?>
                         </a>
                     </div>
                 </div>
@@ -210,8 +258,12 @@ $message = "";
 
             <div class="px-12">
                 <h3 class="text-ks-white text-xl md:text-2xl text-center mb-6">
-                    <strong><span class="text-ks-orange">Utilisez</span> votre</strong> bon d'achat dans une
-                    <strong>énigme</strong> !
+                    <?php if ($_SESSION['lang'] === 'ENG')
+                        echo "<strong><span class='text-ks-orange'>Use</span> your</strong> goods in a <strong>puzzle</strong>!";
+                    else
+                        echo "<strong><span class='text-ks-orange'>Utilisez</span> votre</strong> bon d'achat dans une
+                        <strong>énigme</strong> !";
+                    ?>
                 </h3>
 
                 <div class="flex flex-col md:flex-row gap-6 items-center">
@@ -237,7 +289,11 @@ $message = "";
                                     d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
                             </svg>
                         </span>
-                        Découvrir nos énigmes
+                        <?php if ($_SESSION['lang'] === 'ENG')
+                            echo "discover our puzzles";
+                        else
+                            echo "découvrez nos enigmes";
+                        ?>
                     </a>
                 </div>
             </div>

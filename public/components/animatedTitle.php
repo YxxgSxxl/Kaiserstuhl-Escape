@@ -361,17 +361,30 @@
     }
 </style>
 <div class="h-[50vh] w-auto flex justify-center items-center">
-    <h1
-        class="text-center w-[80%] md:text-5xl lg:text-6xl xl:text-8xl font-semibold z-[2] text-4xl text-ks-white select-none">
+    <?php if ($_SESSION['lang'] === 'ENG')
+        echo "    <h1
+        class='text-center w-[80%] md:text-5xl lg:text-6xl xl:text-8xl font-semibold z-[2] text-4xl text-ks-white select-none'>
+        YOUR ADVENTURE <br><span id='typed'></span><span class='cursor'>&nbsp;</span>
+    </h1>";
+    else
+        echo "    <h1
+        class='text-center w-[80%] md:text-5xl lg:text-6xl xl:text-8xl font-semibold z-[2] text-4xl text-ks-white select-none'>
         VOTRE
-        AVENTURE EN <br><span id="typed"></span><span class="cursor">&nbsp;</span></h1>
+        AVENTURE EN <br><span id='typed'></span><span class='cursor'>&nbsp;</span>
+    </h1>";
+    ?>
 </div>
 
 <script>
     // text typing 
 
     const typedSpan = document.getElementById("typed")
-    const totype = [" Exterieur", " Equipe",]
+    <?php if ($_SESSION['lang'] === 'ENG')
+        echo "const totype = ['OUTDOOR', 'IN TEAM',]";
+    else
+        echo "const totype = ['EXTERIEUR', 'EQUIPE',]";
+    ?>
+
 
     const delayTyping_char = 100;
     const delayErasing_text = 120;

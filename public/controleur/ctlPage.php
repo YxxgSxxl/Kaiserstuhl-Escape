@@ -23,6 +23,6 @@ class ctlPage
         }
 
         $vue = new vue("Accueil"); // Instancie la vue appropriée
-        $vue->afficher(array("langue" => $_POST['langue']));
+        $vue->afficher(array("langue" => $_SESSION['lang']));
     }
 }

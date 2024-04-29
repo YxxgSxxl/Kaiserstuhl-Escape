@@ -20,19 +20,35 @@ global $Conf;
                     class="object-cover rounded-lg">
             </a>
             <div class="text-md w-fit">
-                <label class="text-base text-ks-orange">Nom:</label>
+                <label class="text-base text-ks-orange"><?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Name:';
+                else
+                    echo "Nom:";
+                ?></label>
                 <p><?= $panier['goodname'] ?></p>
             </div>
             <div class="text-md w-fit">
-                <label class="text-base text-ks-orange">Prix:</label>
+                <label class="text-base text-ks-orange"><?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Prix:';
+                else
+                    echo "Price:";
+                ?></label>
                 <p class="whitespace-nowrap"><?= $panier['price'] ?> €</p>
             </div>
             <div class="text-md w-fit">
-                <label class="text-base text-ks-orange">Livraison:</label>
+                <label class="text-base text-ks-orange"><?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Delivery:';
+                else
+                    echo "Livraison:";
+                ?></label>
                 <p><?= $panier['delivery_time'] ?></p>
             </div>
             <div class="text-md w-fit">
-                <label class="text-base text-ks-orange">Quantité:</label>
+                <label class="text-base text-ks-orange"><?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Quantity:';
+                else
+                    echo "Quantité:";
+                ?></label>
                 <p><?= $panier['quantite']['quantité'] ?></p>
             </div>
         </div>

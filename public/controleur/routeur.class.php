@@ -24,8 +24,12 @@ if (!isset($_SESSION['panier'])) {
 
 }
 
-$_SESSION['lang'] = 'FR';
+// Instanciation de la langue par défaut
+if (!isset($_SESSION['lang'])) {
+  $_SESSION['lang'] = 'FR';
+}
 
+// Si l'utilisateur change de langue, on récupère celle-ci
 if (isset($_POST['langue'])) {
   $_SESSION['lang'] = $_POST['langue'];
 } else {
@@ -34,7 +38,7 @@ if (isset($_POST['langue'])) {
   }
 }
 
-var_dump($_SESSION);
+// var_dump($_SESSION);
 
 class routeur
 {

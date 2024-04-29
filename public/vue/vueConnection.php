@@ -31,7 +31,7 @@ $title = "Kaiserstuhl - Connection";
         <hr class="hr-text" data-content="ou bien">
 
         <!-- Bouton de connexion avec les RS -->
-        <?php require 'components/socials.html'; ?>
+        <?php require 'components/socials.php'; ?>
 
         <p class="text-white/60 text-center text-sm">Pas encore client ? <a
                 href="index.php?action=register#register-form" class="underline hover:text-white/80">S'inscrire</a></p>

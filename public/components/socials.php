@@ -23,7 +23,12 @@
             </g>
         </g>
     </svg>
-    <span>Continue with Google</span>
+    <span>
+        <?php if ($_SESSION['lang'] === 'ENG')
+            echo 'Continue with Google';
+        else
+            echo "Continuer avec Google";
+        ?></span>
 </button>
 
 
@@ -42,7 +47,12 @@
         </g>
     </svg>
 
-    <span>Continue with Facebook</span>
+    <span>
+        <?php if ($_SESSION['lang'] === 'ENG')
+            echo 'Continue with Facebook';
+        else
+            echo "Continuer avec Facebook";
+        ?></span>
 </button>
 
 <button
@@ -62,5 +72,10 @@
         </g>
     </svg>
 
-    <span>Continue with Apple</span>
+    <span>
+        <?php if ($_SESSION['lang'] === 'ENG')
+            echo 'Continue with Apple';
+        else
+            echo "Continuer avec Apple";
+        ?></span>
 </button>

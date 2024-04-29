@@ -11,15 +11,26 @@ $title = "Kaiserstuhl - Panier";
 
     <div class="flex-1 w-[100%] mx-auto">
         <h1 class="text-white font-semibold mt-0 pt-6 text-4xl md:text-6xl text-center mb-12 select-none">
-            MON <span class="text-ks-orange"> PANIER</span>
+            <?php if ($_SESSION['lang'] === 'ENG')
+                echo "MY <span class='text-ks-orange'> CART</span>";
+            else
+                echo "MON <span class='text-ks-orange'> PANIER</span>";
+            ?>
+
         </h1>
 
         <small class="text-ks-white flex justify-center my-4">
             <?php
             if (!empty($_SESSION['panier'])) {
-                echo "Vous avez <span class='text-ks-orange px-1'>" . count($_SESSION['panier']) . "</span> article(s) différents dans votre panier";
+                if ($_SESSION['lang'] === 'ENG')
+                    echo "You have <span class='text-ks-orange px-1'>" . count($_SESSION['panier']) . "</span> different good(s) in your shopping cart";
+                else
+                    echo "Vous avez <span class='text-ks-orange px-1'>" . count($_SESSION['panier']) . "</span> article(s) différents dans votre panier";
             } else {
-                echo "Vous avez <span class='text-ks-orange px-1'>0</span> articles différents dans votre panier";
+                if ($_SESSION['lang'] === 'ENG')
+                    echo "You have <span class='text-ks-orange px-1'>0</span> different good(s) in your shopping cart";
+                else
+                    echo "Vous avez <span class='text-ks-orange px-1'>0</span> articles différents dans votre panier";
             }
             ?>
         </small>
@@ -36,37 +47,27 @@ $title = "Kaiserstuhl - Panier";
                             $panier = $item;
                             $panier['quantite'] = $quantite;
                             $paniers[] = $panier;
-
-
-
-                            // var_dump($item);
-                            // var_dump($panier);            
                         }
                     }
-                    // $pan = $_SESSION['panier'] + $panier;
-                    // var_dump($pan);
-                    // if ($_SESSION['panier'])
-            
-                    // var_dump($id);
-                    // var_dump($quantite);
-                    // var_dump($panier);
-            
-                    // foreach ($_SESSION['panier'] as $key => $value) {
-                    //     var_dump($key);
-                    //     var_dump($value);
-                    // }
-            
+
                     $listePanier .= include 'components/cartItem.php';
                 }
             } else {
-                echo "<span class='text-ks-white mx-auto'>Votre panier est vide</span>";
+                if ($_SESSION['lang'] === 'ENG')
+                    echo "<span class='text-ks-white mx-auto'>Your cart is empty</span>";
+                else
+                    echo "<span class='text-ks-white mx-auto'>Votre panier est vide</span>";
             }
             ?>
         </div>
 
         <div class="my-12 mx-auto w-[50%] md:w-[80%] lg:w-[60%]">
             <div class="flex justify-between items-center mb-4">
-                <p class="text-ks-white">Total (HT)</p>
+                <p class="text-ks-white"><?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Total (duty free)';
+                else
+                    echo "Total (HT)";
+                ?></p>
                 <p class="text-ks-orange font-bold text-2xl">
                     <?php
                     $totalPanier = 0;
@@ -81,7 +82,11 @@ $title = "Kaiserstuhl - Panier";
 
         <a href="index.php?action=payment"
             class="flex gap-2 justify-center mx-auto w-fit bg-ks-green hover:bg-green-500 text-ks-white py-2 px-4 mb-4 rounded-lg items-center text-center">
-            <p class="text-lg font-bold">Payer</p>
+            <p class="text-lg font-bold"> <?php if ($_SESSION['lang'] === 'ENG')
+                echo 'Buy';
+            else
+                echo "Payer";
+            ?></p>
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
                 stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="10" cy="20.5" r="1" />
@@ -92,7 +97,11 @@ $title = "Kaiserstuhl - Panier";
 
         <a href="index.php?action=flushCart"
             class="flex gap-2 p-2 items-center mx-auto text-center justify-start text-lg font-bold w-fit text-white/60 hover:text-white">
-            Je souhaite effacer mon panier
+            <?php if ($_SESSION['lang'] === 'ENG')
+                echo 'I want to flush my cart';
+            else
+                echo "Je souhaite effacer mon panier";
+            ?>
         </a>
     </div>
 
