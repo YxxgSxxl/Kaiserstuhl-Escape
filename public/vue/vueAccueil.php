@@ -182,7 +182,7 @@ $message = "";
     <script>
         // Particle animation
         class ParticleAnimation {
-            constructor(el, { quantity = 30, staticity = 50, ease = 50 } = {}) {
+            constructor(el, { quantity = 150, staticity = 40, ease = 50 } = {}) {
                 this.canvas = el;
                 if (!this.canvas) return;
                 this.canvasContainer = this.canvas.parentElement;
