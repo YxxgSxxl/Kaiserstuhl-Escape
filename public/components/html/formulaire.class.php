@@ -79,10 +79,17 @@ class formulaire
             </div>";
     }
 
-
     public function inputHidden($name, $value)
     {
         return "<input type='hidden' name='" . $name . "' value='" . $value . "'>";
+    }
+
+    public function inputID($name, $label = "", $value = "", $placeholder = "")
+    {
+        return "<div class='ks-label' title='You cant edit an ID'>
+        <label class='lg:text-lg font-normal'>$label:</label>
+        <input readonly class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light bg-gray-400/20 text-ks-white' type='text' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "''>
+        </div>";
     }
 
     public function submit($value)

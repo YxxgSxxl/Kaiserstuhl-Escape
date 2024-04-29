@@ -27,7 +27,7 @@ var_dump($item);
             $form = new Formulaire();
 
             echo $form->debutForm("POST", "index.php?action=modificationConfirm", "multipart/form-data");
-            echo $form->inputText("id_item", "ID", $item['id_item'] ? $item['id_item'] : '');
+            echo $form->inputID("id_item", "ID", $item['id_item'] ? $item['id_item'] : '');
             echo $form->inputText("goodname", "Nom", $item['goodname'] ? $item['goodname'] : '');
             echo $form->inputText("gooddesc", "Description", $item['gooddesc'] ? $item['gooddesc'] : '');
             echo $form->inputNumber("price", "Prix", $item['price'] ? $item['price'] : '');
