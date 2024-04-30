@@ -12,43 +12,86 @@ $title = "Kaiserstuhl - Inscription";
 
     <form action="index.php?action=regMember" method="post"
         class="flex flex-col gap-form-gap bg-black/30 text-ks-white p-4 rounded-lg w-full max-w-md mx-auto backdrop-blur-xl">
-        <h1 class="text-ks-white text-4xl text-center mb-2">Inscription</h1>
+        <h1 class="text-ks-white text-4xl text-center mb-2">
+            <?php if ($_SESSION['lang'] === 'ENG')
+                echo 'SIGN UP';
+            else
+                echo 'INSCRIPTION';
+            ?>
+        </h1>
         <div class="ks-label">
-            <label class="lg:text-lg font-normal" for="username">Nom d'<span class="text-ks-orange">utilisateur</span>*
-                :</label>
+            <label class="lg:text-lg font-normal" for="username">
+                <?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Username<span class="text-ks-orange">*</span> :';
+                else
+                    echo 'Nom d\'<span class="text-ks-orange">utilisateur</span>*
+                    :';
+                ?></label>
             <input type="text" name="username" placeholder="Entrez le nom d'utilisateur ici..."
                 class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" autocomplete="off" require>
         </div>
         <div class="ks-label">
-            <label class="lg:text-lg font-normal" for="email">Adresse <span class="text-ks-orange">mail</span>*
-                :</label>
+            <label class="lg:text-lg font-normal" for="email">
+                <?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Mail address<span class="text-ks-orange">*</span>
+                    :';
+                else
+                    echo 'Adresse <span class="text-ks-orange">mail</span>*
+                    :';
+                ?></label>
 
             <input type="text" name="email" placeholder="Entrez vos infortmations ici..."
                 class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" autocomplete="off" require>
         </div>
         <div class="ks-label">
-            <label class="lg:text-lg font-normal" for="mdp">Mot de<span class="text-ks-orange"> passe</span>*
-                :</label>
+            <label class="lg:text-lg font-normal" for="mdp">
+                <?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Password<span class="text-ks-orange">*</span>
+                :';
+                else
+                    echo 'Mot de<span class="text-ks-orange">
+                    passe</span>*
+                :';
+                ?></label>
             <input type="password" name="mdp" placeholder="Entrez votre mot de passe ici..."
                 class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" autocomplete="off" require>
         </div>
         <div class="ks-label">
-            <label class="lg:text-lg font-normal" for="mdp_confirm">Confirmation du mot de<span class="text-ks-orange">
-                    passe</span>* :</label>
+            <label class="lg:text-lg font-normal" for="mdp_confirm">
+                <?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Password confirmation<span class="text-ks-orange">*</span> :';
+                else
+                    echo 'Confirmation du mot de<span class="text-ks-orange">
+                    passe</span>* :';
+                ?></label>
             <input type="password" name="mdp_confirm" placeholder="Confirmez votre mot de passe ici..."
                 class="h-10 px-4 py-1 rounded-lg w-full max-w-md md:max-w-none font-light" autocomplete="off" require>
         </div>
         <a href="index.php?action=regMember"><button type="submit"
-                class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10 w-full">S'inscrire</button>
+                class="bg-ks-orange rounded-lg p-2 font-bold lg:text-lg h-10 w-full">
+                <?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'Sign up';
+                else
+                    echo 'S\'inscrire';
+                ?></button>
         </a>
 
-        <hr class="hr-text" data-content="ou bien">
+        <?php if ($_SESSION['lang'] === 'ENG')
+            echo '<hr class="hr-text" data-content="or">';
+        else
+            echo '<hr class="hr-text" data-content="ou bien">';
+        ?>
 
         <!-- Bouton de connexion avec les RS -->
         <?php require 'components/socials.php'; ?>
 
-        <p class="text-white/60 text-center text-sm">Déjà client ? <a href="index.php?action=login#login-form"
-                class="underline hover:text-white/80">Se connecter</a></p>
+        <?php if ($_SESSION['lang'] === 'ENG')
+            echo '<p class="text-white/60 text-center text-sm">Already client? <a href="index.php?action=login#login-form"
+            class="underline hover:text-white/80">Sign in</a></p>';
+        else
+            echo '<p class="text-white/60 text-center text-sm">Déjà client ? <a href="index.php?action=login#login-form"
+            class="underline hover:text-white/80">Se connecter</a></p>';
+        ?>
         <?php
         if (isset($message)) {
             echo $message;

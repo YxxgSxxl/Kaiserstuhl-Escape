@@ -33,14 +33,26 @@ $title = "Kaiserstuhl - Contact";
 
 <section class="flex flex-col min-h-screen bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
 
-    <h1 class="text-white font-semibold mt-0 pt-20 text-6xl text-center my-4O">NOUS <span
-            class="text-ks-orange">CONTACTER</span>
+    <h1 class="text-white font-semibold mt-0 pt-20 text-6xl text-center my-4O">
+        <?php
+        if ($_SESSION['lang'] === 'ENG')
+            echo "CONTACT <span class='text-ks-orange'>US</span>";
+        else
+            echo "NOUS <span class='text-ks-orange'>CONTACTER</span>";
+        ?>
     </h1>
 
     <!-- Conteneur pour centrer les détails -->
     <div class="details-container flex flex-col gap-4">
         <details class="details-color w-[300px] md:w-[500px] md:text-base lg:text-lg select-none cursor-pointer" open>
-            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">Faire un retour</summary>
+            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">
+                <?php
+                if ($_SESSION['lang'] === 'ENG')
+                    echo "Make a review";
+                else
+                    echo "Faire un retour";
+                ?>
+            </summary>
             <div class="px-2 py-1">
                 <!-- Contenu des détails -->
                 <p class="text-ks-white">
@@ -52,7 +64,14 @@ $title = "Kaiserstuhl - Contact";
             </div>
         </details>
         <details class="details-color w-[300px] md:w-[500px] md:text-base lg:text-lg select-none cursor-pointer">
-            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">Faire une suggestion</summary>
+            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">
+                <?php
+                if ($_SESSION['lang'] === 'ENG')
+                    echo "Make a suggestion";
+                else
+                    echo "Faire une suggestion";
+                ?>
+            </summary>
             <div class="px-2 py-1">
                 <!-- Contenu des détails -->
                 <p class="text-ks-white">
@@ -63,7 +82,14 @@ $title = "Kaiserstuhl - Contact";
             </div>
         </details>
         <details class="details-color w-[300px] md:w-[500px] md:text-base lg:text-lg select-none cursor-pointer">
-            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">Demande d'emploi ou stage</summary>
+            <summary class="details-color text-ks-white text-2xl md:text-4xl p-2">
+                <?php
+                if ($_SESSION['lang'] === 'ENG')
+                    echo "Job opportunity or internship request";
+                else
+                    echo "Demande d'emploi ou stage";
+                ?>
+            </summary>
             <div class="px-2 py-1">
                 <p class="text-ks-white">
                     Contactez-nous via le formulaire en cliquant sur le bouton

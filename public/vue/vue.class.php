@@ -50,7 +50,7 @@ class vue
 
     require $this->fichierVue;   // Génère le contenu de la page en fonction de l'action
 
-    $footer = require "./components/footer.html";     // Charge le footer
+    $footer = require "./components/footer.php";     // Charge le footer
     $contenu = ob_get_clean();      // Lit le contenu du tampon de sortie puis l'efface
 
 

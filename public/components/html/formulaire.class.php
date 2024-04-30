@@ -45,7 +45,7 @@ class formulaire
     {
         return "<div class='ks-label'>
         <label class='lg:text-lg font-normal'>$label:</label>
-        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='number' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "''>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='number' class='texte' name='" . $name . "' value='" . intval($value) . "' placeholder=''" . $placeholder . "''>
         </div>";
     }
 

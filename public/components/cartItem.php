@@ -29,9 +29,9 @@ global $Conf;
             </div>
             <div class="text-md w-fit">
                 <label class="text-base text-ks-orange"><?php if ($_SESSION['lang'] === 'ENG')
-                    echo 'Prix:';
+                    echo 'Price:';
                 else
-                    echo "Price:";
+                    echo "Prix:";
                 ?></label>
                 <p class="whitespace-nowrap"><?= $panier['price'] ?> €</p>
             </div>

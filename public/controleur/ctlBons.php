@@ -282,7 +282,10 @@ class ctlBons
         if (isset($_GET['idProduct'])) {
 
             if (empty($_SESSION['username'])) {
-                $erreur = "Vous devez être connecté pour ajouter un produit au panier";
+                if ($_SESSION['lang'] === 'ENG')
+                    $erreur = "You need to be logged in to add a product to the cart";
+                else
+                    $erreur = "Vous devez être connecté pour ajouter un produit au panier";
 
                 $vue = new vue("Erreur"); // Instancie la vue appropriée
                 $vue->afficher(array("erreur" => $erreur));
@@ -317,7 +320,11 @@ class ctlBons
                     );
                 } elseif ($this->item->verifItem($_GET['idProduct']) == FALSE) {
                     // Sinon on redirige vers la page des erreurs
-                    $erreur = "Le produit n'existe pas";
+                    if ($_SESSION['lang'] === 'ENG')
+                        $erreur = "The product does not exist";
+                    else
+                        $erreur = "Le produit n'existe pas";
+
                     $vue = new vue("Erreur"); // Instancie la vue appropriée
                     $vue->afficher(array("erreur" => $erreur));
                 }

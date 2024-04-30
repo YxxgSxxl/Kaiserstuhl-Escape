@@ -1,5 +1,9 @@
 <?php
-$title = "Kaiserstuhl - Panier";
+if ($_SESSION['lang'] === 'ENG')
+    $title = "Kaiserstuhl - Cart";
+else
+    $title = "Kaiserstuhl - Panier";
+
 
 // var_dump($_SESSION['panier']);
 // var_dump($items);

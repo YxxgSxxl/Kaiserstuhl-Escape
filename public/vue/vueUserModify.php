@@ -21,19 +21,35 @@ global $Conf;
 
             $form = new Formulaire();
 
-            echo $form->debutForm("POST", "index.php?action=userModifyConfirm", "multipart/form-data");
-            echo $form->inputEmail("email", "Email", $users['email'] ? $users['email'] : '');
-            echo $form->inputPassword("password", "Mot de passe");
-            echo $form->inputText("firstname", "Prénom", $users['firstname'] ? $users['firstname'] : '');
-            echo $form->inputText("lastname", "Nom", $users['lastname'] ? $users['lastname'] : '');
-            echo $form->inputText("age", "Age", $users['age'] ? $users['age'] : '');
-            echo $form->inputText("street", "Adresse", $users['street'] ? $users['street'] : '');
-            echo $form->inputText("zip_code", "Code postal", $users['zip_code'] ? $users['zip_code'] : '');
-            echo $form->inputText("city", "Ville", $users['city'] ? $users['city'] : '');
-            echo $form->inputText("country", "Pays", $users['country'] ? $users['country'] : '');
-            echo $form->inputText("phonenum", "téléphone", $users['phonenum'] ? $users['phonenum'] : '');
-            echo $form->submit("Modifier");
-            echo $form->finForm();
+            if ($_SESSION['lang'] === 'ENG') {
+                echo $form->debutForm("POST", "index.php?action=userModifyConfirm", "multipart/form-data");
+                echo $form->inputEmail("email", "Email", $users['email'] ? $users['email'] : '');
+                echo $form->inputPassword("password", "Password");
+                echo $form->inputText("firstname", "Firstname", $users['firstname'] ? $users['firstname'] : '');
+                echo $form->inputText("lastname", "Lastname", $users['lastname'] ? $users['lastname'] : '');
+                echo $form->inputNumber("age", "Age", $users['age'] ? $users['age'] : '0');
+                echo $form->inputText("street", "Address", $users['street'] ? $users['street'] : '');
+                echo $form->inputText("zip_code", "Zip code", $users['zip_code'] ? $users['zip_code'] : '');
+                echo $form->inputText("city", "City", $users['city'] ? $users['city'] : '');
+                echo $form->inputText("country", "Country", $users['country'] ? $users['country'] : '');
+                echo $form->inputText("phonenum", "Phone number", $users['phonenum'] ? $users['phonenum'] : '');
+                echo $form->submit("Modify");
+                echo $form->finForm();
+            } else {
+                echo $form->debutForm("POST", "index.php?action=userModifyConfirm", "multipart/form-data");
+                echo $form->inputEmail("email", "Email", $users['email'] ? $users['email'] : '');
+                echo $form->inputPassword("password", "Mot de passe");
+                echo $form->inputText("firstname", "Prénom", $users['firstname'] ? $users['firstname'] : '');
+                echo $form->inputText("lastname", "Nom", $users['lastname'] ? $users['lastname'] : '');
+                echo $form->inputNumber("age", "Age", $users['age'] ? $users['age'] : '0');
+                echo $form->inputText("street", "Adresse", $users['street'] ? $users['street'] : '');
+                echo $form->inputText("zip_code", "Code postal", $users['zip_code'] ? $users['zip_code'] : '');
+                echo $form->inputText("city", "Ville", $users['city'] ? $users['city'] : '');
+                echo $form->inputText("country", "Pays", $users['country'] ? $users['country'] : '');
+                echo $form->inputText("phonenum", "téléphone", $users['phonenum'] ? $users['phonenum'] : '');
+                echo $form->submit("Modifier");
+                echo $form->finForm();
+            }
             ?>
         </div>
     </div>

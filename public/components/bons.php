@@ -7,14 +7,28 @@
     <div class="flex flex-row justify-between bg-[#2A2A2A] w-full p-2">
         <div class="text-ks-white flex flex-col ">
             <h3 class="text-xl"><?= $name ?></h3>
-            <small><span class="text-ks-orange">Temps</span> de livraison : <span
-                    class="text-ks-orange"><?= $deltime ?></span></small>
+            <small>
+                <?php if ($_SESSION['lang'] === 'ENG')
+                    echo '<span class="text-ks-orange">Delivery</span> time: <span
+                                        class="text-ks-orange">' . $deltime . '</span>';
+                else
+                    echo '<span class="text-ks-orange">Temps</span> de livraison: <span
+                    class="text-ks-orange">' . $deltime . '</span>';
+                ?>
+            </small>
         </div>
         <div class="text-ks-orange text-2xl font-semibold items-center"><?= $price ?>€</div>
     </div>
     <a href="index.php?action=cart&idProduct=<?= $id ?>"
         class="flex gap-2 justify-center bg-ks-orange hover:bg-orange-300 text-ks-white p-2 items-center text-center">
-        <p class="text-lg font-bold">Ajouter au panier</p>
+        <p class="text-lg font-bold">
+            <?php if ($_SESSION['lang'] === 'ENG')
+                echo 'Add to cart';
+            else
+                echo 'Ajouter au panier';
+            ?>
+        </p>
+
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="10" cy="20.5" r="1" />
@@ -25,14 +39,16 @@
     <?php
     if (isset($_SESSION['username'])) {
         if ($member_role == 'Admin') {
-            echo '<a href="index.php?action=modification&idItemModif=' . $id . '"
+            if ($_SESSION['lang'] === 'ENG')
+                echo '<a href="index.php?action=modification&idItemModif=' . $id . '"
             class="flex gap-2 justify-center bg-ks-white hover:bg-gray-200 text-ks-black p-2 items-center text-center">
-            <p class="text-lg font-bold">Modifier</p>
+            <p class="text-lg font-bold">Modify</p>
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></svg>
         </a>
         <a id="confirmDelete" onclick="confirmDelete()" class="cursor-pointer w-full items-center mx-auto">
             <form class="w-full mb-8" action="index.php?action=modification&goodDelete=' . $id . '" method="post">
-                <button class="flex gap-2 justify-center bg-red-500/30 hover:bg-red-800 w-full text-ks-white p-2 items-center text-center text-lg font-bold">Supprimer</button>   
+                <button class="flex gap-2 justify-center bg-red-500/30 hover:bg-red-800 w-full text-ks-white p-2 items-center text-center text-lg font-bold">Delete
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></button>   
             </form>
         </a>
         <!-- Script de confirmation de suppression du bon -->
@@ -45,6 +61,29 @@
             }
         }
         </script>';
+            else
+                echo '<a href="index.php?action=modification&idItemModif=' . $id . '"
+            class="flex gap-2 justify-center bg-ks-white hover:bg-gray-200 text-ks-black p-2 items-center text-center">
+            <p class="text-lg font-bold">Modifier</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g fill="none" fill-rule="evenodd"><path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8"/></g></svg>
+        </a>
+        <a id="confirmDelete" onclick="confirmDelete()" class="cursor-pointer w-full items-center mx-auto">
+            <form class="w-full mb-8" action="index.php?action=modification&goodDelete=' . $id . '" method="post">
+                <button class="flex gap-2 justify-center bg-red-500/30 hover:bg-red-800 w-full text-ks-white p-2 items-center text-center text-lg font-bold">Supprimer
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></button>   
+            </form>
+        </a>
+        <!-- Script de confirmation de suppression du bon -->
+        <script>
+        function confirmDelete() {
+            if (confirm("Voulez-vous vraiment supprimer ce bon ?")) {
+            document.getElementById("deleteForm").submit();
+            } else {
+                event.preventDefault();
+            }
+        }
+        </script>';
+
         } else {
             null;
         }
