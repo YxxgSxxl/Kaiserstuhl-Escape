@@ -7,6 +7,46 @@ if (!empty($succes)) {
 }
 ?>
 
+
+<head>
+    <style>
+        .container {
+            width: 100%;
+            height: 100%;
+            --s: 200px;
+            /* control the size */
+            --c1: #1d1d1d;
+            --c2: #4e4f51;
+            --c3: #3c3c3c;
+
+            background: repeating-conic-gradient(from 30deg,
+                    #0000 0 120deg,
+                    var(--c3) 0 180deg) calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+                repeating-conic-gradient(from 30deg,
+                    var(--c1) 0 60deg,
+                    var(--c2) 0 120deg,
+                    var(--c3) 0 180deg);
+            background-size: var(--s) calc(var(--s) * 0.577);
+        }
+
+        .containere {
+            width: 100%;
+            height: 100%;
+            --s: 37px;
+            /* control the size */
+
+            --c: #0000, #282828 0.5deg 119.5deg, #0000 120deg;
+            --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+            --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+            --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+            background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
+                var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
+                var(--g3) 0 calc(1.73 * var(--s)) #1e1e1e;
+            background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+        }
+    </style>
+</head>
+
 <body class="overflow-x-hidden bg-ks-black">
     <section class="h-[60vh] md:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
         <?= require_once "components/animatedTitle.php" ?>
@@ -206,39 +246,87 @@ if (!empty($succes)) {
             </div>
         </section>
 
-        <section class="h-[100vh] bg-ks-black">
-            <div></div>
-        </section>
+
 
         <section
             class="flex flex-col gap-18 md:gap-12 items-center h-[240vh] md:h-[100vh] mb-0 md:mb-[360px] bg-ks-black">
-            <h2 class="text-4xl lg:text-6xl text-ks-white text-center py-20"><?php if ($_SESSION['lang'] === 'ENG')
-                echo 'HAVE FUN!';
-            else
-                echo "FAITES-VOUS PLAISIR !";
-            ?></h2>
 
-            <div class="flex flex-col md:flex-row gap-6 md:gap-12 px-12 mb-28">
-                <div class="mx-auto">
-                    <img class="h-auto max-w-[300px]" src="img/bonTemplate.jpeg" alt="Template de bon">
-                </div>
 
-                <div class="flex flex-col gap-4">
-                    <?php if ($_SESSION['lang'] === 'ENG')
-                        echo "<h3 class='text-xl md:text-2xl text-ks-white text-center md:text-start'>
+            </div>
+
+
+           
+
+                <h2 class="text-4xl lg:text-6xl text-ks-white text-center py-20"><?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'HAVE FUN!';
+                else
+                    echo "FAITES-VOUS PLAISIR !";
+                ?></h2>
+
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 px-12 mb-28">
+                    <div class="mx-auto">
+                        <img class="h-auto max-w-[300px]" src="img/bonTemplate.jpeg" alt="Template de bon">
+                    </div>
+
+                    <div class="flex flex-col gap-4">
+                        <?php if ($_SESSION['lang'] === 'ENG')
+                            echo "<h3 class='text-xl md:text-3xl text-ks-white text-center md:text-start'>
                         <strong>Discover</strong> our goods for adventure <br><span
                             class='text-ks-orange'>awesome</span> and <span class='text-ks-orange'>mysterious</span>!
                     </h3>";
-                    else
-                        echo "<h3 class='text-xl md:text-2xl text-ks-white text-center md:text-start'>
+                        else
+                            echo "<h3 class='text-xl md:text-3xl text-ks-white text-center md:text-start'>
                         <strong>Découvrez</strong> nos bons pour des aventures <br><span
                             class='text-ks-orange'>incroyables</span> et <span class='text-ks-orange'>mystérieuse</span>
                         !
                     </h3>";
-                    ?>
+                        ?>
 
-                    <div data-aos="fade-up" class="buttons flex gap-4 mt-4 justify-center md:justify-start">
-                        <a style="--clr: #000000" class="button" href="index.php?action=goods">
+                        <div data-aos="fade-up" class="buttons flex gap-4 mt-4 justify-center md:justify-start">
+                            <a style="--clr: #000000" class="button" href="index.php?action=goods">
+                                <span class="button__icon-wrapper">
+                                    <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 15">
+                                        <path fill="currentColor"
+                                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
+                                    </svg>
+                                    <svg class="button__icon-svg  button__icon-svg--copy"
+                                        xmlns="http://www.w3.org/2000/svg" width="10" fill="none" viewBox="0 0 14 15">
+                                        <path fill="currentColor"
+                                            d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
+                                    </svg>
+                                </span>
+                                <?php if ($_SESSION['lang'] === 'ENG')
+                                    echo 'discover our goods';
+                                else
+                                    echo "découvrez nos bons";
+                                ?>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-12">
+                    <h3 class="text-ks-white text-xl md:text-2xl text-center mb-6">
+                        <?php if ($_SESSION['lang'] === 'ENG')
+                            echo "<strong><span class='text-ks-orange'>Use</span> your</strong> goods in a <strong>puzzle</strong>!";
+                        else
+                            echo "<strong><span class='text-ks-orange'>Utilisez</span> votre</strong> bon d'achat dans une
+                        <strong>énigme</strong> !";
+                        ?>
+                    </h3>
+
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]"
+                            src="img/Faecher_2.jpg" alt="Template de bon">
+                        <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]"
+                            src="img/Puzzel_2.jpg" alt="Template de bon">
+                        <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]"
+                            src="img/Hertz_4.jpg" alt="Template de bon">
+                    </div>
+
+                    <div data-aos="fade-up" class="buttons flex gap-4 mt-6 justify-center">
+                        <a style="--clr: #000000" class="button" href="index.php?action=games">
                             <span class="button__icon-wrapper">
                                 <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 14 15">
@@ -252,63 +340,434 @@ if (!empty($succes)) {
                                 </svg>
                             </span>
                             <?php if ($_SESSION['lang'] === 'ENG')
-                                echo 'discover our goods';
+                                echo "discover our puzzles";
                             else
-                                echo "découvrez nos bons";
+                                echo "découvrez nos enigmes";
                             ?>
                         </a>
                     </div>
-                </div>
-            </div>
-
-            <div class="px-12">
-                <h3 class="text-ks-white text-xl md:text-2xl text-center mb-6">
-                    <?php if ($_SESSION['lang'] === 'ENG')
-                        echo "<strong><span class='text-ks-orange'>Use</span> your</strong> goods in a <strong>puzzle</strong>!";
-                    else
-                        echo "<strong><span class='text-ks-orange'>Utilisez</span> votre</strong> bon d'achat dans une
-                        <strong>énigme</strong> !";
-                    ?>
-                </h3>
-
-                <div class="flex flex-col md:flex-row gap-6 items-center">
-                    <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]" src="img/Faecher_2.jpg"
-                        alt="Template de bon">
-                    <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]" src="img/Puzzel_2.jpg"
-                        alt="Template de bon">
-                    <img class="h-auto max-w-[280px] md:w-[200px] lg:max-w-[340px] lg:w-[340px]" src="img/Hertz_4.jpg"
-                        alt="Template de bon">
-                </div>
-
-                <div data-aos="fade-up" class="buttons flex gap-4 mt-6 justify-center">
-                    <a style="--clr: #000000" class="button" href="index.php?action=games">
-                        <span class="button__icon-wrapper">
-                            <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 14 15">
-                                <path fill="currentColor"
-                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
-                            </svg>
-                            <svg class="button__icon-svg  button__icon-svg--copy" xmlns="http://www.w3.org/2000/svg"
-                                width="10" fill="none" viewBox="0 0 14 15">
-                                <path fill="currentColor"
-                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z" />
-                            </svg>
-                        </span>
-                        <?php if ($_SESSION['lang'] === 'ENG')
-                            echo "discover our puzzles";
-                        else
-                            echo "découvrez nos enigmes";
-                        ?>
-                    </a>
-                </div>
-            </div>
+                
         </section>
 
-        <?= require_once "components/sponso.html" ?>
 
-        <section class="h-[100vh] bg-ks-black">
-            <div></div>
+        <section>
+
+            <h2 class="text-4xl lg:text-6xl text-ks-white text-center py-20"><?php if ($_SESSION['lang'] === 'ENG')
+                echo 'THEY TRUST US!';
+            else
+                echo "NOS COLLABORATEURS!";
+            ?></h2>
+            <?= require_once "components/sponso.html" ?>
+
         </section>
+
+        <section class="h-[200vh] bg-ks-black">
+            <div class="containere flex flex-col items-center gap-[40px]">
+                <h2 class="text-4xl lg:text-6xl text-ks-white text-center py-20"><?php if ($_SESSION['lang'] === 'ENG')
+                    echo 'THEY TRUST US!';
+                else
+                    echo "ILS NOUS FONT CONFIANCES !";
+                ?></h2>
+                <div class="grid gap-4 z-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <!-- Card 1 -->
+                    <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                            <div>
+                                <div class="flex gap-1 text-yellow-500">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <!-- Ajoutez autant d'étoiles que nécessaire -->
+                                </div>
+                                <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptatem alias ut
+                            provident
+                            sapiente
+                            repellendus.
+                        </p>
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                            <div>
+                                <div class="flex gap-1 text-yellow-500">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <!-- Ajoutez autant d'étoiles que nécessaire -->
+                                </div>
+                                <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptatem alias ut
+                            provident
+                            sapiente
+                            repellendus.
+                        </p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                            <div>
+                                <div class="flex gap-1 text-yellow-500">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <!-- Ajoutez autant d'étoiles que nécessaire -->
+                                </div>
+                                <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptatem alias ut
+                            provident
+                            sapiente
+                            repellendus.
+                        </p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                            <div>
+                                <div class="flex gap-1 text-yellow-500">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <!-- Ajoutez autant d'étoiles que nécessaire -->
+                                </div>
+                                <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptatem alias ut
+                            provident
+                            sapiente
+                            repellendus.
+                        </p>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                            <div>
+                                <div class="flex gap-1 text-yellow-500">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <!-- Ajoutez autant d'étoiles que nécessaire -->
+                                </div>
+                                <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptatem alias ut
+                            provident
+                            sapiente
+                            repellendus.
+                        </p>
+                    </div>
+                    <!-- card 5 -->
+                    <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                            <div>
+                                <div class="flex gap-1 text-yellow-500">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <!-- Ajoutez autant d'étoiles que nécessaire -->
+                                </div>
+                                <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptatem alias ut
+                            provident
+                            sapiente
+                            repellendus.
+                        </p>
+                    </div>
+                    <!-- card 6 -->
+                    <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                            <div>
+                                <div class="flex gap-1 text-yellow-500">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <!-- Ajoutez autant d'étoiles que nécessaire -->
+                                </div>
+                                <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptatem alias ut
+                            provident
+                            sapiente
+                            repellendus.
+                        </p>
+                    </div>
+                    <!-- card 7 -->
+                    <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
+                        <div class="flex items-center gap-4">
+                            <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                            <div>
+                                <div class="flex gap-1 text-yellow-500">
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                        </path>
+                                    </svg>
+                                    <!-- Ajoutez autant d'étoiles que nécessaire -->
+                                </div>
+                                <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt voluptatem alias ut
+                            provident
+                            sapiente
+                            repellendus.
+                        </p>
+                    </div>
+                    <!-- card 8 -->
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

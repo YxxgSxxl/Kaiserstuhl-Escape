@@ -25,9 +25,47 @@ $title = "Kaiserstuhl - Contact";
         /* Espacement entre la flèche et le texte */
     }
 
+    /* Augmenter la taille de la flèche */
+
     summary {
         font-size: 24px;
         /* Ajustez la taille du texte */
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        height: 50px;
+        border-radius: 50px;
+        border: 0;
+        outline: 0;
+        font-size: 18px;
+        background: green;
+        color: #fff;
+    }
+
+    svg {
+        margin: 0 0 0 10px;
+    }
+
+    button:hover svg {
+        margin: 0 0 0 25px;
+        transition: 0.3s;
+    }
+
+    button:not(:hover) svg {
+        transition: 0.3s;
+    }
+
+    button:active {
+        transform: scale(0.9, 0.9);
+        transition: 200ms;
+    }
+
+    button:not(:active) {
+        transition: 200ms;
     }
 </style>
 
@@ -53,14 +91,28 @@ $title = "Kaiserstuhl - Contact";
                     echo "Faire un retour";
                 ?>
             </summary>
-            <div class="px-2 py-1">
+            <div class="px-2 py-1 flex flex-col gap-[20px]  bg-black/30 text-ks-white p-6 rounded-lg w-full ">
                 <!-- Contenu des détails -->
                 <p class="text-ks-white">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sapiente dolor, corporis, est
                     explicabo consequuntur accusamus rem, optio perspiciatis numquam incidunt. Quos cupiditate
                     temporibus,
                     nulla fuga aut ut commodi. Placeat.
+
                 </p>
+
+
+                <a href="vue/vueRetour.html">
+                    <button> En savoir plus
+                        <svg viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" height="20" width="20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </a>
+
             </div>
         </details>
         <details class="details-color w-[300px] md:w-[500px] md:text-base lg:text-lg select-none cursor-pointer">
@@ -72,13 +124,25 @@ $title = "Kaiserstuhl - Contact";
                     echo "Faire une suggestion";
                 ?>
             </summary>
-            <div class="px-2 py-1">
+            <div
+                class="px-2 py-1  px-2 py-1 flex flex-col gap-[20px]  bg-black/30 text-ks-white p-6 rounded-lg w-full ">
                 <!-- Contenu des détails -->
                 <p class="text-ks-white">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero corrupti non, aut sint repudiandae,
                     iure ut voluptatum porro dicta error et eos. Possimus numquam animi excepturi soluta, consequuntur
                     libero in!
                 </p>
+                <a href="vue/vueIdee.html">
+                    <button> En savoir plus
+                        <svg viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" height="20" width="20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </a>
+
             </div>
         </details>
         <details class="details-color w-[300px] md:w-[500px] md:text-base lg:text-lg select-none cursor-pointer">
@@ -90,13 +154,24 @@ $title = "Kaiserstuhl - Contact";
                     echo "Demande d'emploi ou stage";
                 ?>
             </summary>
-            <div class="px-2 py-1">
+            <div class="px-2 py-1 px-2 py-1 flex flex-col gap-[20px]  bg-black/30 text-ks-white p-6 rounded-lg w-full ">
                 <p class="text-ks-white">
                     Contactez-nous via le formulaire en cliquant sur le bouton
                     via le formulaire ci-dessous. Ce formulaire de contact est
                     seulement pour une demande d'emploi ou du stage, toute autre demande
                     sera rejetée.
                 </p>
+                <a href="vue/vuePostulez.html">
+                <button> En savoir plus
+                    <svg viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" height="20" width="20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </button>
+                </a>
+                
             </div>
         </details>
     </div>
