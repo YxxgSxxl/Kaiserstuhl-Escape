@@ -12,7 +12,7 @@ global $Conf;
     <div
         class="bg-ks-white/10 w-[100%] md:w-[80%] rounded-lg text-ks-white flex flex-col md:flex-row justify-center mx-auto p-8">
 
-        <form action="index.php?action=chekout" method="post">
+        <form action="index.php?action=reservation&idGameRes=<?= $id_game ?>" method="post">
             <div class="flex flex-col gap-3">
                 <h1 class="text-3xl md:text-4xl text-center font-semibold"><?= $title ?></h1>
                 <img src="<?= $Conf->GAMESFOLDER . $img ?>" alt="<?= $title ?>"
@@ -25,6 +25,10 @@ global $Conf;
                 :text-xl">Durée: <?= $duration ?> heures</p>
                 <p class="text-lg md
                 :text-xl">Longueur du parcours: <?= $lengths ?>km</p>
+                <p class="text-lg md
+                :text-xl">Date de début: <?= $dateStart ?></p>
+                <p class="text-lg md
+                :text-xl">Date de fin: <?= $dateEnd ?></p>
                 <input type="hidden" name="id_game" value="<?= $id_game ?>">
 
                 <button type="submit"

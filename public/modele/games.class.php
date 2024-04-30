@@ -34,4 +34,48 @@ class games extends database
     $resultat = $this->execReqPrep($req, array($idGames));
     return $resultat[0];
   }
+
+  /*******************************************************
+Ajoute un Jeu dans la base de données
+  Entrée : 
+    
+
+  Retour : 
+    [array] : Tableau associatif contenant les attributs du jeu
+*******************************************************/
+  public function addGame($title, $longdesc, $minidesc, $price, $duration, $lengths, $dateStart, $dateEnd, $difficulty, $img)
+  {
+    $req = 'INSERT INTO games (title, longdesc, minidesc, price, duration, lengths, dateStart, dateEnd, difficulty, img) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
+    $resultat = $this->execReqPrep($req, array($title, $longdesc, $minidesc, $price, $duration, $lengths, $dateStart, $dateEnd, $difficulty, $img));
+
+    // Vérifier si $resultat est un tableau et s'il contient au moins un élément
+    if (is_array($resultat) && count($resultat) > 0) {
+      return $resultat[0];
+    } else {
+      // Gérer le cas où $resultat ne retourne pas de tableau
+      // Peut-être retourner un message d'erreur ou une valeur par défaut
+      return null;
+    }
+  }
+
+  public function modifGame($title, $longdesc, $minidesc, $price, $duration, $lengths, $dateStart, $dateEnd, $difficulty, $img, $id_game)
+  {
+    $req = 'UPDATE games SET title=?, longdesc=?, minidesc=?, price=? ,duration=?, lengths=?, dateStart=?, dateEnd=?, difficulty=?, img=? WHERE id_game=?;';
+    $resultat = $this->execReqPrep($req, array($title, $longdesc, $minidesc, $price, $duration, $lengths, $dateStart, $dateEnd, $difficulty, $img, $id_game));
+    return $resultat;
+  }
+
+  public function modifImg($img, $id_game)
+  {
+    $req = 'UPDATE games SET img=? WHERE id_game=?;';
+    $resultat = $this->execReqPrep($req, array($img, $id_game));
+    return $resultat;
+  }
+
+  public function deleteGame($idGame)
+  {
+    $req = 'DELETE FROM games WHERE id_game=?;';
+    $resultat = $this->execReqPrep($req, array($idGame));
+    return $resultat;
+  }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement

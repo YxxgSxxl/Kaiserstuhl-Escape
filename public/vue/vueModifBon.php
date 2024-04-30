@@ -33,7 +33,7 @@ if (isset($_SESSION['username'])) {
             $form = new Formulaire();
 
             if ($_SESSION['lang'] === 'ENG') {
-                echo $form->debutForm("POST", "index.php?action=modificationConfirm", "multipart/form-data");
+                echo $form->debutForm("POST", "index.php?action=modificationBonConfirm", "multipart/form-data");
                 echo $form->inputID("id_item", "ID", $item['id_item'] ? $item['id_item'] : '');
                 echo $form->inputText("goodname", "Name", $item['goodname'] ? $item['goodname'] : '');
                 echo $form->inputText("gooddesc", "Description", $item['gooddesc'] ? $item['gooddesc'] : '');
@@ -43,7 +43,7 @@ if (isset($_SESSION['username'])) {
                 echo $form->submit("Modify");
                 echo $form->finForm();
             } else {
-                echo $form->debutForm("POST", "index.php?action=modificationConfirm", "multipart/form-data");
+                echo $form->debutForm("POST", "index.php?action=modificationBonConfirm", "multipart/form-data");
                 echo $form->inputID("id_item", "ID", $item['id_item'] ? $item['id_item'] : '');
                 echo $form->inputText("goodname", "Nom", $item['goodname'] ? $item['goodname'] : '');
                 echo $form->inputText("gooddesc", "Description", $item['gooddesc'] ? $item['gooddesc'] : '');

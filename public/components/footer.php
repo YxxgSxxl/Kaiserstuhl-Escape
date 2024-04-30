@@ -13,14 +13,14 @@
             <?php if ($_SESSION['lang'] === 'ENG')
                 echo '<h4 class="underline text-base font-semibold md:text-sm lg:text-base">OUR COMPANY</h4>
                 <a href="index.php#about">About</a>
-                <a href="index.php?action=about#team">Our team</a>
+                <a href="index.php?action=ourTeam">Our team</a>
                 <a href="index.php?action=?">Legal notice</a>
                 <a href="index.php?action=?">TOS</a>
                 <a href="index.php?action=?">Data protection</a>';
             else
                 echo '<h4 class="underline text-base font-semibold md:text-sm lg:text-base">NOTRE ENTREPRISE</h4>
-                <a href="index.php?action=about">À propos</a>
-                <a href="index.php?action=about#team">Notre équipe</a>
+                <a href="index.php#about">À propos</a>
+                <a href="index.php?action=ourTeam">Notre équipe</a>
                 <a href="index.php?action=?">Mention légales</a>
                 <a href="index.php?action=?">CGV</a>
                 <a href="index.php?action=?">Protection des données</a>';

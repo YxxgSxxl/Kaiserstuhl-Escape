@@ -49,6 +49,14 @@ class formulaire
         </div>";
     }
 
+    public function inputDate($name, $label = "", $value = "", $placeholder = "")
+    {
+        return "<div class='ks-label'>
+        <label class='lg:text-lg font-normal'>$label:</label>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='date' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "''>
+        </div>";
+    }
+
     public function inputSelect($name, $label = "", $options = [], $selected = "")
     {
         $selectOptions = "";

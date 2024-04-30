@@ -82,7 +82,7 @@ class routeur
           case 'modification' && isset($_GET['idItemModif']):
             $this->ctlBons->vueModifBon();
             break;
-          case 'modificationConfirm':
+          case 'modificationBonConfirm':
             $this->ctlBons->modifBon();
             break;
           case 'modification' && isset($_GET['goodDelete']):
@@ -95,8 +95,23 @@ class routeur
           case 'games' && isset($_GET['idGame']):
             $this->ctlJeux->vueJeu($_GET['idGame']);
             break;
+          case 'gameAdd':
+            $this->ctlJeux->vueAjoutJeu();
+            break;
+          case 'gameAddConfirm':
+            $this->ctlJeux->addGame();
+            break;
           case 'modification' && isset($_GET['idGameModif']):
-            $this->ctlBons->vueModifGame();
+            $this->ctlJeux->vueModifJeu();
+            break;
+          case 'modificationJeuConfirm':
+            $this->ctlJeux->modifJeu();
+            break;
+          case 'modification' && isset($_GET['gameDelete']):
+            $this->ctlJeux->deleteGame();
+            break;
+          case 'reservation' && isset($_GET['idGameRes']):
+            $this->ctlJeux->vueReservation($_GET['idGameRes']);
             break;
           case 'review':
             $this->ctlAvis->vueAvis();

@@ -2,6 +2,9 @@
 $title = "Kaiserstuhl - " . strtoupper($_SESSION['username']);
 
 extract($users);
+if (isset($reservations)) {
+    var_dump($reservations);
+}
 ?>
 
 <section
@@ -13,7 +16,7 @@ extract($users);
             if ($_SESSION['lang'] === 'ENG')
                 echo '<span class="text-ks-orange">' . strtoupper($username) . '\'s</span> PROFILE';
             else
-                echo 'LE PROFIL DE <span class="text-ks-orange"><?= strtoupper($username) ?></span>';
+                echo 'LE PROFIL DE <span class="text-ks-orange">' . strtoupper($username) . '</span>';
             ?>
         </h1>
 
@@ -178,6 +181,16 @@ extract($users);
                     echo 'Réservations en cours:';
                 ?>
             </h2>
+        </div>
+
+        <div class="">
+            <?php
+            if (!empty($reservations)) {
+
+            } else {
+                echo "<p class='text-center'>Vous n'avez pas de réservations en cours...</p>";
+            }
+            ?>
         </div>
 
         <hr class="w-[80%] mx-auto">
