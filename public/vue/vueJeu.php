@@ -1,6 +1,6 @@
 <?php
 extract($game);
-var_dump($game);
+// var_dump($game);
 
 $title = "Kaiserstuhl - " . " $title";
 
@@ -10,13 +10,39 @@ global $Conf;
 <section class="flex flex-col min-h-screen p-8 bg-no-repeat bg-ks-black">
 
     <div
-        class="bg-ks-white/10 w-[100%] md:w-[80%] rounded-lg text-ks-white flex flex-col md:flex-row justify-center mx-auto p-8">
+        class="bg-ks-white/10 w-[100%] md:w-[80%] relative rounded-lg text-ks-white flex flex-col md:flex-row justify-center mx-auto p-8">
+
+        <?php
+        if ($_SESSION['lang'] === 'ENG') {
+            if ($game['difficulty']) {
+                if ($game['difficulty'] === 'Easy') {
+                    echo '<p class="absolute top-2 left-2  animate-pulse text-ks-green text-lg md:text-2xl bg-ks-black p-1 rounded-xl">Easy</p>';
+                } elseif ($game['difficulty'] === 'Standard') {
+                    echo '<p class="absolute top-2 left-2  animate-pulse text-ks-orange text-lg md:text-2xl bg-ks-black p-1 rounded-xl">Standard</p>';
+                } elseif ($game['difficulty'] === 'Hard') {
+                    echo '<p class="absolute top-2 left-2 animate-pulse text-red-500 text-lg md:text-2xl bg-ks-black p-1 rounded-xl">Hard</p>';
+                }
+            }
+        } else {
+            if ($game['difficulty']) {
+                if ($game['difficulty'] === 'Easy') {
+                    echo '<p class="absolute top-2 left-2  animate-pulse text-ks-green text-lg md:text-2xl bg-ks-black p-1 rounded-xl">Facile</p>';
+                } elseif ($game['difficulty'] === 'Standard') {
+                    echo '<p class="absolute top-2 left-2  animate-pulse text-ks-orange text-lg md:text-2xl bg-ks-black p-1 rounded-xl">Moyen</p>';
+                } elseif ($game['difficulty'] === 'Hard') {
+                    echo '<p class="absolute top-2 left-2  animate-pulse text-red-500 text-lg md:text-2xl bg-ks-black p-1 rounded-xl">Difficile</p>';
+                }
+            }
+        }
+        ?>
 
         <form action="index.php?action=reservation&idGameRes=<?= $id_game ?>" method="post">
             <div class="flex flex-col gap-3">
-                <h1 class="text-3xl md:text-4xl text-center font-semibold"><?= $title ?></h1>
-                <img src="<?= $Conf->GAMESFOLDER . $img ?>" alt="<?= $title ?>"
-                    class="w-[100%] md:w-[50%] mx-auto rounded-lg">
+                <h1 class="text-2xl md:text-4xl mt-4 text-center font-semibold"><?= $title ?></h1>
+                <div class="relative">
+                    <img src="<?= $Conf->GAMESFOLDER . $img ?>" alt="<?= $title ?>"
+                        class="w-[100%] md:w-[50%] mx-auto rounded-lg">
+                </div>
             </div>
             <div class="flex flex-col gap-3">
                 <p class="text-lg md

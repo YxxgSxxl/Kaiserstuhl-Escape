@@ -24,7 +24,6 @@
             }
         }
         ?>
-
         <img class="w-[300px] md:w-[400px] h-auto" src="<?= $img ?>" alt="Image du bien à vendre">
     </a>
     <div class="text-ks-white flex flex-col gap-4 w-[300px] md:w-[400px] py-4 px-2">

@@ -9,8 +9,6 @@ if (isset($_SESSION['username'])) {
 } else {
     null;
 }
-
-var_dump($game);
 ?>
 
 <section
