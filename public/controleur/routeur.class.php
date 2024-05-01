@@ -113,7 +113,10 @@ class routeur
             $this->ctlJeux->vueReservation($_GET['idGameRes']);
             break;
           case 'reserver' && isset($_GET['idGameResConfirm']):
-            $this->ctlJeux->reserver();
+            $this->ctlJeux->reserver($_GET['idGameResConfirm']);
+            break;
+          case 'reservationDelete' && isset($_GET['idRes']):
+            $this->ctlJeux->removeBooking($_GET['idRes']);
             break;
           case 'review':
             $this->ctlAvis->vueAvis();

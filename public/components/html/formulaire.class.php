@@ -44,7 +44,7 @@ class formulaire
     public function inputNumber($name, $label = "", $value = "", $placeholder = "")
     {
         return "<div class='ks-label'>
-        <label class='lg:text-lg font-normal'>$label:</label>
+        <label class='lg:text-lg font-normal text-ks-white'>$label:</label>
         <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='number' class='texte' name='" . $name . "' value='" . intval($value) . "' placeholder=''" . $placeholder . "''>
         </div>";
     }
@@ -52,8 +52,8 @@ class formulaire
     public function inputDate($name, $label = "", $value = "", $placeholder = "")
     {
         return "<div class='ks-label'>
-        <label class='lg:text-lg font-normal'>$label:</label>
-        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='date' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "''>
+        <label class='lg:text-lg font-normal text-ks-white'>$label:</label>
+        <input class='h-10 px-4 py-1 rounded-lg md:w-[400px] font-light' type='date' class='texte' name='" . $name . "' value='" . $value . "' placeholder=''" . $placeholder . "'' required>
         </div>";
     }
 

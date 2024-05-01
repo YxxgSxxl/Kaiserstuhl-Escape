@@ -290,5 +290,17 @@ class ctlJeux
     public function reserver($idJeu)
     {
         $game = $this->game->getGame($idJeu);
+        $users = $this->user->infoMember($_SESSION['username']);
+
+        $this->game->addBooking($idJeu, $users['id_member'], $_POST['people'], $_POST['dates'], $_POST['time']);
+
+        header('Location: index.php?action=user');
+    }
+
+    public function removeBooking($idBooking)
+    {
+        $this->game->deleteBooking($idBooking);
+
+        header('Location: index.php?action=user');
     }
 }

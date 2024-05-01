@@ -83,10 +83,24 @@ Ajoute un Jeu dans la base de données
   {
     $req = 'SELECT ab.*, a.*
     FROM games_booking ab
-    JOIN games a ON ab.id_game = a.id_game
+    INNER JOIN games a ON ab.id_game = a.id_game
     WHERE ab.id_member = ?;';
 
     $resultat = $this->execReqPrep($req, array($id_user));
+    return $resultat;
+  }
+
+  public function addBooking($id_game, $id_member, $people, $dates, $time)
+  {
+    $req = 'INSERT INTO games_booking (id_game, id_member, people, dates, time) VALUES (?, ?, ?, ?, ?);';
+    $resultat = $this->execReqPrep($req, array($id_game, $id_member, $people, $dates, $time));
+    return $resultat;
+  }
+
+  public function deleteBooking($id_reservation)
+  {
+    $req = 'DELETE FROM games_booking WHERE id_reservation=?;';
+    $resultat = $this->execReqPrep($req, array($id_reservation));
     return $resultat;
   }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement
