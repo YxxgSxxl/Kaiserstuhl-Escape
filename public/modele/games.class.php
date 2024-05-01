@@ -78,4 +78,15 @@ Ajoute un Jeu dans la base de données
     $resultat = $this->execReqPrep($req, array($idGame));
     return $resultat;
   }
+
+  public function getBooking($id_user)
+  {
+    $req = 'SELECT ab.*, a.*
+    FROM games_booking ab
+    JOIN games a ON ab.id_game = a.id_game
+    WHERE ab.id_member = ?;';
+
+    $resultat = $this->execReqPrep($req, array($id_user));
+    return $resultat;
+  }
 }   // Balise PHP non fermée pour éviter de retourner des caractères "parasites" en fin de traitement

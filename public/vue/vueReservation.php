@@ -28,13 +28,26 @@ var_dump($game);
                             class="w-[100%] md:w-[80%] mx-auto rounded-lg">
                         <p class="text-center text-lg text-ks-white">
                             <?php if ($_SESSION['lang'] === 'ENG')
-                                echo "For the " . format_date($dates);
+                                echo "For the <span class='text-ks-orange'>" . format_date($dateStart) . "</span>, Ends <span class='text-ks-orange'>" . format_date($dateEnd) . "</span>";
                             else
-                                echo "Pour le " . format_date($dates);
+                                echo "Pour le <span class='text-ks-orange'>" . format_date($dateStart) . "</span>, fini le <span class='text-ks-orange'>" . format_date($dateEnd) . "</span>";
                             ?>
                         </p>
                     </div>
+
+                    <?php
+                    require_once 'components/html/formulaire.class.php';
+
+                    $form = new Formulaire();
+
+                    echo $form->debutForm("post", "index.php?action=reserver&idGameResConfirm=$id_game", "multipart/form-data");
+                    echo $form->inputText();
+                    echo $form->inputDate();
+                    echo $form->inputNumber();
+
+                    ?>
+                </form>
             </div>
         </div>
-
+    </div>
 </section>

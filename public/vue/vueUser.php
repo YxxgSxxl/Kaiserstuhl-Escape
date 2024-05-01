@@ -3,7 +3,7 @@ $title = "Kaiserstuhl - " . strtoupper($_SESSION['username']);
 
 extract($users);
 if (isset($reservations)) {
-    var_dump($reservations);
+    // var_dump($reservations);
 }
 ?>
 
@@ -186,6 +186,40 @@ if (isset($reservations)) {
         <div class="">
             <?php
             if (!empty($reservations)) {
+                echo "<div class='flex flex-col gap-4 items-center mx-auto'>";
+                foreach ($reservations as $reservation) {
+                    extract($reservation);
+
+                    echo "
+
+                    <div class='bg-ks-white/0 md:bg-transparent text-ks-white flex flex-col md:flex-row gap-4 items-start mx-auto md:mx-0 justify-between rounded-lg p-4 w-[80%] md:w-[80%] md:items-center'>
+                    <div class='flex flex-col'>
+                        <p class='text-lg underline underline-offset-2'>Game:</p>
+                        <p>$title</p>
+                    </div>
+                    <div class='flex flex-col'>
+                        <p class='text-lg underline underline-offset-2'>Start:</p>
+                        <p>$dateStart</p>
+                    </div>
+                    <div class='flex flex-col'>
+                        <p class='text-lg underline underline-offset-2'>Hour:</p>
+                        <p>$time</p>
+                    </div>
+                    <div class='flex flex-col'>
+                        <p class='text-lg underline underline-offset-2'>Price:</p>
+                        <p>$price €</p>
+                    </div>
+                    <form class='w-fit items-center mb-0' action='index.php?action=reservationDelete&idRes=$id_reservation' method='post'>
+                        <button type='submit' class='bg-red-500 rounded-lg p-2 px-6 font-bold text-sm lg:text-lg h-10 w-full'>";
+                    if ($_SESSION['lang'] === 'ENG')
+                        echo "Cancel";
+                    else
+                        echo "Annuler";
+                    echo "</button>
+                    </form>
+                </div>";
+                }
+                echo "</div>";
 
             } else {
                 echo "<p class='text-center'>Vous n'avez pas de réservations en cours...</p>";

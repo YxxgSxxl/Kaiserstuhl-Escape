@@ -3,7 +3,7 @@ require_once "modele/items.class.php";
 require_once "modele/games.class.php";
 require_once "modele/members.class.php";
 
-require_once "controleur/ctlAvis.php";
+require_once "controleur/ctlTeam.php";
 require_once "controleur/ctlUser.php";
 require_once "controleur/ctlInscription.php";
 require_once "controleur/ctlConnection.php";
@@ -42,19 +42,18 @@ if (isset($_POST['langue'])) {
 
 class routeur
 {
-  private $ctlPage, $ctlAbout, $ctlBons, $ctlContact, $ctlJeux, $ctlConnection, $ctlInscription, $ctlUser, $ctlAvis;
+  private $ctlPage, $ctlTeam, $ctlBons, $ctlContact, $ctlJeux, $ctlConnection, $ctlInscription, $ctlUser, $ctlAvis;
 
   public function __construct()
   {
     $this->ctlPage = new ctlPage();
     $this->ctlBons = new ctlBons();
-    $this->ctlAbout = new ctlAbout();
+    $this->ctlTeam = new ctlTeam();
     $this->ctlContact = new ctlContact();
     $this->ctlJeux = new ctlJeux();
     $this->ctlConnection = new ctlConnection();
     $this->ctlInscription = new ctlInscription();
     $this->ctlUser = new ctlUser();
-    $this->ctlAvis = new ctlAvis();
   }
 
   public function routerRequete()
@@ -113,6 +112,9 @@ class routeur
           case 'reservation' && isset($_GET['idGameRes']):
             $this->ctlJeux->vueReservation($_GET['idGameRes']);
             break;
+          case 'reserver' && isset($_GET['idGameResConfirm']):
+            $this->ctlJeux->reserver();
+            break;
           case 'review':
             $this->ctlAvis->vueAvis();
             break;
@@ -129,6 +131,10 @@ class routeur
           // CONTACT side
           case 'contact':
             $this->ctlContact->vueContact();
+            break;
+          // TEAM side
+          case 'team':
+            $this->ctlTeam->vueTeam();
             break;
           // USER side
           case 'login':

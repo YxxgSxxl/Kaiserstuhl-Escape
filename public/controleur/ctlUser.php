@@ -5,11 +5,12 @@ require_once "vue/vue.class.php";
 
 class ctlUser
 {
-    private $user;
+    private $user, $game;
 
     public function __construct()
     {
         $this->user = new members();
+        $this->game = new games();
     }
 
     /////////////////////
@@ -19,6 +20,7 @@ class ctlUser
     {
         $message = "";
 
+
         if (!empty($_FILES)) {
             global $Conf;
 
@@ -27,6 +29,8 @@ class ctlUser
 
             $users = $this->user->infoMember($_SESSION['username']);
             extract($users);
+
+            $reservations = $this->game->getBooking($users['id_member']); // Récupère les réservations de l'utilisateur
 
             if ($_FILES["newImage"]["size"] < 2000000) {
                 $isFileInDir = count(glob("$target_file/*")) === 0 ? "FALSE" : "TRUE"; // Si il y a un ou des fichiers -> TRUE, sinon FALSE
@@ -88,6 +92,7 @@ class ctlUser
             $vue->afficher(
                 array(
                     'users' => $users,
+                    'reservations' => $reservations,
                     'message' => $message
                 )
             );
@@ -98,9 +103,15 @@ class ctlUser
             var_dump($_FILES);
         } else {
             $users = $this->user->infoMember($_SESSION['username']);
-            // var_dump($users);
+            $reservations = $this->game->getBooking($users['id_member']); // Récupère les réservations de l'utilisateur
+
             $vue = new vue("User"); // Instancie la vue appropriée
-            $vue->afficher(array('users' => $users));
+            $vue->afficher(
+                array(
+                    'reservations' => $reservations,
+                    'users' => $users
+                )
+            );
         }
     }
 

@@ -95,13 +95,34 @@ if (!empty($succes)) {
                     </h4>
                 </div>
                 <ol class="w-[80%] md:w-[100%] mx-auto">
-                    <li><mark>Jerry Wood</mark><small>315</small></li>
-                    <li><mark>Brandon Barnes</mark><small>301</small></li>
-                    <li><mark>Raymond Knight</mark><small>292</small></li>
-                    <li><mark>Trevor McCormick</mark><small>245</small></li>
-                    <li><mark>Andrew Fox</mark><small>203</small></li>
+
                 </ol>
             </div>
+            <script>
+                // Fonction pour récupérer et afficher les données des joueurs
+                async function fetchPlayers() {
+                    try {
+                        const response = await fetch('json/leaderboard.json'); // Chemin vers votre fichier JSON
+                        const data = await response.json();
+                        const players = data.mostActivePlayers;
+
+                        // Sélection de l'élément <ol> où les joueurs seront ajoutés
+                        const playerList = document.querySelector('.leaderboard ol');
+
+                        // Boucle à travers les joueurs et les ajouter à la liste
+                        players.forEach(player => {
+                            const listItem = document.createElement('li');
+                            listItem.innerHTML = <mark>${player.name}</mark><small>${player.score}</small>;
+                            playerList.appendChild(listItem);
+                        });
+                    } catch (error) {
+                        console.error('Une erreur s\'est produite lors de la récupération des données: ', error);
+                    }
+                }
+
+                // Appel de la fonction fetchPlayers pour récupérer et afficher les données des joueurs
+                fetchPlayers();
+            </script>
         </section>
 
         <section id="about"
@@ -145,7 +166,7 @@ if (!empty($succes)) {
                         dolorem consequuntur id, dignissimos quisquam maxime veritatis a magni. Autem nobis eaque
                         tempore consequatur cum assumenda quia blanditiis a excepturi repellat!</p>
                     <div data-aos="fade-up" class="buttons flex gap-4 mt-4 ">
-                        <a style="--clr: #000000" class="button" href="index.php?action=about">
+                        <a style="--clr: #000000" class="button" href="index.php?action=team">
                             <span class="button__icon-wrapper">
                                 <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 14 15">

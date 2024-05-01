@@ -126,7 +126,7 @@ $title = "Kaiserstuhl - Contact";
                     iure ut voluptatum porro dicta error et eos. Possimus numquam animi excepturi soluta, consequuntur
                     libero in!
                 </p>
-                <a href="vue/vueIdee.html">
+                <a class="btnspe" href="vue/vueIdee.html">
                     <button> En savoir plus
                         <svg viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" height="20" width="20"
                             xmlns="http://www.w3.org/2000/svg">
@@ -154,7 +154,7 @@ $title = "Kaiserstuhl - Contact";
                     seulement pour une demande d'emploi ou du stage, toute autre demande
                     sera rejetée.
                 </p>
-                <a href="vue/vuePostulez.html">
+                <a class="btnspe" href="vue/vuePostulez.html">
                     <button> En savoir plus
                         <svg viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" height="20" width="20"
                             xmlns="http://www.w3.org/2000/svg">

@@ -286,4 +286,9 @@ class ctlJeux
         $vue = new vue("Reservation"); // Instancie la vue appropriée
         $vue->afficher(array('game' => $game));
     }
+
+    public function reserver($idJeu)
+    {
+        $game = $this->game->getGame($idJeu);
+    }
 }
