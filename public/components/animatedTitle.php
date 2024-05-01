@@ -359,6 +359,42 @@
     #map {
         height: 180px;
     }
+
+    /* AVIS STYLE */
+    .container {
+        width: 100%;
+        height: 100%;
+        --s: 200px;
+        /* control the size */
+        --c1: #1d1d1d;
+        --c2: #4e4f51;
+        --c3: #3c3c3c;
+
+        background: repeating-conic-gradient(from 30deg,
+                #0000 0 120deg,
+                var(--c3) 0 180deg) calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+            repeating-conic-gradient(from 30deg,
+                var(--c1) 0 60deg,
+                var(--c2) 0 120deg,
+                var(--c3) 0 180deg);
+        background-size: var(--s) calc(var(--s) * 0.577);
+    }
+
+    .containere {
+        width: 100%;
+        height: 100%;
+        --s: 37px;
+        /* control the size */
+
+        --c: #0000, #282828 0.5deg 119.5deg, #0000 120deg;
+        --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+        --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+        --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+        background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
+            var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
+            var(--g3) 0 calc(1.73 * var(--s)) #1e1e1e;
+        background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+    }
 </style>
 <div class="h-[50vh] w-auto flex justify-center items-center">
     <?php if ($_SESSION['lang'] === 'ENG')

@@ -206,10 +206,6 @@ if (!empty($succes)) {
             </div>
         </section>
 
-        <section class="h-[100vh] bg-ks-black">
-            <div></div>
-        </section>
-
         <section
             class="flex flex-col gap-18 md:gap-12 items-center h-[240vh] md:h-[100vh] mb-0 md:mb-[360px] bg-ks-black">
             <h2 class="text-4xl lg:text-6xl text-ks-white text-center py-20"><?php if ($_SESSION['lang'] === 'ENG')
@@ -306,9 +302,7 @@ if (!empty($succes)) {
 
         <?= require_once "components/sponso.html" ?>
 
-        <section class="h-[100vh] bg-ks-black">
-            <div></div>
-        </section>
+        <?= require_once "components/Avis.php" ?>
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
