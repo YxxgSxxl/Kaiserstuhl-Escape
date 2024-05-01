@@ -46,7 +46,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">ASSAIN Marc</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
@@ -60,7 +60,7 @@
             <!-- card 2 -->
             <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
                 <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                    <div class="h-16 w-16 rounded-full bg-green-500"></div>
                     <div>
                         <div class="flex gap-1 text-yellow-500">
                             <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
@@ -95,7 +95,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">HOCHON Paul</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
@@ -109,7 +109,7 @@
             <!-- card 3 -->
             <div class="bg-gray-100 p-8 max-w-xs mx-auto rounded-lg shadow-md">
                 <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                    <div class="h-16 w-16 rounded-full bg-orange-400"></div>
                     <div>
                         <div class="flex gap-1 text-yellow-500">
                             <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
@@ -144,7 +144,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">IONETTE Camy</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
@@ -158,7 +158,7 @@
             <!-- card 3 -->
             <div class="bg-gray-100 hidden md:inline p-8 max-w-xs mx-auto rounded-lg shadow-md">
                 <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                    <div class="h-16 w-16 rounded-full bg-red-500"></div>
                     <div>
                         <div class="flex gap-1 text-yellow-500">
                             <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
@@ -193,7 +193,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">HONETTE Mary</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
@@ -242,7 +242,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">COVER Harry</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
@@ -256,7 +256,7 @@
             <!-- card 5 -->
             <div class="bg-gray-100 hidden md:inline p-8 max-w-xs mx-auto rounded-lg shadow-md">
                 <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                    <div class="h-16 w-16 rounded-full bg-green-400"></div>
                     <div>
                         <div class="flex gap-1 text-yellow-500">
                             <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
@@ -291,7 +291,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">GRENA Dine</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
@@ -340,7 +340,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">BELOUZ Carl</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
@@ -354,7 +354,7 @@
             <!-- card 7 -->
             <div class="bg-gray-100 hidden lg:inline p-8 max-w-xs mx-auto rounded-lg shadow-md">
                 <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                    <div class="h-16 w-16 rounded-full bg-yellow-300"></div>
                     <div>
                         <div class="flex gap-1 text-yellow-500">
                             <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
@@ -389,7 +389,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">ZITZITOUN Aziz</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">
@@ -403,7 +403,7 @@
             <!-- card 8 -->
             <div class="bg-gray-100 hidden lg:inline p-8 max-w-xs mx-auto rounded-lg shadow-md">
                 <div class="flex items-center gap-4">
-                    <div class="h-16 w-16 rounded-full bg-blue-600"></div>
+                    <div class="h-16 w-16 rounded-full bg-red-500"></div>
                     <div>
                         <div class="flex gap-1 text-yellow-500">
                             <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"
@@ -438,7 +438,7 @@
                             </svg>
                             <!-- Ajoutez autant d'étoiles que nécessaire -->
                         </div>
-                        <p class="mt-2 text-gray-700 text-lg font-semibold">John Doe</p>
+                        <p class="mt-2 text-gray-700 text-lg font-semibold">Kolique Al</p>
                     </div>
                 </div>
                 <p class="mt-4 text-gray-500 overflow-hidden whitespace-pre-line">

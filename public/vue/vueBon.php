@@ -8,7 +8,6 @@ global $Conf;
 ?>
 
 <section class="flex flex-col min-h-screen p-8 bg-no-repeat bg-ks-black">
-
     <div
         class="bg-ks-white/10 w-[100%] md:w-[80%] rounded-lg text-ks-white flex flex-col md:flex-row justify-center mx-auto p-8">
         <div class="w-[80%] md:w-[40%] mx-auto mb-6 flex h-auto justify-center items-center">
@@ -37,5 +36,4 @@ global $Conf;
             </form>
         </div>
     </div>
-
 </section>

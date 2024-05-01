@@ -5,7 +5,7 @@ else
     $title = "Kaiserstuhl - Réservation";
 
 extract($game);
-var_dump($game);
+// var_dump($game);
 ?>
 
 <section class="flex flex-col min-h-screen p-8 bg-no-repeat bg-ks-black">
@@ -30,6 +30,13 @@ var_dump($game);
                             echo "For the <span class='text-ks-orange'>" . format_date($dateStart) . "</span>, Ends <span class='text-ks-orange'>" . format_date($dateEnd) . "</span>";
                         else
                             echo "Pour le <span class='text-ks-orange'>" . format_date($dateStart) . "</span>, fini le <span class='text-ks-orange'>" . format_date($dateEnd) . "</span>";
+                        ?>
+                    </p>
+                    <p class="text-center text-lg text-ks-white">
+                        <?php if ($_SESSION['lang'] === 'ENG')
+                            echo "Price for the booking : <span class='text-ks-orange'>" . $price . "€</span>";
+                        else
+                            echo "Prix de la réservation : <span class='text-ks-orange'>" . $price . "€</span>";
                         ?>
                     </p>
                 </div>

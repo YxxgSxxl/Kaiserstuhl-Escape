@@ -244,7 +244,6 @@ class ctlJeux
 
         global $Conf;
 
-
         if ($users['member_role'] == 'Admin') {
             if (isset($_GET['gameDelete'])) {
 
@@ -283,16 +282,16 @@ class ctlJeux
     public function vueReservation($idJeu)
     {
         $game = $this->game->getGame($idJeu);
+
         $vue = new vue("Reservation"); // Instancie la vue appropriée
         $vue->afficher(array('game' => $game));
     }
 
     public function reserver($idJeu)
     {
-        $game = $this->game->getGame($idJeu);
         $users = $this->user->infoMember($_SESSION['username']);
 
-        $this->game->addBooking($idJeu, $users['id_member'], $_POST['people'], $_POST['dates'], $_POST['time']);
+        $this->game->addBooking($idJeu, $users['id_member'], securize($_POST['people']), $_POST['dates'], $_POST['time']);
 
         header('Location: index.php?action=user');
     }

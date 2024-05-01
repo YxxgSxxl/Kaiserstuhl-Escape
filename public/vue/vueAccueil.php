@@ -97,32 +97,6 @@ if (!empty($succes)) {
                 <ol class="w-[80%] md:w-[100%] mx-auto">
 
                 </ol>
-            </div>
-            <script>
-                // Fonction pour récupérer et afficher les données des joueurs
-                async function fetchPlayers() {
-                    try {
-                        const response = await fetch('json/leaderboard.json'); // Chemin vers votre fichier JSON
-                        const data = await response.json();
-                        const players = data.mostActivePlayers;
-
-                        // Sélection de l'élément <ol> où les joueurs seront ajoutés
-                        const playerList = document.querySelector('.leaderboard ol');
-
-                        // Boucle à travers les joueurs et les ajouter à la liste
-                        players.forEach(player => {
-                            const listItem = document.createElement('li');
-                            listItem.innerHTML = <mark>${player.name}</mark><small>${player.score}</small>;
-                            playerList.appendChild(listItem);
-                        });
-                    } catch (error) {
-                        console.error('Une erreur s\'est produite lors de la récupération des données: ', error);
-                    }
-                }
-
-                // Appel de la fonction fetchPlayers pour récupérer et afficher les données des joueurs
-                fetchPlayers();
-            </script>
         </section>
 
         <section id="about"
@@ -298,7 +272,7 @@ if (!empty($succes)) {
                 </div>
 
                 <div data-aos="fade-up" class="buttons flex gap-4 mt-6 justify-center">
-                    <a style="--clr: #000000" class="button" href="index.php?action=games">
+                    <a style="--clr: #000000" class="button" href="index.php?action=goods">
                         <span class="button__icon-wrapper">
                             <svg width="10" class="button__icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 15">
@@ -495,47 +469,28 @@ if (!empty($succes)) {
             new ParticleAnimation(canvas, options);
         });
 
+        // Fonction pour récupérer et afficher les données des joueurs
+        async function fetchPlayers() {
+            try {
+                const response = await fetch('json/leaderboard.json'); // Chemin vers votre fichier JSON
+                const data = await response.json();
+                const players = data.mostActivePlayers;
 
-        document.addEventListener("alpine:init", () => {
-            Alpine.data("list", () => ({
-                users: [],
-                search: "",
-                isLoading: true,
+                // Sélection de l'élément <ol> où les joueurs seront ajoutés
+                const playerList = document.querySelector('.leaderboard ol');
 
-                get filteredUsers() {
-                    if (this.search === "") {
-                        return this.users;
-                    }
+                // Boucle à travers les joueurs et les ajouter à la liste
+                players.forEach(player => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<mark>${player.name}</mark><small>${player.score}</small>`;
+                    playerList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Une erreur s\'est produite lors de la récupération des données:', error);
+            }
+        }
 
-                    return this.users.filter((item) => {
-                        return item.name.toLowerCase().includes(this.search.toLowerCase());
-                    });
-                },
-
-                getUsers() {
-                    fetch("js/data/users.json")
-                        .then((res) => res.json())
-                        .then((data) => {
-                            this.isLoading = false;
-                            this.users = data.sort((a, b) => a.ranking - b.ranking);
-                        })
-                        .catch((error) => {
-                            console.error("Error fetching data:", error);
-                            this.isLoading = false;
-                        });
-                },
-
-                getMedal(ranking) {
-                    if (ranking == 1) return "#FED931";
-                    if (ranking == 2) return "#CFCFD0";
-                    if (ranking == 3) return "#BD7B65";
-                    return "transparent";
-                },
-
-                init() {
-                    this.getUsers();
-                }
-            }));
-        });
+        // Appel de la fonction fetchPlayers pour récupérer et afficher les données des joueurs
+        fetchPlayers();
     </script>
 </body>

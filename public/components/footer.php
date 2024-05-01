@@ -13,14 +13,14 @@
             <?php if ($_SESSION['lang'] === 'ENG')
                 echo '<h4 class="underline text-base font-semibold md:text-sm lg:text-base">OUR COMPANY</h4>
                 <a href="index.php#about">About</a>
-                <a href="index.php?action=ourTeam">Our team</a>
+                <a href="index.php?action=team">Our team</a>
                 <a href="index.php?action=?">Legal notice</a>
                 <a href="index.php?action=?">TOS</a>
                 <a href="index.php?action=?">Data protection</a>';
             else
                 echo '<h4 class="underline text-base font-semibold md:text-sm lg:text-base">NOTRE ENTREPRISE</h4>
                 <a href="index.php#about">À propos</a>
-                <a href="index.php?action=ourTeam">Notre équipe</a>
+                <a href="index.php?action=team">Notre équipe</a>
                 <a href="index.php?action=?">Mention légales</a>
                 <a href="index.php?action=?">CGV</a>
                 <a href="index.php?action=?">Protection des données</a>';
@@ -32,17 +32,17 @@
             <div class="footer-nav flex flex-col gap-2">
                 <?php if ($_SESSION['lang'] === 'ENG')
                     echo '<h4 class="underline text-base font-semibold md:text-sm lg:text-base">INFORMATIONS</h4>
-                    <a href="index.php?action=?">FAQ</a>
+                    <a href="index.php?action=team#FAQ">FAQ</a>
                     <a href="index.php?action=games">Escape Games</a>
                     <a href="index.php?action=goods">Discount vouchers</a>
-                    
+                    <a href="index.php#sponso">Our partners</a>
                     <a href="index.php?action=?">Jobs</a>';
                 else
                     echo '<h4 class="underline text-base font-semibold md:text-sm lg:text-base">INFORMATIONS</h4>
-                    <a href="index.php?action=?">FAQ</a>
+                    <a href="index.php?action=team#FAQ">FAQ</a>
                     <a href="index.php?action=games">Escape Games</a>
                     <a href="index.php?action=goods">Bons de réductions</a>
-                    <a href="index.php#partners">Nos Partenaires</a>
+                    <a href="index.php#sponso">Nos Partenaires</a>
                     <a href="index.php?action=?">Emplois</a>';
                 ?>
 

@@ -1,24 +1,9 @@
 {
     "mostActivePlayers": [
-        {
-            "name": "Jerry Wood",
-            "score": 315
-        },
-        {
-            "name": "Brandon Barnes",
-            "score": 301
-        },
-        {
-            "name": "Raymond Knight",
-            "score": 292
-        },
-        {
-            "name": "Trevor McCormick",
-            "score": 245
-        },
-        {
-            "name": "BOUGUERRI Sofiane",
-            "score": 203
-        }
+        {"name": "KOLLIC Al", "score": 315},
+        {"name": "IONETTE Camy", "score": 301},
+        {"name": "ASSAIN Marc", "score": 292},
+        {"name": "HOCHON Paul", "score": 245},
+        {"name": "HONETTE Mary", "score": 203}
     ]
 }
