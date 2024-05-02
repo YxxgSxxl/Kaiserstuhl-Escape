@@ -8,10 +8,10 @@ if (!empty($succes)) {
 ?>
 
 <body class="overflow-x-hidden bg-ks-black">
-    <section class="h-[60vh] md:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
-        <?= require_once "components/animatedTitle.php" ?>
+    <section class="h-[80vh] md:h-[100vh] bg-cover bg-no-repeat" style="background-image: url('img/ks-bg1.png');">
+        <?php require_once "components/animatedTitle.php" ?>
 
-        <div class="absolute top-3/4 md:top-[100%]] left-1/2 transform -translate-x-1/2 ">
+        <div class="md:inline hidden absolute top-3/4 md:top-[100%]] left-1/2 transform -translate-x-1/2 ">
             <div
                 class="mouse w-[30px] h-[50px] md:w-[65px] md:h-[100px] border-4 border-solid border-white rounded-full">
             </div>
@@ -28,14 +28,16 @@ if (!empty($succes)) {
             <div class="flex flex-col md:w-[40vw] text-ks-white">
                 <p data-aos="fade-up">Mulhouse</p>
                 <h2 data-aos="fade-up" class="text-4xl md:text-4xl lg:text-6xl text-ks-orange">We-Escape</h2>
-                <p data-aos="fade-up" class="md:text-base lg:text-2xl mb-4">Lorem ipsum dolor sit amet consectetur,
-                    adipisicing
-                    elit.
-                    Corporis quod
-                    molestias magnam nemo,
-                    hic
-                    ratione fugit veritatis ea possimus nihil ut repellendus consequuntur veniam deserunt? Consequuntur
-                    tempora sed quaerat error.
+                <p data-aos="fade-up" class="md:text-base lg:text-2xl mb-4">
+                    <?php if ($_SESSION['lang'] === 'ENG')
+                        echo "We settled in Mulhouse, we
+                        are a team of puzzle and game enthusiasts.
+                        Come and play with us!";
+                    else
+                        echo "Nous nous sommes installés à Mulhouse, nous
+                        sommes une équipe de passionnés d'énigmes et de jeux.
+                        Venez nous voirs !";
+                    ?>
                 </p>
 
                 <div data-aos="fade-up" class="buttons flex gap-4 mt-2">
@@ -82,7 +84,6 @@ if (!empty($succes)) {
                     <strong>ENTREPRISES</strong>, LES <strong>ASSOCIATIONS</strong>, LA <strong>FAMILLE</strong> ET LES
                     <strong>AMIS.</strong>";
                 ?>
-
             </p>
             <div data-aos="fade-up" class="leaderboard">
                 <div class=" flex justify-center item-center">
@@ -133,12 +134,13 @@ if (!empty($succes)) {
                     </a>
                 </div>
                 <div class="flex flex-col md:w-[40vw] justify-center">
-                    <p class="text-ks-white md:text-lg lg:text-xl text-start">Lorem ipsum dolor sit
-                        amet consectetur
-                        adipisicing
-                        elit. Sint
-                        dolorem consequuntur id, dignissimos quisquam maxime veritatis a magni. Autem nobis eaque
-                        tempore consequatur cum assumenda quia blanditiis a excepturi repellat!</p>
+                    <p class="text-ks-white md:text-lg lg:text-xl text-start">
+                        <?php if ($_SESSION['lang'] === 'ENG')
+                            echo "We are a team of puzzle and game enthusiasts, we want to offer the best possible experience to our customers. If you’re still wondering who we are, click on the button below to find out more!";
+                        else
+                            echo "Nous sommes une équipe de passionnés d'énigmes et de jeux, nous voulons offrir la meilleur expérience possible à nos clients. Si vous vous demandez encore qui nous sommes, cliquez sur le bouton ci-dessous pour en savoir plus !";
+                        ?>
+                    </p>
                     <div data-aos="fade-up" class="buttons flex gap-4 mt-4 ">
                         <a style="--clr: #000000" class="button" href="index.php?action=team">
                             <span class="button__icon-wrapper">

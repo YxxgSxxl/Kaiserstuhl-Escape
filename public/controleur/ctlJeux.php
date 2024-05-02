@@ -146,7 +146,7 @@ class ctlJeux
             $game = $this->game->getGame($_GET['idGameModif']);
 
             if ($users['member_role'] == 'Admin') {
-                $vue = new vue("modifJeu"); // Instancie la vue appropriée
+                $vue = new vue("ModifJeu"); // Instancie la vue appropriée
                 $vue->afficher(
                     array(
                         'users' => $users,

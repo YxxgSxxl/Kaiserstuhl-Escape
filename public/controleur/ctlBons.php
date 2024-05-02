@@ -137,12 +137,12 @@ class ctlBons
     ////////////////////
     public function vueModifBon()
     {
-        if ($_SESSION['username']) {
+        if (isset($_SESSION['username'])) {
             $users = $this->user->infoMember($_SESSION['username']);
             $item = $this->item->getItem($_GET['idItemModif']);
 
             if ($users['member_role'] == 'Admin') {
-                $vue = new vue("modifBon"); // Instancie la vue appropriée
+                $vue = new vue("ModifBon"); // Instancie la vue appropriée
                 $vue->afficher(
                     array(
                         'users' => $users,
@@ -157,6 +157,13 @@ class ctlBons
                     array('erreur' => $erreur)
                 );
             }
+        } else {
+            $erreur = "You don't have the permission to modify an item";
+
+            $vue = new vue("Erreur"); // Instancie la vue appropriée
+            $vue->afficher(
+                array('erreur' => $erreur)
+            );
         }
     }
 
@@ -380,5 +387,41 @@ class ctlBons
     {
         unset($_SESSION['panier']);
         header('Location: index.php?action=cart');
+    }
+
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
+    public function payment()
+    {
+        if (!empty($_SESSION['panier'])) {
+            $items = $this->item->getItems();
+            $users = $this->user->infoMember($_SESSION['username']);
+
+            $panier = "";
+
+            $panier = array();
+            foreach ($_SESSION['panier'] as $idProduct => $infos) {
+                $item = $this->item->getItem($idProduct);
+                $panier[] = $item;
+            }
+
+            $vue = new vue("Payment"); // Instancie la vue appropriée
+            $vue->afficher(
+                array(
+                    'panier' => $panier,
+                    'items' => $items,
+                    'users' => $users
+                )
+            );
+        } else {
+            if ($_SESSION['lang'] === 'ENG')
+                $erreur = "Your cart is empty";
+            else
+                $erreur = "Votre panier est vide";
+
+            $vue = new vue("Erreur"); // Instancie la vue appropriée
+            $vue->afficher(array("erreur" => $erreur));
+        }
     }
 }

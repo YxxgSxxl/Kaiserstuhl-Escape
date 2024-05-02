@@ -131,6 +131,9 @@ class routeur
           case 'flushCart':
             $this->ctlBons->flushCart();
             break;
+          case 'payment':
+            $this->ctlBons->payment();
+            break;
           // CONTACT side
           case 'contact':
             $this->ctlContact->vueContact();

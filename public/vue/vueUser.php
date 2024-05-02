@@ -143,7 +143,7 @@ if (isset($reservations)) {
                     if ($age) {
                         echo "<p class='text-center'>$age ans</p>";
                     } else {
-                        echo "/";
+                        echo "<p class='text-center text-ks-white/50'>/</p>";
                     }
                     ?>
                     </p>
