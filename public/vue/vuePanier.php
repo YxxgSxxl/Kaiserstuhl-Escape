@@ -84,7 +84,7 @@ else
             </div>
         </div>
 
-        <a href="index.php?action=payment"
+        <a href="index.php?action=checkout"
             class="flex gap-2 justify-center mx-auto w-fit bg-ks-green hover:bg-green-500 text-ks-white py-2 px-4 mb-4 rounded-lg items-center text-center">
             <p class="text-lg font-bold"> <?php if ($_SESSION['lang'] === 'ENG')
                 echo 'Buy';

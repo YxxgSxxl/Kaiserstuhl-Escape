@@ -37,26 +37,30 @@ global $Conf;
         ?>
 
         <form action="index.php?action=reservation&idGameRes=<?= $id_game ?>" method="post">
-            <div class="flex flex-col gap-3">
-                <h1 class="text-2xl md:text-4xl mt-4 text-center font-semibold"><?= $title ?></h1>
-                <div class="relative">
-                    <img src="<?= $Conf->GAMESFOLDER . $img ?>" alt="<?= $title ?>"
-                        class="w-[100%] md:w-[50%] mx-auto rounded-lg">
-                </div>
-            </div>
-            <div class="flex flex-col gap-3">
-                <p class="text-lg md
-                :text-xl"><?= $minidesc ?></p>
-                <p class="text-lg md
-                :text-xl">Durée: <?= $duration ?> heures</p>
-                <p class="text-lg md
-                :text-xl">Longueur du parcours: <?= $lengths ?>km</p>
-                <p class="text-lg md
-                :text-xl">Date de début: <?= $dateStart ?></p>
-                <p class="text-lg md
-                :text-xl">Date de fin: <?= $dateEnd ?></p>
-                <input type="hidden" name="id_game" value="<?= $id_game ?>">
 
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-3">
+                    <h1 class="text-2xl md:text-4xl mt-4 text-center font-semibold"><?= $title ?></h1>
+                    <div class="relative">
+                        <img src="<?= $Conf->GAMESFOLDER . $img ?>" alt="<?= $title ?>"
+                            class="w-[100%] md:w-[50%] mx-auto rounded-lg">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-3 rounded p-4  bg-ks-orange items-center justify-center">
+                    <p class="text-lg md
+                :text-xl"><?= $minidesc ?></p>
+                    <p class="text-lg md
+                :text-xl">Durée : <?= $duration ?> heures</p>
+                    <p class="text-lg md
+                :text-xl">Longueur du parcours : <?= $lengths ?>km</p>
+                    <p class="text-lg md
+                :text-xl">Date de début : <?= $dateStart ?></p>
+                    <p class="text-lg md
+                :text-xl">Date de fin : <?= $dateEnd ?></p>
+                    <p class="text-lg md
+                :text-xl">Prix : <?= $price ?> €</p>
+                    <input type="hidden" name="id_game" value="<?= $id_game ?>">
+                </div>
                 <button type="submit"
                     class="flex flex-row gap-2 text-ks-white text-lg bg-ks-green w-fit rounded-md mx-auto px-4 py-1 md:py-2 hover:bg-green-500 cursor-pointer">
                     Je réserve
@@ -67,7 +71,9 @@ global $Conf;
                     </svg>
                 </button>
             </div>
-        </form>
     </div>
+
+    </form>
+
 
 </section>

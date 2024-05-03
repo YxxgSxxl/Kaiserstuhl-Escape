@@ -392,6 +392,17 @@ class ctlBons
     /////////////////////
     // FONCTION MEMBRE //
     /////////////////////
+    public function checkout()
+    {
+        if (!empty($_SESSION['panier'])) {
+            $vue = new vue("PaymentPannel"); // Instancie la vue appropriée
+            $vue->afficher(array());
+        }
+    }
+
+    /////////////////////
+    // FONCTION MEMBRE //
+    /////////////////////
     public function payment()
     {
         if (!empty($_SESSION['panier'])) {

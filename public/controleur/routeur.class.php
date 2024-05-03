@@ -131,6 +131,9 @@ class routeur
           case 'flushCart':
             $this->ctlBons->flushCart();
             break;
+          case 'checkout':
+            $this->ctlBons->checkout();
+            break;
           case 'payment':
             $this->ctlBons->payment();
             break;
