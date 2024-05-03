@@ -4,88 +4,95 @@
     <title>Payment Verification</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-      
-      .container {
-        background-color: #455d7a;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        max-width: 400px;
-        width: 100%;
-      }
-      
-      form {
-        margin-top: 20px;
-      }
-      label {
-        display: block;
-        margin-bottom: 10px;
-      }
-      input[type="text"], input[type="password"] {
-        width: calc(100% - 20px);
-        padding: 10px;
-        margin-bottom: 20px;
-        border: none;
-        border-radius: 5px;
-      }
-      input[type="submit"] {
-        background-color: #b80257;
-        color: #e3e3e3;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        width: 100%;
-        cursor: pointer;
-      }
-      input[type="submit"]:hover {
-        background-color: #f95959;
-      }
-      .receipt {
-        display: none;
-        margin-top: 20px;
-        padding: 20px;
-        background-color: #301b1b;
-        border-radius: 5px;
-      }
-      .receipt p {
-        margin: 5px 0;
-      }
-      .receipt-button {
-        background-color: #b80257;
-        color: #e3e3e3;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        width: 100%;
-        cursor: pointer;
-        margin-top: 20px;
-      }
-      .receipt-button:hover {
-        background-color: #f95959;
-      }
+        .container {
+            background-color: #455d7a;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #b80257;
+            color: #e3e3e3;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #f95959;
+        }
+
+        .receipt {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #301b1b;
+            border-radius: 5px;
+        }
+
+        .receipt p {
+            margin: 5px 0;
+        }
+
+        .receipt-button {
+            background-color: #b80257;
+            color: #e3e3e3;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .receipt-button:hover {
+            background-color: #f95959;
+        }
     </style>
-    </head>
-    <body class="flex flex-col min-h-screen p-8 bg-no-repeat bg-ks-black">
-    
+</head>
+
+<body class="flex flex-col min-h-screen p-8 bg-no-repeat bg-ks-black">
+
     <div class="container">
-      <h1 class="text-center">Payment Verification</h1>
-      <form id="paymentForm">
-        <label for="cardNumber">Card Number</label>
-        <input type="text" id="cardNumber" placeholder="Enter 16 digit card number" required>
-        <label for="cvv">CVV</label>
-        <input type="password" id="cvv" placeholder="Enter 3 digit CVV" required>
-        <input type="submit" value="Verify Payment">
-      </form>
-      <div class="receipt" id="receipt">
-        <p><strong>Payment Sender:</strong> John Doe</p>
-        <p><strong>Purpose of Payment:</strong> Product Purchase</p>
-        <p><strong>Amount:</strong> $100</p>
-        <p><strong>Date:</strong> January 29, 2024</p>
-       <a href=""><button class="receipt-button" onclick="printReceipt()">Get Receipt</button></a> 
-      </div>
+        <h1 class="text-center">Payment Verification</h1>
+        <form id="paymentForm">
+            <label for="cardHolderName">Cardholder Name</label>
+            <input type="text" id="cardHolderName" placeholder="Enter cardholder's name" required>
+            <label for="cardNumber">Card Number</label>
+            <input type="text" id="cardNumber" placeholder="Enter 16 digit card number" required>
+            <label for="expirationDate">Expiration Date (MM/YY)</label>
+            <input type="text" id="expirationDate" placeholder="MM/YY" required maxlength="5">
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" placeholder="Enter 3 digit CVV" required>
+
+            <input type="submit" value="Verify Payment">
+        </form>
     </div>
-    
-   
-    </body>
-    
-    
+
+
+
+</body>
